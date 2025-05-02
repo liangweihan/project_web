@@ -307,3 +307,16 @@ body {
     margin-left: 10px;
 }
 
+.game-button {
+    padding: 150px 150px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.game-button:hover {
+    background-color: #45a049;
+}
