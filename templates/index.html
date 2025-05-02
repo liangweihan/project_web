@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Odyssey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo">LOGO</div>
+            <div class="logo-text">
+                <div>115 TAHRD</div>
+                <div>畢業專展</div>
+            </div>
+        </div>
+        <div class="nav-links"></div>
+        <ul>
+            <li><a href="#home" class="active">首頁</a></li>
+            <li><a href="#intro">專展介紹</a></li>
+            <li><a href="#works">作品集</a></li>
+            <li><a href="#info">交通資訊</a></li>
+            <li><a href="#about">關於科技系</a></li>
+            <li><a href="#games">互動遊戲</a></li>
+            <li><a href="#map">展場地圖</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#manufacturer">贊助廠商</a></li>
+        </ul>
+    </nav>
+
+    <!-- 各區塊 -->
+    <section id="home" class="section">Tech Odyssey：未來之旅</section>
+    <section id="intro" class="section">專展介紹內容...</section>
+    <section id="works" class="section">作品集展示...</section>
+    <section id="info" class="section">交通資訊內容...</section>
+    <section id="about" class="section">科技系介紹...</section>
+    <section id="games" class="section">互動遊戲內容...</section>
+    <section id="map" class="section">展場地圖...</section>
+    <section id="faq" class="section">常見問題...</section>
+    <section id="manufacturer" class="section">贊助廠商名單...</section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.navbar ul li a');
+        
+            function onScroll() {
+                let scrollPos = window.scrollY + 100; // 加一些偏移避免導覽列遮住
+        
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const bottom = top + section.offsetHeight;
+                    const id = section.getAttribute('id');
+        
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+        
+            window.addEventListener('scroll', onScroll);
+        });
+        </script>
+        
+</body>
+</html>
