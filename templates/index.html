@@ -31,10 +31,63 @@
     </nav>
 
     <!-- 各區塊 -->
-    <section id="home" class="section">Tech Odyssey：未來之旅</section>
-    <section id="intro" class="section">專展介紹內容...</section>
+    <section id="home" class="section home-section">
+        <h1>Tech Odyssey：未來之旅</h1>
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/你的FB連結" target="_blank">
+                <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/你的IG連結" target="_blank">
+                <img src="{{ url_for('static', filename='ig.png') }}" alt="Instagram" class="social-icon">
+            </a>
+        </div>
+    
+        <div class="footer-text">
+            <p>2025 國立臺灣師範大學<br>科技應用與人力資源發展學系</p>
+        </div>
+    </section>
+    
+    <section id="intro" class="section intro-section">
+        <h2>專展介紹</h2>
+        <div class="intro-container">
+            <div class="intro-card">
+                <h3>關於專展</h3>
+                <p>
+                    一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字...
+                </p>
+            </div>
+            <div class="intro-card">
+                <h3>專展理念</h3>
+                <p>
+                    一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字...
+                </p>
+            </div>
+        </div>
+    </section>
+    
     <section id="works" class="section">作品集展示...</section>
-    <section id="info" class="section">交通資訊內容...</section>
+    <section id="info" class="section transport-section">
+        <div class="transport-container">
+            <div class="transport-text">
+                <h2>交通資訊</h2>
+                <p><strong>時間</strong><br>
+                2024年12月06日(五) 13:00 ~ 19:00 ／ 2024年12月07日(六) 08:30 ~ 15:30</p>
+    
+                <p><strong>地址</strong><br>
+                台北市大安區和平東路一段129號 綜210 展演廳</p>
+    
+                <p><strong>交通方式</strong><br>
+                1. 由捷運古亭站出發：中和新蘆線(橘線)、松山新店線(綠線) 出站：5號出口<br>
+                步行：約十分鐘可抵達圖書館校區綜合大樓，入口位於師大路與和平東路交叉口附近，依照指示地貼進入大樓後，前往2樓210會議室。<br><br>
+                2. 由捷運台電大樓站出發：松山新店線(綠線) 出站：3號出口<br>
+                步行：從師大路直行約十分鐘，可抵達圖書館校區綜合大樓，入口位於師大路與和平東路交叉口附近，依照指示地貼進入大樓後，前往2樓210會議室。</p>
+            </div>
+            <div class="transport-map">
+                <img src="static/map.png" alt="交通地圖" class="map-image">
+            </div>            
+        </div>
+    </section>
+    
     <section id="about" class="section">科技系介紹...</section>
     <section id="games" class="section">互動遊戲內容...</section>
     <section id="map" class="section">展場地圖...</section>
