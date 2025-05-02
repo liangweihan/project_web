@@ -69,7 +69,7 @@
     <section id="info" class="section transport-section">
         <div class="transport-container">
             <div class="transport-text">
-                <h2>交通資訊</h2>
+                <h1>交通資訊</h1>
                 <p><strong>時間</strong><br>
                 2024年12月06日(五) 13:00 ~ 19:00 ／ 2024年12月07日(六) 08:30 ~ 15:30</p>
     
@@ -88,11 +88,54 @@
         </div>
     </section>
     
-    <section id="about" class="section">科技系介紹...</section>
+    <section id="about" class="section">
+        <section id="info" class="section transport-section">
+            <div class="transport-container">
+                <div class="transport-text">
+                    <h1>關於科技系</h1>
+                    <p><strong>文字</strong><br>
+                        好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂
+                        字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多
+                        ⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好
+                        多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字
+                        好多⽂字
+                        好多⽂字好多⽂</p>
+        
+            </div>
+        </section>
+    </section>
     <section id="games" class="section">互動遊戲內容...</section>
-    <section id="map" class="section">展場地圖...</section>
-    <section id="faq" class="section">常見問題...</section>
-    <section id="manufacturer" class="section">贊助廠商名單...</section>
+    <section id="map" class="section">
+        <h2 style="text-align: center;">展場地圖</h2>
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <img src="{{ url_for('static', filename='Exhibition Photos.png') }}" alt="展場地圖圖片" style="max-width: 90%; height: auto; margin-top: 20px;">
+        </div>
+    </section>
+    
+    <section id="faq" class="section">
+        <h2>FAQ</h2>
+    <div class="faq-buttons">
+        <a href="faq1.html" class="faq-link-button">一個問題</a>
+        <a href="faq2.html" class="faq-link-button">兩個問題</a>
+        <a href="faq3.html" class="faq-link-button">三個問題</a>
+    </div>
+    </section>
+    <section id="manufacturer" class="section manufacturer-section">
+        <h2 style="text-align: center;">贊助廠商</h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn left" onclick="scrollCarousel(-1)">←</button>
+          <div class="carousel" id="sponsorCarousel">
+            <div class="sponsor-card">贊助一</div>
+            <div class="sponsor-card">贊助二</div>
+            <div class="sponsor-card">贊助三</div>
+            <div class="sponsor-card">贊助四</div>
+            <div class="sponsor-card">贊助五</div>
+            <div class="sponsor-card">贊助六</div>
+          </div>
+          <button class="carousel-btn right" onclick="scrollCarousel(1)">→</button>
+        </div>
+      </section>
+      
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -122,5 +165,16 @@
         });
         </script>
         
+        <script>
+            function scrollCarousel(direction) {
+              const carousel = document.getElementById("sponsorCarousel");
+              const scrollAmount = 200;
+              carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: "smooth"
+              });
+            }
+          </script>
+          
 </body>
 </html>
