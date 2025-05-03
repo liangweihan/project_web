@@ -104,11 +104,24 @@ body {
     align-items: center;
 }
 
-.social-icon {
+.fb-icon {
     width: 48px;
     height: 48px;
     transition: transform 0.3s ease;
     cursor: pointer;
+    top: 260px;
+    left: 70px;
+    position: absolute;
+}
+
+.ig-icon {
+    width: 53px;
+    height: 53px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    top: 260px;
+    left: 130px;
+    position: absolute;
 }
 
 .social-icon:hover {
@@ -117,7 +130,7 @@ body {
 
 .footer-text {
     position: absolute;
-    bottom: 20px;
+    bottom: 130px;
     right: 40px;
     text-align: right;
     font-size: 1.2em;
@@ -319,4 +332,52 @@ body {
 
 .game-button:hover {
     background-color: #45a049;
+}
+
+.intro-section {
+    position: relative;
+}
+
+.works-section {
+    position: relative;
+}
+
+.transport-section {
+    position: relative;
+}
+
+.about-section {
+    position: relative;
+}
+
+.games-section {
+    position: relative;
+}
+
+.map-section {
+    position: relative;
+}
+
+.faq-section {
+    position: relative;
+}
+
+.manufacturer-section {
+    position: relative;
+}
+
+.section-title {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.home-title {
+    position: absolute;
+    top: 160px;
+    left: 70px;
+    font-size: 1.8em;
+    font-weight: 400;
 }
