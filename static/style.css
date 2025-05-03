@@ -348,6 +348,10 @@ body {
 
 .about-section {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 若你希望整頁區塊居中 */
 }
 
 .games-section {
@@ -380,4 +384,12 @@ body {
     left: 70px;
     font-size: 1.8em;
     font-weight: 400;
+}
+
+.about-text {
+    padding-left: 0px;/* 控制左側間距 */
+    max-width: 1300px;
+    max-height: 500px;
+    text-align: left;
+    font-size: 0.7em;
 }
