@@ -265,9 +265,16 @@ body {
 }
 
 .manufacturer-section {
-    background-color: #75adc5;
-    padding: 40px 20px;
-}
+    background: linear-gradient(
+      to bottom,
+      #79b2ca 0%,     /* 上半部：淺藍 */
+      #79b2ca 60%,    /* 分界點 */
+      #cde1ea 60%,    /* 下半部：深藍 */
+      #cde1ea 100%
+    );
+    padding: 60px 0;
+    width: 100%;
+  }
 
 .carousel-wrapper {
     position: relative;
@@ -401,3 +408,48 @@ body {
     font-size: 0.7em;
 }
 
+.manufacturer-fb-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    top: 650px;
+    right: 130px;
+    position: absolute;
+}
+
+.manufacturer-ig-icon {
+    width: 53px;
+    height: 53px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    top: 650px;
+    right: 70px;
+    position: absolute;
+}
+
+.manufacturer-logo {
+    font-weight: 400;
+    font-size: 0.6em;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 630px;
+    left: 60px;
+    position: absolute;
+}
+
+.manufacturer-footer-text {
+    text-align: center;
+    margin-top: 20px; /* 可視情況調整與上方間距 */
+    color: #000; /* 你想要的文字顏色 */
+    font-size: 1em; /* 可調整文字大小 */
+    top: 550px;
+    left: 400px;
+    position: absolute;
+  }
