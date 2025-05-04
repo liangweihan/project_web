@@ -31,7 +31,7 @@
     </nav>
 
     <!-- 各區塊 -->
-    <section id="home" class="section home-section">
+    <section id="home" class="section home-section" data-nav-color="white">
         <div class="home-title">Tech Odyssey：未來之旅</div>
         <div class="social-buttons">
             <a href="https://www.facebook.com/你的FB連結" target="_blank">
@@ -47,7 +47,7 @@
         </div>
     </section>
     
-    <section id="intro" class="section intro-section">
+    <section id="intro" class="section intro-section" data-nav-color="#8bb9cd">
         <div class="section-title"> • 專展介紹</div>    
         <div class="intro-container">
             <div class="intro-card">
@@ -65,10 +65,10 @@
         </div>
     </section>
     
-    <section id="works" class="section works-section">作品集展示...
+    <section id="works" class="section works-section"data-nav-color="#cde1ea">作品集展示...
         <div class="section-title"> • 作品集</div>
     </section>
-    <section id="info" class="section transport-section">
+    <section id="info" class="section transport-section"data-nav-color="#8bb9cd">
         <div class="section-title"> • 交通資訊</div>
         <div class="transport-container">
             <div class="transport-text">
@@ -90,7 +90,7 @@
         </div>
     </section>
     
-    <section id="about" class="section about-section">
+    <section id="about" class="section about-section"data-nav-color="#cde1ea">
         <div class="section-title"> • 關於科技系</div>
                 <div class="about-container">
                 <div class="about-text">
@@ -109,7 +109,7 @@
             </div>
         </section>
     </section>
-    <section id="games" class="section games-section">
+    <section id="games" class="section games-section"data-nav-color="#8bb9cd">
         <div class="section-title"> • 互動遊戲</div>
         <!-- 中間三個按鈕 -->
         <div style="display: flex; justify-content: center; align-items: center; height: 400px; gap: 30px;">
@@ -119,14 +119,14 @@
         </div>
     </section>
     
-    <section id="map" class="section map-section">
+    <section id="map" class="section map-section"data-nav-color="#cde1ea">
         <div class="section-title"> • 展場地圖</div>
         <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
             <img src="{{ url_for('static', filename='Exhibition Photos.png') }}" alt="展場地圖圖片" style="max-width: 90%; height: auto; margin-top: 20px;">
         </div>
     </section>
     
-    <section id="faq" class="section faq-section">
+    <section id="faq" class="section faq-section"data-nav-color="#8bb9cd">
         <div class="section-title"> • FAQ</div>
         <div class="faq-buttons">
             <a href="faq1.html" class="faq-link-button">一個問題</a>
@@ -134,7 +134,7 @@
             <a href="faq3.html" class="faq-link-button">三個問題</a>
         </div>
     </section>
-    <section id="manufacturer" class="section manufacturer-section">
+    <section id="manufacturer" class="section manufacturer-section"data-nav-color="#cde1ea">
         <div class="section-title"> • 贊助廠商</div>
         <div class="carousel-wrapper">
           <button class="carousel-btn left" onclick="scrollCarousel(-1)">←</button>
@@ -189,6 +189,45 @@
               });
             }
           </script>
-          
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const logoText = document.querySelector(".logo-text");
+                const homeSection = document.querySelector("#home");
+            
+                window.addEventListener("scroll", () => {
+                    const homeBottom = homeSection.getBoundingClientRect().bottom;
+            
+                    if (homeBottom <= 100) {
+                        // 離開首頁，隱藏 logo-text
+                        logoText.classList.add("hidden");
+                    } else {
+                        // 還在首頁，顯示 logo-text
+                        logoText.classList.remove("hidden");
+                    }
+                });
+            });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const navbar = document.querySelector(".navbar");
+                    const sections = document.querySelectorAll("section");
+                
+                    window.addEventListener("scroll", () => {
+                        let currentSection = null;
+                
+                        sections.forEach((section) => {
+                            const rect = section.getBoundingClientRect();
+                            if (rect.top <= 100 && rect.bottom >= 100) {
+                                currentSection = section;
+                            }
+                        });
+                
+                        if (currentSection) {
+                            const color = currentSection.dataset.navColor || "white";
+                            navbar.style.backgroundColor = color;
+                        }
+                    });
+                });
+                </script>
 </body>
 </html>

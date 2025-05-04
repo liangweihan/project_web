@@ -18,6 +18,7 @@ body {
     padding: 15px 25px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 .logo-container {
@@ -43,9 +44,13 @@ body {
     line-height: 1.2;
     font-size: 1.5em;
     color: black;
+    display: block; /* 預設顯示 */
+    transition: opacity 0.3s ease;
 }
 
-
+.logo-text.hidden {
+    display: none; /* 隱藏狀態 */
+}
 
 .navbar ul {
     list-style: none;
@@ -356,6 +361,7 @@ body {
 
 .games-section {
     position: relative;
+    background-color: #d0e3eb
 }
 
 .map-section {
@@ -364,6 +370,7 @@ body {
 
 .faq-section {
     position: relative;
+    background-color: #d0e3eb
 }
 
 .manufacturer-section {
@@ -393,3 +400,4 @@ body {
     text-align: left;
     font-size: 0.7em;
 }
+
