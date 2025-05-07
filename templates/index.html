@@ -137,7 +137,6 @@
     <section id="manufacturer" class="section manufacturer-section"data-nav-color="#cde1ea">
         <!--<div class="section-title"> • 贊助廠商</div>-->
         <div class="carousel-wrapper">
-          <button class="carousel-btn left" onclick="scrollCarousel(-1)">←</button>
           <div class="carousel" id="sponsorCarousel">
             <div class="sponsor-card">贊助一</div>
             <div class="sponsor-card">贊助二</div>
@@ -145,8 +144,9 @@
             <div class="sponsor-card">贊助四</div>
             <div class="sponsor-card">贊助五</div>
             <div class="sponsor-card">贊助六</div>
+            <div class="sponsor-card">贊助七</div>
+            <div class="sponsor-card">贊助八</div>
           </div>
-          <button class="carousel-btn right" onclick="scrollCarousel(1)">→</button>
         </div>
         <div class="manufacturer-logo">LOGO</div>
         <div class="manufacturer-footer-text">
@@ -191,16 +191,7 @@
         });
         </script>
         
-        <script>
-            function scrollCarousel(direction) {
-              const carousel = document.getElementById("sponsorCarousel");
-              const scrollAmount = 200;
-              carousel.scrollBy({
-                left: direction * scrollAmount,
-                behavior: "smooth"
-              });
-            }
-          </script>
+
           <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const logoText = document.querySelector(".logo-text");
@@ -241,5 +232,13 @@
                     });
                 });
                 </script>
+                <script>
+                    window.addEventListener('DOMContentLoaded', () => {
+                      const carousel = document.getElementById("sponsorCarousel");
+                      const cards = carousel.innerHTML;
+                      carousel.innerHTML += cards; // 將所有贊助卡片重複一次（接在尾端）
+                    });
+                  </script>
+                  
 </body>
 </html>
