@@ -136,7 +136,7 @@
     </section>
     <section id="manufacturer" class="section manufacturer-section"data-nav-color="#cde1ea">
         <!--<div class="section-title"> • 贊助廠商</div>-->
-        <div class="carousel-wrapper">
+        <div class="sponsor-scroll-area">
           <div class="carousel" id="sponsorCarousel">
             <div class="sponsor-card">贊助一</div>
             <div class="sponsor-card">贊助二</div>
@@ -233,12 +233,39 @@
                 });
                 </script>
                 <script>
-                    window.addEventListener('DOMContentLoaded', () => {
-                      const carousel = document.getElementById("sponsorCarousel");
-                      const cards = carousel.innerHTML;
-                      carousel.innerHTML += cards; // 將所有贊助卡片重複一次（接在尾端）
+                    const scrollArea = document.querySelector('.sponsor-scroll-area');
+                    const carousel = document.getElementById('sponsorCarousel');
+                  
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+                  
+                    scrollArea.addEventListener('mousedown', (e) => {
+                      isDown = true;
+                      scrollArea.classList.add('active');
+                      startX = e.pageX - scrollArea.offsetLeft;
+                      scrollLeft = scrollArea.scrollLeft;
+                    });
+                  
+                    scrollArea.addEventListener('mouseleave', () => {
+                      isDown = false;
+                      scrollArea.classList.remove('active');
+                    });
+                  
+                    scrollArea.addEventListener('mouseup', () => {
+                      isDown = false;
+                      scrollArea.classList.remove('active');
+                    });
+                  
+                    scrollArea.addEventListener('mousemove', (e) => {
+                      if (!isDown) return;
+                      e.preventDefault();
+                      const x = e.pageX - scrollArea.offsetLeft;
+                      const walk = (x - startX) * 1.5;
+                      scrollArea.scrollLeft = scrollLeft - walk;
                     });
                   </script>
+
                   
 </body>
 </html>
