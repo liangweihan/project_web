@@ -7,6 +7,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* 導覽列 */
 .navbar {
     position: fixed;
     top: 0;
@@ -21,6 +22,38 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.navbar li {
+    display: flex;
+    align-items: center;
+}
+
+.navbar li a.active {
+    color: #FFCC22;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    padding: 10px 0;  /* 垂直 padding 幫助高度一致 */
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;             /* 清除預設外距 */
+    padding: 0;            /* 清除預設內距 */
+    margin-right: 60px;    /* 你可依需求調整右邊距離 */
+    align-items: center;   /* 水平排列元素垂直置中 */
+}
+
+
+
+
+/* 最上面的logo */
 .logo-container {
     display: flex;
     align-items: center;
@@ -52,61 +85,36 @@ body {
     display: none; /* 隱藏狀態 */
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;             /* 清除預設外距 */
-    padding: 0;            /* 清除預設內距 */
-    margin-right: 60px;    /* 你可依需求調整右邊距離 */
-    align-items: center;   /* 水平排列元素垂直置中 */
-}
 
-.navbar li {
-    display: flex;
-    align-items: center;
-}
 
-.navbar li a.active {
-    color: #FFCC22;
-}
-
-.navbar li a {
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
-    padding: 10px 0;  /* 垂直 padding 幫助高度一致 */
-    display: inline-block;
-    font-size: 1.5em;
-}
-
+/*所有section通用設定*/
 .section {
     height: 100vh; /* 可調整區塊高度 */
     padding-top: 60px;
-    background-color: #8bb9cd;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    border-bottom: 1px solid #ccc;
 }
 
+
+
+/*所有社交平台按鈕通用設定*/
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+/*首頁*/
 .home-section {
     text-align: left;
     padding: 80px;
     background-color: #78adc3; /* 原本的淺藍色 */
     color: #000;
-}
-
-.home-section h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.social-buttons {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    position: relative;
 }
 
 .fb-icon {
@@ -129,10 +137,6 @@ body {
     position: absolute;
 }
 
-.social-icon:hover {
-    transform: scale(1.1);
-}
-
 .footer-text {
     position: absolute;
     bottom: 130px;
@@ -143,18 +147,13 @@ body {
     line-height: 1.5;
 }
 
-.home-section {
-    position: relative;
-}
 
+
+/*專展介紹*/
 .intro-section {
+    position: relative;
     background-color: #cde1ea; /* 和背景相同 */
     padding: 60px 40px;
-}
-
-.intro-section h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
 }
 
 .intro-container {
@@ -182,9 +181,21 @@ body {
     line-height: 1.6;
 }
 
+
+
+/*作品集*/
+.works-section {
+    background-color: #78adc3;
+    position: relative;
+}
+
+
+
+/*交通資訊*/
 .transport-section {
     background-color: #d0e3eb;
     padding: 60px 10%;
+    position: relative;
 }
 
 .transport-container {
@@ -199,29 +210,11 @@ body {
     line-height: 1.8;
 }
 
-.transport-text h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
 .transport-map {
     flex: 1 1 35%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.map-placeholder {
-    width: 100%;
-    max-width: 350px;
-    height: 350px;
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    font-weight: bold;
 }
 
 .map-image {
@@ -232,9 +225,62 @@ body {
     object-fit: cover;
 }
 
-.transport-text h2 {
-    font-size: 2em;  /* 修改為與 .intro-section h2 一樣 */
-    margin-bottom: 40px;
+
+
+/*關於科技系*/
+.about-section {
+    background-color: #78adc3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 若你希望整頁區塊居中 */
+}
+
+.about-text {
+    padding-left: 0px;/* 控制左側間距 */
+    max-width: 1300px;
+    max-height: 500px;
+    text-align: left;
+    font-size: 0.7em;
+}
+
+
+
+/*互動遊戲*/
+.games-section {
+    position: relative;
+    background-color: #d0e3eb
+}
+
+.game-button {
+    padding: 150px 150px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.game-button:hover {
+    background-color: #45a049;
+}
+
+
+
+/*展場地圖*/
+.map-section {
+    background-color: #78adc3;
+    position: relative;
+}
+
+
+
+/*FAQ*/
+.faq-section {
+    position: relative;
+    background-color: #d0e3eb
 }
 
 .faq-buttons {
@@ -264,7 +310,11 @@ body {
     background-color: #e0f0ff;
 }
 
+
+
+/*贊助廠商*/
 .manufacturer-section {
+    position: relative;
     background: linear-gradient(
       to bottom,
       #79b2ca 0%,     /* 上半部：淺藍 */
@@ -274,28 +324,28 @@ body {
     );
     padding: 60px 0;
     width: 100%;
-  }
+}
 
-  .sponsor-scroll-area {
+.sponsor-scroll-area {
     overflow: hidden;
     cursor: grab;
     width: 100%;
     padding: 20px;
     height: 370px;
-  }
+}
   
-  .sponsor-scroll-area:active {
+.sponsor-scroll-area:active {
     cursor: grabbing;
-  }
+}
   
-  .carousel {
+.carousel {
     display: flex;
     gap: 40px;
     transition: transform 0.3s;
     user-select: none;
-  }
+}
   
-  .sponsor-card {
+.sponsor-card {
     flex: 0 0 auto;
     width: 200px;
     height: 100px;
@@ -306,86 +356,10 @@ body {
     justify-content: center;
     font-weight: bold;
     transition: transform 0.3s ease;
-  }
+}
   
-  .sponsor-card:hover {
+.sponsor-card:hover {
     transform: scale(1.2);
-  }
-
-.game-button {
-    padding: 150px 150px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-}
-
-.game-button:hover {
-    background-color: #45a049;
-}
-
-.intro-section {
-    position: relative;
-}
-
-.works-section {
-    position: relative;
-}
-
-.transport-section {
-    position: relative;
-}
-
-.about-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* 若你希望整頁區塊居中 */
-}
-
-.games-section {
-    position: relative;
-    background-color: #d0e3eb
-}
-
-.map-section {
-    position: relative;
-}
-
-.faq-section {
-    position: relative;
-    background-color: #d0e3eb
-}
-
-.manufacturer-section {
-    position: relative;
-}
-
-.section-title {
-    position: absolute;
-    top: 120px;
-    left: 50px;
-    font-size: 1.5em;
-    font-weight: 400;
-}
-
-.home-title {
-    position: absolute;
-    top: 160px;
-    left: 70px;
-    font-size: 1.8em;
-    font-weight: 400;
-}
-
-.about-text {
-    padding-left: 0px;/* 控制左側間距 */
-    max-width: 1300px;
-    max-height: 500px;
-    text-align: left;
-    font-size: 0.7em;
 }
 
 .manufacturer-fb-icon {
@@ -408,6 +382,44 @@ body {
     position: absolute;
 }
 
+
+
+/* 大部分section的title */
+.section-title {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+
+
+/* home-section的title */
+.home-title {
+    position: absolute;
+    top: 160px;
+    left: 70px;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+
+
+/* 最下面的文字 */
+.manufacturer-footer-text {
+    text-align: center;
+    margin-top: 20px; /* 可視情況調整與上方間距 */
+    color: #000; /* 你想要的文字顏色 */
+    font-size: 1em; /* 可調整文字大小 */
+    top: 550px;
+    left: 400px;
+    position: absolute;
+  }
+
+
+
+/* 最下面的logo */
 .manufacturer-logo {
     font-weight: 400;
     font-size: 0.6em;
@@ -423,13 +435,3 @@ body {
     left: 60px;
     position: absolute;
 }
-
-.manufacturer-footer-text {
-    text-align: center;
-    margin-top: 20px; /* 可視情況調整與上方間距 */
-    color: #000; /* 你想要的文字顏色 */
-    font-size: 1em; /* 可調整文字大小 */
-    top: 550px;
-    left: 400px;
-    position: absolute;
-  }
