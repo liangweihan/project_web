@@ -1,266 +1,403 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8">
-    <title>Tech Odyssey</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
-  </head>
-  <body>
+ <html lang="zh-Hant">
+ <head>
+  <meta charset="UTF-8">
+  <title>Tech Odyssey</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+ </head>
+ <body>
+ 
 
-    <!-- 導覽列 -->
-    <nav class="navbar">
-      <div class="logo-container">
-        <div class="logo">LOGO</div>
-        <div class="logo-text">
-          <div>115 TAHRD</div>
-          <div>畢業專展</div>
-        </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home" class="active">首頁</a></li>
-        <li><a href="#intro">專展介紹</a></li>
-        <li><a href="#works">作品集</a></li>
-        <li><a href="#info">交通資訊</a></li>
-        <li><a href="#about">關於科技系</a></li>
-        <li><a href="#games">互動遊戲</a></li>
-        <li><a href="#map">展場地圖</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#manufacturer">贊助廠商</a></li>
-      </ul>
-    </nav>
+  <nav class="navbar">
+  <div class="logo-container">
+  <div class="logo">LOGO</div>
+  <div class="logo-text">
+  <div>115 TAHRD</div>
+  <div>畢業專展</div>
+  </div>
+  </div>
+  <div class="nav-links"></div>
+  <ul>
+  <li><a href="#home" class="active">首頁</a></li>
+  <li><a href="#intro">專展介紹</a></li>
+  <li><a href="#works">作品集</a></li>
+  <li><a href="#info">交通資訊</a></li>
+  <li><a href="#about">關於科技系</a></li>
+  <li><a href="#games">互動遊戲</a></li>
+  <li><a href="#map">展場地圖</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#manufacturer">贊助廠商</a></li>
+  </ul>
+  </nav>
+ 
 
-    <!-- 首頁 -->
-    <section id="home" class="section home-section" data-nav-color="white">
-      <div class="home-title">Tech Odyssey：未來之旅</div>
-      <div class="social-buttons">
-        <a href="https://www.facebook.com/你的FB連結" target="_blank">
-          <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="fb-icon">
-        </a>
-        <a href="https://www.instagram.com/你的IG連結" target="_blank">
-          <img src="{{ url_for('static', filename='IG.png') }}" alt="Instagram" class="ig-icon">
-        </a>
-      </div>
-      <div class="footer-text">
-        <p>2025 國立臺灣師範大學<br>科技應用與人力資源發展學系</p>
-      </div>
-    </section>
+  <section id="home" class="section home-section" data-nav-color="white">
+  <div class="home-title">Tech Odyssey：未來之旅</div>
+  <div class="social-buttons">
+  <a href="https://www.facebook.com/你的FB連結" target="_blank">
+  <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="fb-icon">
+  </a>
+  <a href="https://www.instagram.com/你的IG連結" target="_blank">
+  <img src="{{ url_for('static', filename='IG.png') }}" alt="Instagram" class="ig-icon">
+  </a>
+  </div>
+ 
 
-    <!-- 專展介紹 -->
-    <section id="intro" class="section intro-section" data-nav-color="#d0e3eb">
-      <div class="section-title"> • 專展介紹</div>
-      <div class="intro-container">
-        <div class="intro-card rounded-box">
-          <h3>關於專展</h3>
-          <p>一堆文字一堆文字一堆文字一堆文字一堆文字…</p>
-        </div>
-        <div class="intro-card rounded-box">
-          <h3>專展理念</h3>
-          <p>一堆文字一堆文字一堆文字一堆文字一堆文字…</p>
-        </div>
-      </div>
-    </section>
+  <div class="footer-text">
+  <p>2025 國立臺灣師範大學<br>科技應用與人力資源發展學系</p>
+  </div>
+  </section>
+ 
 
-    <!-- 作品集 -->
-    <section id="works" class="section works-section" data-nav-color="#b0b0b0">
-      <div class="section-title"> • 作品集</div>
-      <div class="works-filter">
-        <button class="filter-btn active" data-filter="category1">分類一</button>
-        <button class="filter-btn" data-filter="category2">分類二</button>
-        <button class="filter-btn" data-filter="category3">分類三</button>
-        <button class="filter-btn" data-filter="category4">分類四</button>
-        <button class="filter-btn" data-filter="category5">分類五</button>
-      </div>
-      <div class="works-grid">
-        {% for i in range(1, 6) %}
-        <a href="work-detail.html" class="work-card" data-category="category{{ i }}">
-          <div class="work-image">
-            <img src="static/work{{ i }}.jpg" alt="作品{{ i }}">
-          </div>
-          <div class="work-description">
-            <p>我是文字我是文字我是文字我是文字我是文字...</p>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-      <div class="works-instruction">
-        <p>點選圖片後跳到另一個頁面有詳細組別介紹</p>
-      </div>
-    </section>
+  <section id="intro" class="section intro-section" data-nav-color="#d0e3eb">
+  <div class="section-title"> • 專展介紹</div>
+  <div class="intro-container">
+  <div class="intro-card rounded-box">
+  <h3>關於專展</h3>
+  <p>
+  一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字...
+  </p>
+  </div>
+  <div class="intro-card rounded-box">
+  <h3>專展理念</h3>
+  <p>
+  一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字一堆文字...
+  </p>
+  </div>
+  </div>
+  </section>
+ 
 
-    <!-- 交通資訊 -->
-    <section id="info" class="section transport-section" data-nav-color="#a7c1e8">
-      <div class="section-title"> • 交通資訊</div>
-      <div class="transport-container">
-        <div class="transport-text">
-          <p><strong>時間：</strong>2024年12月06日(五) 13:00 ~ 19:00 ／ 2024年12月07日(六) 08:30 ~ 15:30</p>
-          <p><strong>地址：</strong>台北市大安區和平東路一段129號 綜210 展演廳</p>
-          <p><strong>交通方式：</strong><br>
-            捷運古亭站：5號出口，步行約10分鐘。<br>
-            捷運台電大樓站：3號出口，步行約10分鐘。</p>
-        </div>
-        <div class="transport-map rounded-box">
-          <img src="static/map.png" alt="交通地圖" class="map-image">
-        </div>
-      </div>
-    </section>
+<section id="works" class="section works-section"data-nav-color="#b0b0b0">
+  <div class="section-title"> • 作品集</div>
+ 
 
-    <!-- 關於科技系 -->
-    <section id="about" class="section about-section" data-nav-color="#6aa6da">
-      <div class="section-title"> • 關於科技系</div>
-      <div class="about-container">
-        <div class="about-text rounded-box">
-          <p>好多文字好多文字好多文字好多文字好多文字...</p>
-        </div>
-      </div>
-    </section>
+  <div class="works-filter">
+  <button class="filter-btn active" data-filter="category1">分類一</button>
+  <button class="filter-btn" data-filter="category2">分類二</button>
+  <button class="filter-btn" data-filter="category3">分類三</button>
+  <button class="filter-btn" data-filter="category4">分類四</button>
+  <button class="filter-btn" data-filter="category5">分類五</button>
+  </div>
+ 
 
-    <!-- 互動遊戲 -->
-    <section id="games" class="section games-section" data-nav-color="#c0c0c0">
-      <div class="section-title"> • 互動遊戲</div>
-      <div style="display: flex; justify-content: center; align-items: center; height: 400px; gap: 30px;">
-        <a href="game1.html" class="game-button btn">遊戲一</a>
-        <a href="game2.html" class="game-button btn">遊戲二</a>
-        <a href="game3.html" class="game-button btn">遊戲三</a>
-      </div>
-    </section>
+  <div class="works-grid">
+  <a href="work-detail.html" class="work-card" data-category="category1">
+  <div class="work-image">
+  <img src="static/work1.jpg" alt="作品1">
+  </div>
+  <div class="work-description">
+  <p>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</p>
+  </div>
+  </a>
+  <a href="work-detail.html" class="work-card" data-category="category2">
+  <div class="work-image">
+  <img src="static/work2.jpg" alt="作品2">
+  </div>
+  <div class="work-description">
+  <p>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</p>
+  </div>
+  </a>
+  <a href="work-detail.html" class="work-card" data-category="category3">
+  <div class="work-image">
+  <img src="static/work3.jpg" alt="作品3">
+  </div>
+  <div class="work-description">
+  <p>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</p>
+  </div>
+  </a>
+  <a href="work-detail.html" class="work-card" data-category="category4">
+  <div class="work-image">
+  <img src="static/work4.jpg" alt="作品4">
+  </div>
+  <div class="work-description">
+  <p>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</p>
+  </div>
+  </a>
+  <a href="work-detail.html" class="work-card" data-category="category5">
+  <div class="work-image">
+  <img src="static/work5.jpg" alt="作品5">
+  </div>
+  <div class="work-description">
+  <p>我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字我是文字</p>
+  </div>
+  </a>
+  </div>
+ 
 
-    <!-- 展場地圖 -->
-    <section id="map" class="section map-section" data-nav-color="#8ab6e2">
-      <div class="section-title"> • 展場地圖</div>
-      <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <img src="{{ url_for('static', filename='Exhibition Photos.png') }}" alt="展場地圖圖片" style="max-width: 90%; height: auto; margin-top: 20px;" class="rounded-box">
-      </div>
-    </section>
+  <div class="works-instruction">
+  <p>點選圖片後跳到另一個頁面有詳細組別介紹</p>
+  </div>
+  </section>
+ 
 
-    <!-- FAQ -->
-    <section id="faq" class="section faq-section" data-nav-color="#e0e0e0">
-      <div class="section-title"> • FAQ</div>
-      <div class="faq-buttons">
-        <a href="faq1.html" class="faq-link-button rounded-box">一個問題</a>
-        <a href="faq2.html" class="faq-link-button rounded-box">兩個問題</a>
-        <a href="faq3.html" class="faq-link-button rounded-box">三個問題</a>
-      </div>
-    </section>
+  <section id="info" class="section transport-section"data-nav-color="#a7c1e8">
+  <div class="section-title"> • 交通資訊</div>
+  <div class="transport-container">
+  <div class="transport-text">
+  <p><strong>時間</strong>
+  2024年12月06日(五) 13:00 ~ 19:00 ／ 2024年12月07日(六) 08:30 ~ 15:30</p>
+ 
 
-    <!-- 贊助廠商 -->
-    <section id="manufacturer" class="section manufacturer-section" data-nav-color="#8ab6e2">
-      <div class="section-title"> • 贊助廠商</div>
-      <div class="sponsor-scroll-area">
-        <div class="carousel" id="sponsorCarousel">
-          <div class="sponsor-card rounded-box">贊助一</div>
-          <div class="sponsor-card rounded-box">贊助二</div>
-          <div class="sponsor-card rounded-box">贊助三</div>
-          <div class="sponsor-card rounded-box">贊助四</div>
-          <div class="sponsor-card rounded-box">贊助五</div>
-          <div class="sponsor-card rounded-box">贊助六</div>
-          <div class="sponsor-card rounded-box">贊助七</div>
-          <div class="sponsor-card rounded-box">贊助八</div>
-        </div>
-      </div>
-      <div class="manufacturer-logo rounded-box">LOGO</div>
-      <div class="manufacturer-footer-text">
-        <p>2025 國立臺灣師範大學 科技應用與人力資源發展學系<br>115級畢業專題成果網站</p>
-      </div>
-      <div class="social-buttons">
-        <a href="https://www.facebook.com/你的FB連結" target="_blank">
-          <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="manufacturer-fb-icon">
-        </a>
-        <a href="https://www.instagram.com/你的IG連結" target="_blank">
-          <img src="{{ url_for('static', filename='IG.png') }}" alt="Instagram" class="manufacturer-ig-icon">
-        </a>
-      </div>
-    </section>
+  <p><strong>地址</strong>
+  台北市大安區和平東路一段129號 綜210 展演廳</p>
+ 
 
-    <!-- JavaScript -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const sections = document.querySelectorAll('.section');
-        const navLinks = document.querySelectorAll('.navbar ul li a');
-        const navbar = document.querySelector('.navbar');
+  <p><strong>交通方式</strong>
+  1. 由捷運古亭站出發：中和新蘆線(橘線)、松山新店線(綠線) 出站：5號出口<br>
+  步行：約十分鐘可抵達圖書館校區綜合大樓，入口位於師大路與和平東路交叉口附近，依照指示地貼進入大樓後，前往2樓210會議室。<br><br>
+  2. 由捷運台電大樓站出發：松山新店線(綠線) 出站：3號出口<br>
+  步行：從師大路直行約十分鐘，可抵達圖書館校區綜合大樓，入口位於師大路直行約十分鐘，可抵達圖書館校區綜合大樓，入口位於師大路與和平東路交叉口附近，依照指示地貼進入大樓後，前往2樓210會議室。</p>
+  </div>
+  <div class="transport-map rounded-box">
+  <img src="static/map.png" alt="交通地圖" class="map-image">
+  </div>
+  </div>
+  </section>
+ 
 
-        function onScroll() {
-          let scrollPos = window.scrollY + 100;
-          let activeSection = null;
+  <section id="about" class="section about-section"data-nav-color="#6aa6da">
+  <div class="section-title"> • 關於科技系</div>
+  <div class="about-container">
+  <div class="about-text rounded-box">
+  <p>
+  好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂
+  字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多
+  ⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好
+  多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字
+  好多⽂字<br><br>
+  好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂
+  字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多
+  ⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好
+  多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字好多⽂字
+  好多⽂字</p>
+ 
 
-          sections.forEach(section => {
-            const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
-            const id = section.getAttribute('id');
+  </div>
+  </section>
+  </section>
+  <section id="games" class="section games-section"data-nav-color="#c0c0c0">
+  <div class="section-title"> • 互動遊戲</div>
+  <div style="display: flex; justify-content: center; align-items: center; height: 400px; gap: 30px;">
+  <a href="game1.html" class="game-button btn">遊戲一</a>
+  <a href="game2.html" class="game-button btn">遊戲二</a>
+  <a href="game3.html" class="game-button btn">遊戲三</a>
+  </div>
+  </section>
+ 
 
-            if (scrollPos >= top && scrollPos < bottom) {
-              navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${id}`) {
-                  link.classList.add('active');
-                }
-              });
-              activeSection = section;
-            }
-          });
+  <section id="map" class="section map-section"data-nav-color="#8ab6e2">
+  <div class="section-title"> • 展場地圖</div>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+  <img src="{{ url_for('static', filename='Exhibition Photos.png') }}" alt="展場地圖圖片" style="max-width: 90%; height: auto; margin-top: 20px;" class="rounded-box">
+  </div>
+  </section>
+ 
 
-          if (activeSection) {
-            const navColor = activeSection.dataset.navColor || "white";
-            navbar.style.backgroundColor = navColor;
-            activeSection.style.backgroundColor = navColor === "white" ? "#f0f0f0" : "white";
-          }
-        }
+  <section id="faq" class="section faq-section"data-nav-color="#e0e0e0">
+  <div class="section-title"> • FAQ</div>
+  <div class="faq-buttons">
+  <a href="faq1.html" class="faq-link-button rounded-box">一個問題</a>
+  <a href="faq2.html" class="faq-link-button rounded-box">兩個問題</a>
+  <a href="faq3.html" class="faq-link-button rounded-box">三個問題</a>
+  </div>
+  </section>
+  <section id="manufacturer" class="section manufacturer-section"data-nav-color="#8ab6e2">
+  <div class="section-title"> • 贊助廠商</div>
+  <div class="sponsor-scroll-area">
+  <div class="carousel" id="sponsorCarousel">
+  <div class="sponsor-card rounded-box">贊助一</div>
+  <div class="sponsor-card rounded-box">贊助二</div>
+  <div class="sponsor-card rounded-box">贊助三</div>
+  <div class="sponsor-card rounded-box">贊助四</div>
+  <div class="sponsor-card rounded-box">贊助五</div>
+  <div class="sponsor-card rounded-box">贊助六</div>
+  <div class="sponsor-card rounded-box">贊助七</div>
+  <div class="sponsor-card rounded-box">贊助八</div>
+  </div>
+  </div>
+  <div class="manufacturer-logo rounded-box">LOGO</div>
+  <div class="manufacturer-footer-text">
+  <p>2025 國立臺灣師範大學 科技應用與人力資源發展學系<br>115級畢業專題成果網站</p>
+  </div>
+  <div class="social-buttons">
+  <a href="https://www.facebook.com/你的FB連結" target="_blank">
+  <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="manufacturer-fb-icon">
+  </a>
+  <a href="https://www.instagram.com/你的IG連結" target="_blank">
+  <img src="{{ url_for('static', filename='IG.png') }}" alt="Instagram" class="manufacturer-ig-icon">
+  </a>
+  </div>
+  </section>
+ 
 
-        window.addEventListener('scroll', onScroll);
-        onScroll();
-      });
-    </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.navbar ul li a');
+  const navbar = document.querySelector('.navbar');
+ 
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const logoText = document.querySelector(".logo-text");
-        const homeSection = document.querySelector("#home");
+  function onScroll() {
+  let scrollPos = window.scrollY + 100; // 加一些偏移避免導覽列遮住
+  let activeSection = null;
+ 
 
-        window.addEventListener("scroll", () => {
-          const homeBottom = homeSection.getBoundingClientRect().bottom;
-          if (homeBottom <= 100) {
-            logoText.classList.add("hidden");
-          } else {
-            logoText.classList.remove("hidden");
-          }
-        });
-      });
-    </script>
+  sections.forEach(section => {
+  const top = section.offsetTop;
+  const bottom = top + section.offsetHeight;
+  const id = section.getAttribute('id');
+ 
 
-    <script>
-      const scrollArea = document.querySelector('.sponsor-scroll-area');
-      const carousel = document.getElementById('sponsorCarousel');
+  if (scrollPos >= top && scrollPos < bottom) {
+  navLinks.forEach(link => {
+  link.classList.remove('active');
+  if (link.getAttribute('href') === `#${id}`) {
+  link.classList.add('active');
+  }
+  });
+  activeSection = section;
+  }
+  });
+ 
 
-      let isDown = false;
-      let startX;
-      let scrollLeft;
+  if (activeSection) {
+  const navColor = activeSection.dataset.navColor || "white";
+  navbar.style.backgroundColor = navColor;
+  sections.forEach(section => {
+  if (section.id !== activeSection.id) {
+  section.style.backgroundColor = "";
+  }
+  });
+  activeSection.style.backgroundColor = navColor === "white" ? "#f0f0f0" : "white"; // 區塊背景色切換
+  }
+  }
+ 
 
-      scrollArea.addEventListener('mousedown', (e) => {
-        isDown = true;
-        scrollArea.classList.add('active');
-        startX = e.pageX - scrollArea.offsetLeft;
-        scrollLeft = scrollArea.scrollLeft;
-      });
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // 頁面載入完成後立即執行 onScroll
+  });
+  </script>
+ 
 
-      scrollArea.addEventListener('mouseleave', () => {
-        isDown = false;
-        scrollArea.classList.remove('active');
-      });
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const logoText = document.querySelector(".logo-text");
+  const homeSection = document.querySelector("#home");
+ 
 
-      scrollArea.addEventListener('mouseup', () => {
-        isDown = false;
-        scrollArea.classList.remove('active');
-      });
+  window.addEventListener("scroll", () => {
+  const homeBottom = homeSection.getBounding;
+  Rect().bottom;
+ 
 
-      scrollArea.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - scrollArea.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        scrollArea.scrollLeft = scrollLeft - walk;
-      });
-    </script>
+  if (homeBottom <= 100) {
+  // 離開首頁，隱藏 logo-text
+  logoText.classList.add("hidden");
+  } else {
+  // 還在首頁，顯示 logo-text
+  logoText.classList.remove("hidden");
+  }
+  });
+  });
+  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector(".navbar");
+  const sections = document.querySelectorAll("section");
+ 
 
-  </body>
-</html>
+  window.addEventListener("scroll", () => {
+  let currentSection = null;
+ 
+
+  sections.forEach((section) => {
+  const rect = section.getBoundingClientRect();
+  if (rect.top <= 100 && rect.bottom >= 100) {
+  currentSection = section;
+  }
+  });
+ 
+
+  if (currentSection) {
+  const color = currentSection.dataset.navColor || "white";
+  navbar.style.backgroundColor = color;
+  }
+  });
+  });
+  </script>
+  <script>
+  const scrollArea = document.querySelector('.sponsor-scroll-area');
+  const carousel = document.getElementById('sponsorCarousel');
+ 
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+ 
+
+  scrollArea.addEventListener('mousedown', (e) => {
+  isDown = true;
+  scrollArea.classList.add('active');
+  startX = e.pageX - scrollArea.offsetLeft;
+  scrollLeft = scrollArea.scrollLeft;
+  });
+ 
+
+  scrollArea.addEventListener('mouseleave', () => {
+  isDown = false;
+  scrollArea.classList.remove('active');
+  });
+ 
+
+  scrollArea.addEventListener('mouseup', () => {
+  isDown = false;
+  scrollArea.classList.remove('active');
+  });
+ 
+
+  scrollArea.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - scrollArea.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  scrollArea.scrollLeft = scrollLeft - walk;
+  });
+  </script>
+  <script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const workCards = document.querySelectorAll('.work-card');
+ 
+
+  filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+  // 移除所有按鈕的 active 類別
+  filterButtons.forEach(btn => btn.classList.remove('active'));
+  // 為點擊的按鈕新增 active 類別
+  button.classList.add('active');
+ 
+
+  const filter = button.dataset.filter;
+ 
+
+  workCards.forEach(card => {
+  if (filter === 'all' || card.dataset.category === filter) {
+  card.style.display = 'block';
+  } else {
+  card.style.display = 'none';
+  }
+  });
+  });
+  });
+  // 頁面載入完成後，模擬點擊一次 "分類一" 按鈕 (如果需要更嚴格的控制)
+  window.addEventListener('load', () => {
+  const firstCategoryButton = document.querySelector('.filter-btn[data-filter="category1"]');
+  if (firstCategoryButton) {
+  firstCategoryButton.click();
+  }
+  });
+  </script>
+ </body>
+ </html>
