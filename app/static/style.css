@@ -208,10 +208,9 @@ h4 {
 /* ===== COMMON STYLES ===== */
 .rounded-box {
   border-radius: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 123, 255, 0.05);
   position: relative;
+  overflow: hidden;
 }
 
 .rounded-box:hover {
@@ -261,8 +260,8 @@ h4 {
   font-weight: 600;
   color: #000000;
   z-index: 10;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1.2px;
 }
 
 .btn {
@@ -312,6 +311,7 @@ h4 {
   z-index: 2;
   opacity: 0.8;
   transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 198, 255, 0.3);
 }
 
 .tech-corner.top-left {
@@ -345,7 +345,7 @@ h4 {
 .rounded-box:hover .tech-corner {
   width: 30px;
   height: 30px;
-  box-shadow: var(--tech-glow);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.6);
 }
 
 /* Tech Grid */
@@ -375,6 +375,9 @@ h4 {
   z-index: 1000;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   height: 80px; /* 固定高度 */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-sizing: border-box;
 }
 
 .navbar-bg {
@@ -387,7 +390,7 @@ h4 {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: -1;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -422,6 +425,7 @@ h4 {
   font-size: 1.1em;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
+  padding: 10px 5px;
 }
 
 .navbar li a::after {
@@ -431,7 +435,7 @@ h4 {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -549,6 +553,7 @@ h4 {
   height: 20px;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
 }
 
 .mobile-menu-btn span {
@@ -556,6 +561,7 @@ h4 {
   height: 2px;
   background-color: var(--dark-text);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: block;
 }
 
 .navbar.dark .mobile-menu-btn span {
@@ -737,7 +743,8 @@ h4 {
   font-size: 4.5em;
   font-weight: 800;
   margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1.5px;
   background: linear-gradient(to right, #ffffff, #00c6ff);
   -webkit-background-clip: text;
   background-clip: text;
@@ -825,7 +832,8 @@ h4 {
   margin-bottom: 40px;
   opacity: 0.9;
   color: #f0f0f0;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.2px;
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -965,6 +973,7 @@ h4 {
   align-items: center;
   gap: 10px;
   z-index: 2;
+  animation: bounce 2s infinite;
 }
 
 .mouse {
@@ -1269,7 +1278,6 @@ h4 {
 
 /* ===== INTRO SECTION ===== */
 .intro-section {
-  position: relative;
   background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
   padding: 120px 40px 60px;
 }
@@ -1675,9 +1683,10 @@ h4 {
   z-index: 1;
 }
 
-.transport-map:hover .map-image {
-  transform: scale(1.03);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+.transport-map:hover .map-image,
+.exhibition-map:hover .exhibition-map-img {
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
 }
 
 .map-decoration {
@@ -1875,6 +1884,8 @@ h4 {
   gap: 40px;
   flex-wrap: wrap;
   margin-top: 60px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* 改進按鈕樣式 */
@@ -2128,21 +2139,47 @@ h4 {
   width: 100%;
 }
 
+/* 增強贊助商區域的視覺效果 */
 .sponsor-scroll-area {
   overflow: hidden;
   width: 100%;
   max-width: 1200px;
-  padding: 20px 0;
+  padding: 30px 0;
   position: relative;
+  background: linear-gradient(to right, rgba(0, 123, 255, 0.05), rgba(0, 198, 255, 0.1), rgba(0, 123, 255, 0.05));
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.sponsor-scroll-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.1));
+  pointer-events: none;
+  z-index: 5;
 }
 
 /* 贊助商跑馬燈樣式 */
 .carousel {
   display: flex;
   gap: 40px;
-  transition: transform 0.3s ease;
   padding: 20px 0;
   will-change: transform;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* 改進贊助商卡片樣式 */
@@ -2150,7 +2187,7 @@ h4 {
   flex: 0 0 auto;
   width: 200px;
   height: 120px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -2158,20 +2195,22 @@ h4 {
   font-weight: bold;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  margin: 0 20px;
 }
 
 .sponsor-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(0, 198, 255, 0.05));
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(0, 198, 255, 0.1), transparent 30%);
+  animation: rotate 8s linear infinite;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -2180,10 +2219,11 @@ h4 {
   opacity: 1;
 }
 
-.sponsor-card:hover {
-  transform: scale(1.15);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  z-index: 10;
+.sponsor-hover {
+  transform: scale(1.2) !important;
+  box-shadow: 0 20px 50px rgba(0, 123, 255, 0.4) !important;
+  z-index: 10 !important;
+  border: 2px solid rgba(0, 198, 255, 0.6) !important;
 }
 
 .sponsor-logo {
@@ -2192,6 +2232,7 @@ h4 {
   position: relative;
   z-index: 2;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .sponsor-card:hover .sponsor-logo {
@@ -2310,207 +2351,114 @@ h4 {
   }
 }
 
+/* 改進手機版適應性 */
 @media (max-width: 768px) {
+  .section {
+    padding-top: 150px; /* Increase top padding to prevent overlap */
+  }
+
   .section-title {
+    top: 60px; /* Move title higher up */
     left: 20px;
     font-size: 1.8em;
-    top: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
 
-  .home-title {
-    font-size: 2.2em;
-  }
-
-  .home-subtitle {
-    font-size: 1.2em;
-  }
-
-  .intro-card {
-    width: 100%;
-  }
-
-  .works-filter {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .games-container {
-    flex-direction: column;
-  }
-
+  /* Fix game buttons to maintain square shape on mobile */
   .game-button {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .faq-link-button {
-    width: 100%;
-  }
-
-  .manufacturer-logo {
-    width: 70px;
-    height: 70px;
-    left: 20px;
-    bottom: 150px;
-  }
-
-  .manufacturer-footer-text {
-    bottom: 180px;
-    font-size: 1em;
-  }
-
-  .manufacturer-social {
-    bottom: 80px;
-    right: 20px;
+    width: 200px;
+    height: 200px; /* Keep it square */
+    max-width: 80%;
+    aspect-ratio: 1 / 1; /* Enforce square aspect ratio */
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   .section {
-    padding-top: 100px;
+    padding-top: 130px;
   }
 
   .section-title {
+    top: 50px;
+    left: 15px;
     font-size: 1.5em;
   }
 
-  .home-title {
-    font-size: 1.8em;
-  }
-
-  .home-subtitle {
-    font-size: 1em;
-  }
-
-  .footer-text {
-    font-size: 0.9em;
-    bottom: 30px;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .logo-text {
-    font-size: 1.1em;
+  .game-button {
+    width: 160px;
+    height: 160px; /* Keep it square */
   }
 }
 
-/* 改進按鈕樣式 */
-.cta-button,
-.game-button,
-.btn {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+/* Enhance sponsor card hover effect */
+.sponsor-card:hover {
+  transform: scale(1.5) !important;
+  box-shadow: 0 25px 60px rgba(0, 123, 255, 0.6) !important;
+  z-index: 100 !important;
+  border: 2px solid rgba(0, 198, 255, 0.8) !important;
 }
 
-.cta-button:hover,
-.game-button:hover,
-.btn:hover {
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.3);
-  transform: translateY(-5px);
-}
-
-/* 改進標題樣式 */
-.section-title {
-  font-family: "Playfair Display", "Noto Serif TC", serif;
+.sponsor-card::after {
+  content: "";
   position: absolute;
-  top: 100px;
-  left: 80px;
-  font-size: 2.5em;
-  font-weight: 600;
-  color: #000000;
-  z-index: 10;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1px;
-}
-
-/* 改進首頁標題 */
-.home-title {
-  font-family: "Playfair Display", serif;
-  font-size: 4.5em;
-  font-weight: 800;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(to right, #ffffff, #00c6ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-  letter-spacing: 1px;
-  line-height: 1.2;
-}
-
-.home-subtitle {
-  font-size: 2em;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  color: #f0f0f0;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-/* 改進圖片樣式 */
-.work-image img,
-.map-image,
-.exhibition-map-img {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border-radius: 8px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 20px;
+  pointer-events: none;
 }
 
-/* 改進文字樣式 */
-p {
-  line-height: 1.8;
-  color: inherit;
-  font-size: 1.05em;
+.sponsor-card:hover::after {
+  opacity: 1;
 }
 
-/* 改進背景漸變 */
-.home-section {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+/* 整體美感和質感提升 */
+/* 添加微妙的背景紋理 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z"/>
+
+/* ===== SECTION COMMON STYLES ===== */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 150px; /* Increase top padding to prevent overlap */
+  }
+
+  .section-title {
+    top: 60px; /* Move title higher up */
+    left: 20px;
+    font-size: 1.8em;
+  }
 }
 
-.intro-section {
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
+@media (max-width: 480px) {
+  .section {
+    padding-top: 130px;
+  }
+
+  .section-title {
+    top: 50px;
+    left: 15px;
+    font-size: 1.5em;
+  }
 }
 
-.works-section {
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
-}
-
-.transport-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-}
-
-.about-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-}
-
-.games-section {
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
-}
-
-.map-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-}
-
-.faq-section {
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
-}
-
-.manufacturer-section {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-}
+/* ===== GAMES SECTION ===== */
+@media (max-width: 768px) {
+  .game-button {
+    width: 200px;
+    height: 200px; /* Keep it square */
+    max-width: 80%;
+    aspect-ratio: 1/1; /* Enforce square */
