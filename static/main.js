@@ -772,3 +772,34 @@ window.addEventListener("load", () => {
     el.style.transform = "translateY(0) scale(1)"
   })
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.faq-link-button');
+  const modals = document.querySelectorAll('.modal');
+  const closeButtons = document.querySelectorAll('.modal-close');
+
+  // 開啟 modal
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modalId = button.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) modal.style.display = 'flex';
+    });
+  });
+
+  // 關閉 modal（點叉叉）
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.modal').style.display = 'none';
+    });
+  });
+
+  // 點擊背景也關閉 modal
+  modals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+});
