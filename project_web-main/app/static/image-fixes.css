@@ -1,0 +1,90 @@
+/* Fix for images not displaying */
+img[src^="/static/images/"] {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure work images maintain aspect ratio */
+.work-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Fix for map images */
+.map-image,
+.exhibition-map-img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* Fix for social media icons */
+.social-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+/* Fix for sponsor cards to prevent cutting off when magnified */
+.sponsor-scroll-area {
+  overflow: visible !important;
+  padding: 60px 0 !important;
+  margin: 60px 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.carousel {
+  padding: 60px 0 !important;
+}
+
+.sponsor-card {
+  margin: 0 20px !important;
+  transform-origin: center center !important;
+}
+
+/* Ensure game buttons maintain square shape */
+.game-button {
+  aspect-ratio: 1 / 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 768px) {
+  .games-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  .game-button {
+    width: 200px !important;
+    height: 200px !important;
+    min-width: 200px !important;
+    min-height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    flex: 0 0 200px !important;
+  }
+}
+
+/* Fix section titles on mobile */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 220px !important;
+  }
+
+  .section-title {
+    top: 70px !important;
+    margin-bottom: 40px !important;
+    position: absolute !important;
+    z-index: 100 !important;
+  }
+}

@@ -1,0 +1,202 @@
+/* Enhanced Animations and Visual Effects */
+
+/* Improved Matrix Animation */
+#matrix-canvas {
+  opacity: 0.15;
+  transition: opacity 2s ease;
+}
+
+.home-section:hover #matrix-canvas {
+  opacity: 0.25;
+}
+
+/* Enhanced Floating Elements */
+.floating-cube {
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(0, 198, 255, 0.6);
+}
+
+.floating-sphere {
+  box-shadow: 0 0 25px rgba(0, 198, 255, 0.3);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(0, 198, 255, 0.4);
+}
+
+/* Enhanced Section Transitions */
+.section {
+  transition: background 0.8s ease;
+}
+
+/* Enhanced Card Hover Effects */
+.intro-card::before,
+.work-card::before,
+.faq-link-button::before,
+.sponsor-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #007bff, #00c6ff, #007bff);
+  z-index: -1;
+  border-radius: 32px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.intro-card:hover::before,
+.work-card:hover::before,
+.faq-link-button:hover::before,
+.sponsor-card:hover::before {
+  opacity: 0.7;
+}
+
+/* Enhanced Button Effects */
+.cta-button,
+.game-button,
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::after,
+.game-button::after,
+.filter-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+    top: -50%;
+  }
+  100% {
+    left: 150%;
+    top: 150%;
+  }
+}
+
+/* Enhanced Game Buttons for Mobile */
+@media (max-width: 768px) {
+  .game-button {
+    width: 180px;
+    height: 180px;
+    aspect-ratio: 1 / 1;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-button {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Enhanced Section Titles for Mobile */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 130px;
+  }
+
+  .section-title {
+    top: 70px;
+    font-size: 2em;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Enhanced Sponsor Marquee */
+.sponsor-scroll-area {
+  position: relative;
+}
+
+.sponsor-scroll-area::before,
+.sponsor-scroll-area::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.sponsor-scroll-area::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(14, 165, 233, 0.8), transparent);
+}
+
+.sponsor-scroll-area::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(14, 165, 233, 0.8), transparent);
+}
+
+/* Enhanced Tech Corners */
+.tech-corner {
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.rounded-box:hover .tech-corner.top-left {
+  transform: translate(-5px, -5px);
+}
+
+.rounded-box:hover .tech-corner.top-right {
+  transform: translate(5px, -5px);
+}
+
+.rounded-box:hover .tech-corner.bottom-left {
+  transform: translate(-5px, 5px);
+}
+
+.rounded-box:hover .tech-corner.bottom-right {
+  transform: translate(5px, 5px);
+}
+
+/* Enhanced Logo Animation */
+.logo {
+  animation: pulse-glow 3s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 5px 30px rgba(0, 123, 255, 0.6);
+  }
+}
+
+/* Enhanced Mobile Menu Button */
+.mobile-menu-btn {
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
