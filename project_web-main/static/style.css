@@ -924,6 +924,16 @@ h4 {
   margin-right: 60px;
 }
 
+.home-social-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+  margin-right: 60px;
+} /*for 主頁的社交按鈕*/
+
+
+
 /* 改進社交媒體按鈕 */
 .social-btn {
   width: 50px;
@@ -2306,6 +2316,7 @@ h4 {
   line-height: 1.6;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  margin-bottom: 100px;
 }
 
 .manufacturer-social {
