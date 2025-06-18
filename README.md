@@ -4,8 +4,8 @@
 運行方式：到project_web-main資料夾底下運行資料夾底下的 app.py，即可運行。  
 [0610 一驗影片](https://www.youtube.com/watch?v=lKaCqMD11TI)
 
-# 6.19 以下為製作和部署建議，爲參考，不代表100%正確：
-## 程式架構：（只列出有用的）
+## 6.19 以下為製作和部署建議，爲參考，不代表100%正確：
+### 程式架構：（只列出有用的）
 project_web-main/
 ├── app.py                # ✅ **【核心驅動】** 啟動伺服器。絕對不要動它，除非你知道你在做什麼。
 ├── templates/
@@ -17,7 +17,7 @@ project_web-main/
 ├── Procfile              # ✅ **【Heroku 設定檔】** 告訴 Heroku 如何啟動 app.py。
 └── requirements.txt      # ✅ **【Python 依賴】** 告訴 Heroku 需要安裝 Flask 和 Gunicorn。
 
-## 本地部署方式
+### 本地部署方式
 
 1.  打開你的終端機。 
 2.  導航到 `project_web-main` 資料夾：（記得要進入project_web-main！！！！）
