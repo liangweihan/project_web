@@ -6,6 +6,9 @@
 
 ## 6.19 以下為製作和部署建議，爲參考，不代表100%正確：
 ### 程式架構：（只列出有用的）
+
+
+```
 project_web-main/
 ├── app.py                # ✅ **【核心驅動】** 啟動伺服器。絕對不要動它，除非你知道你在做什麼。
 ├── templates/
@@ -16,6 +19,8 @@ project_web-main/
 │   └── (所有圖片)         # ✅ **【圖片資源】** 所有圖片。
 ├── Procfile              # ✅ **【Heroku 設定檔】** 告訴 Heroku 如何啟動 app.py。
 └── requirements.txt      # ✅ **【Python 依賴】** 告訴 Heroku 需要安裝 Flask 和 Gunicorn。
+```
+
 
 ### 本地部署方式
 
