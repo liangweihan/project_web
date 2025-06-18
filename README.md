@@ -10,15 +10,15 @@
 
 ```
 project_web-main/
-├── app.py                # ✅ **【核心驅動】** 啟動伺服器。絕對不要動它，除非你知道你在做什麼。
+├── app.py               【核心驅動】** 啟動伺服器。絕對不要動它，除非你知道你在做什麼。
 ├── templates/
-│   └── index.html        # ✅ **【網頁骨架】** 網站的所有 HTML 結構都在這裡。
+│   └── index.html       【網頁骨架】** 網站的所有 HTML 結構都在這裡。
 ├── static/
-│   ├── style.css         # ✅ **【視覺樣式】** 網站的所有 CSS 樣式都在這裡。
-│   ├── main.js           # ✅ **【互動功能】** 網站的所有動畫和互動都在這裡。
-│   └── (所有圖片)         # ✅ **【圖片資源】** 所有圖片。
-├── Procfile              # ✅ **【Heroku 設定檔】** 告訴 Heroku 如何啟動 app.py。
-└── requirements.txt      # ✅ **【Python 依賴】** 告訴 Heroku 需要安裝 Flask 和 Gunicorn。
+│   ├── style.css        【視覺樣式】** 網站的所有 CSS 樣式都在這裡。
+│   ├── main.js          【互動功能】** 網站的所有動畫和互動都在這裡。
+│   └── (所有圖片)        【圖片資源】** 所有圖片。
+├── Procfile             【Heroku 設定檔】** 告訴 Heroku 如何啟動 app.py。
+└── requirements.txt     【Python 依賴】** 告訴 Heroku 需要安裝 Flask 和 Gunicorn。
 ```
 
 
