@@ -8,7 +8,10 @@
 5. 畫面中的按鈕、地圖等物件用 HTML title 添加提示文字  
 6. 修正每個 section，讓物件對齊，以及 responsive design 的設計也同步修正  
 7. 將按鈕 pacity 調成 0.8 - 0.9  變成部分透明 ; 按鈕、navbar 的 opacity 調成 0.5 讓其與銀河深色背景不違和。  
-8. 最下方的文字排序再重新作調正
+8. 最下方的文字排序再重新作調正  
 
 ## 網頁程式碼
-[網頁程式碼重新更新在 master branch](
+[網頁程式碼重新更新在 master branch](https://github.com/liangweihan/project_web/tree/master)  
+
+## 更新內容
+[更新影片](https://youtu.be/_nGpMx6uhBE?si=M5Bh-ChB94HIRKrH)  
