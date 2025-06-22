@@ -42,4 +42,4 @@ project_web-main/
 5.  在瀏覽器中打開 `http://127.0.0.1:5000` 來查看你的修改。
 
 # 2025.6.22
-已經開啟新的分支了，新的網頁程式碼在此處：
+已經開啟新的分支了，新的網頁程式碼在此處：[在master分支](https://github.com/liangweihan/project_web/tree/master)  
