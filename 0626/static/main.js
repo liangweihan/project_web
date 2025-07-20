@@ -2,20 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Declare global variables for libraries
   let particlesJS, AOS, gsap, ScrollTrigger
 
-  // Preloader
-  const preloader = document.querySelector(".preloader")
 
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      preloader.style.opacity = "0"
-      setTimeout(() => {
-        preloader.style.display = "none"
-
-        // Start animations after preloader is gone
-        animateHomeElements()
-      }, 500)
-    }, 1500)
-  })
 
   // Initialize particles.js
   if (typeof particlesJS !== "undefined") {
@@ -245,28 +232,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Page transition effect
-  const pageTransition = document.querySelector(".page-transition")
   const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link")
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault()
-      const target = this.getAttribute("href")
-
-      pageTransition.style.transform = "translateY(0)"
-
-      setTimeout(() => {
-        document.querySelector(target).scrollIntoView({
-          behavior: "smooth",
-        })
-
-        setTimeout(() => {
-          pageTransition.style.transform = "translateY(100%)"
-        }, 500)
-      }, 500)
+navLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault()
+    const target = this.getAttribute("href")
+    document.querySelector(target).scrollIntoView({
+      behavior: "smooth",
     })
   })
+})
+
 
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
