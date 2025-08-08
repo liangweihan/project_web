@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>圖 BE CONTINUED</title>
+        <link rel="stylesheet" href = "{{ url_for('static', filename='style.css')}}">
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--七個旋轉零件自轉 + 公轉-->
+        <div class="background-container">
+            <img src="../static/components/component1.png" class="rotating-image" style="top: 5%; left: 10%; animation-delay: 0s;">
+            <img src="../static/components/component2.png" class="rotating-image" style="top: 15%; left: 70%; animation-delay: 2s;">
+            <img src="../static/components/component3.png" class="rotating-image" style="top: 35%; left: 40%; animation-delay: 4s;">
+            <img src="../static/components/component4.png" class="rotating-image" style="top: 50%; left: 80%; animation-delay: 6s;">
+            <img src="../static/components/component5.png" class="rotating-image" style="top: 65%; left: 20%; animation-delay: 1s;">
+            <img src="../static/components/component6.png" class="rotating-image" style="top: 75%; left: 55%; animation-delay: 3s;">
+            <img src="../static/components/component7.png" class="rotating-image" style="top: 85%; left: 85%; animation-delay: 5s;">
+        </div>
+        <!--主內容-->
+        <div class = "main-content">
+            <div class = "nav">
+                <div class = "nav-content">
+                    <div class = "logo">
+                        <div class="logo-image">
+                            <img src="../static/logo.png" alt="圖 BE CONTINUED" width="60" height="60">
+                        </div>
+                        <div class="logo-text"> Department of Graphic Arts and Communication</div>
+                    </div>
+                    <div class = "nav-list">
+                        <nav>
+                            <ul>
+                                <li><a href="#">首頁</a></li>
+                                <li><a href="#">專展介紹</a></li>
+                                <li><a href="#">全部作品</a></li>
+                                <li><a href="#">關於圖傳系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class = "main-area">
+                <div class = "firstplace">
+                    <div class = "ToBeContinued">
+                        <img src = "../static/ToBeContinued.png" alt="圖 BE CONTINUED">
+                    </div>
+                    <div class = "star">
+                        <img src = "../static/star.png" alt="star">
+                    </div>
+                </div>
+                <div class = "secondplace">
+                    <div class = "custom-cursor">
+                        <div class = "mouse-body">
+                            <div class="mouse-wheel"></div>
+                        </div>
+                        <div class = "scroll-arrow">
+                            <span class = "arrow-part"></span>
+                            <span class = "arrow-part"></span>
+                            <span class = "arrow-part"></span>
+                        </div> 
+                    </div>
+                </div>
+                <div class = "thirdplace">
+                    <img src = "../static/unfinished.png" alt="unfinished">
+                </div>
+                <div class = "fourthplace">
+                    <img src = "../static/GAC_text.png" alt="unfinished">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
