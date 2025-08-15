@@ -25,4 +25,4 @@
 5. 移除星星發光效果 (由於原先的圖片是在網路上抓取，沒有找到合適圖片，所以就將星星發光效果移除)  
 6. 把 loading 無法跳轉的 bug 去除，新增卸載 preload 的邏輯  
 
-[0815程式碼](https://github.com/liangweihan/project_web/tree/master/0815)  
+[0815新修正程式碼](https://github.com/liangweihan/project_web/tree/master/0815)  
