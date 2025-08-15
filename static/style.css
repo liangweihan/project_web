@@ -52,7 +52,10 @@ body::before {
     }
 }
 
-
+/*section分區*/
+.section{
+    min-height:600px;
+}
 /*首頁主內容*/
 .main-content {
     display: flex;
@@ -64,6 +67,12 @@ body::before {
     position: fixed;
     width: 100%;
     background-color: #e9ff12;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    /* 0: 水平偏移
+       4px: 垂直偏移，讓陰影出現在下方
+       8px: 模糊半徑，讓陰影更柔和
+       rgba(0, 0, 0, 0.3): 黑色陰影，30% 的透明度*/
 }
 
 /*導覽列內容 (父容器)*/
@@ -74,6 +83,7 @@ body::before {
     align-items: end;
     margin-left: 30px;
     margin-right: 30px;
+    position: relative;
 }
 
 /*導覽列文字*/
@@ -98,7 +108,23 @@ body::before {
     padding: 10px 25px;
     font-size: 20px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
+    color: inherit;
+}
+
+.nav-list nav li a:hover{
+    background-color: lightgray;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+/*手機選單相關*/
+.sidebar{
+    display: none;
+}
+
+.menubutton{
+    display: none;
 }
 
 /*logo*/
@@ -123,8 +149,8 @@ body::before {
     margin-top: 80px;
 }
 
-/*firstplace*/ /*圖 be continue 和 star */ 
-.firstplace {
+/*home-firstplace*/ /*圖 be continue 和 star */ 
+.home-firstplace {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -149,8 +175,8 @@ body::before {
     height: 60px;
 }
 
-/*secondplace*/
-.secondplace {
+/*home-secondplace*/
+.home-secondplace {
     width:100%;
     height: auto;
     display: flex;
@@ -160,11 +186,11 @@ body::before {
 
 /* 自訂滑鼠容器 */
 .custom-cursor {
-  pointer-events: none; /* 讓滑鼠可以點擊到下方的元素 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.1s ease-out; /* 平滑移動效果 */
+    position: relative; /* 為了讓 tooltip-text 可以準確定位，父元素需要 position */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.1s ease-out; /* 平滑移動效果 */
 }
 
 /* 滑鼠本體樣式 (黃色滑鼠圖案) */
@@ -246,11 +272,11 @@ body::before {
 }
 
 /*第三部分*/
-.thirdplace {
+.home-thirdplace {
     width: 100%;
 }
 
-.thirdplace img {
+.home-thirdplace img {
     margin-left: 150px;
     width:300px;
     height: 150px;
@@ -258,26 +284,73 @@ body::before {
 }
 
 /*第四部份*/
-.fourthplace{
+.home-fourthplace{
     width: 100%;
     display: flex;
     justify-content: end;
 }
 
-.fourthplace img{
+.home-fourthplace img{
     width: 450px;
     height: 150px;
 }
 
+/*最後一個區塊*/
+.last-section{
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    height: 150px;
+    width: 100%;
+    background-color: #e9ff12;
+    display: flex;
+    flex-direction: column;
+}
+
+.last-FirstPart{
+    margin-top: 20px;
+    height: 80px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.last-SecondPart{
+    margin-top: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
 @media (max-width: 768px) {
+    .menubutton{
+        display: block;
+    }
+    .hideonMobile{
+        display: none; /*當進入手機選單時，原本的 navbar 選項移除。*/
+    }
+    .sidebar{
+        position:fixed;
+        top:0;
+        right:0;
+        height:100vh;
+        width:250px;
+        z-index:9999;
+        background-color: lightgray;
+        box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        backdrop-filter: blur(10px);
+    }
+    .section{
+        min-height: 550px;
+    }
     .mouse-body{
         display: none;
     }
     .mouse-wheel{
         display: none;
-    }
-    .nav-list nav li a{
-        font-size: 2vw;
     }
     .logo{
         gap:5px;
@@ -286,11 +359,11 @@ body::before {
         width: 300px;
         height: 60px;
     }
-    .fourthplace img{
+    .home-fourthplace img{
         width: 270px;
         height: 54px;
     }
-    .thirdplace img{
+    .home-thirdplace img{
         width:180px;
         height: 90px;
     }
@@ -302,9 +375,18 @@ body::before {
         height: 90px;
         width: 90px;
     }
+    .last-SecondPart{
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 500px){
+    .sidebar{
+        width:60%;
+    }
+    .section{
+        min-height: 400px;
+    }
     .scroll-arrow{
         display: none;
     }
@@ -312,11 +394,11 @@ body::before {
         width: 180px;
         height: 36px;
     }
-    .fourthplace img{
+    .home-fourthplace img{
         width: 162px;
         height: 30px;
     }
-    .thirdplace img{
+    .home-thirdplace img{
         width:108px;
         height: 54px;
     }
@@ -327,5 +409,11 @@ body::before {
     .rotating-image{
         height: 54px;
         width: 54px;
+    }
+    .last-FirstPart{
+        font-size: 16px;
+    }
+    .last-SecondPart{
+        font-size: 12px;
     }
 }

@@ -24,34 +24,42 @@
             <div class = "nav">
                 <div class = "nav-content">
                     <div class = "logo">
-                        <div class="logo-image">
+                        <div class="logo-image" title="2025 圖傳系畢業專展">
                             <img src="../static/logo.png" alt="圖 BE CONTINUED" width="60" height="60">
                         </div>
-                        <div class="logo-text"> Department of Graphic Arts and Communication</div>
+                        <div class="logo-text" title="GAC"> Department of Graphic Arts and Communication</div>
                     </div>
                     <div class = "nav-list">
                         <nav>
-                            <ul>
-                                <li><a href="#">首頁</a></li>
-                                <li><a href="#">專展介紹</a></li>
-                                <li><a href="#">全部作品</a></li>
-                                <li><a href="#">關於圖傳系</a></li>
+                            <ul class = "sidebar">
+                                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                                <li><a href="#home-section" title="首頁">首頁</a></li>
+                                <li><a href="#intro-section" title="專展介紹">專展介紹</a></li>
+                                <li><a href="#project-section" title="全部作品">全部作品</a></li>
+                                <li><a href="#about-section" title="關於圖傳系">關於圖傳系</a></li>
+                            </ul>
+                            <ul class>
+                                <li class="hideonMobile"><a href="#home-section" title="首頁">首頁</a></li>
+                                <li class="hideonMobile"><a href="#intro-section" title="專展介紹">專展介紹</a></li>
+                                <li class="hideonMobile"><a href="#project-section" title="全部作品">全部作品</a></li>
+                                <li class="hideonMobile"><a href="#about-section" title="關於圖傳系">關於圖傳系</a></li>
+                                <li onclick=showSidebar() class="menubutton"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
-            <div class = "main-area">
-                <div class = "firstplace">
-                    <div class = "ToBeContinued">
+            <div id="home-section" class = "section main-area">
+                <div class = "home-firstplace">
+                    <div class = "ToBeContinued" title="圖 BE CONTINUED">
                         <img src = "../static/ToBeContinued.png" alt="圖 BE CONTINUED">
                     </div>
                     <div class = "star">
                         <img src = "../static/star.png" alt="star">
                     </div>
                 </div>
-                <div class = "secondplace">
-                    <div class = "custom-cursor">
+                <div class = "home-secondplace">
+                    <div class = "custom-cursor" title="向下滾動查看更多專展內容">
                         <div class = "mouse-body">
                             <div class="mouse-wheel"></div>
                         </div>
@@ -62,11 +70,29 @@
                         </div> 
                     </div>
                 </div>
-                <div class = "thirdplace">
+                <div class = "home-thirdplace">
                     <img src = "../static/unfinished.png" alt="unfinished">
                 </div>
-                <div class = "fourthplace">
-                    <img src = "../static/GAC_text.png" alt="unfinished">
+                <div class = "home-fourthplace">
+                    <img src = "../static/GAC_text.png" alt="2025 圖傳系畢業專展" title="2025圖傳系畢業專展">
+                </div>
+            </div>
+            <div id="intro-section" class="section intro">
+                <h1>專展介紹區待實作</h1>
+            </div>
+            <div id="project-section" class= "section project">
+                <h1>全部作品區待實作</h1>
+            </div>
+            <div id="about-section" class= "section about">
+                <h1>關於圖傳系待實作</h1>
+            </div>
+            <div class="last-section">
+                <div class="last-FirstPart">
+                    <div>2025 國立臺灣師範大學 圖文傳播學系</div>
+                    <div>115級畢業專題成果展網站</div>
+                </div>
+                <div class="last-SecondPart">
+                    <div>© Copyright 2025 臺師大圖傳系畢業專題成果展</div>
                 </div>
             </div>
         </div>
