@@ -22,6 +22,22 @@ def group2_1():
 def group2_2():
     return render_template('group2_2.html')
 
+@app.route('/group3_1')
+def group3_1():
+    return render_template('group3_1.html')
+
+@app.route('/group3_2')
+def group3_2():
+    return render_template('group3_2.html')
+
+@app.route('/group4_1')
+def group4_1():
+    return render_template('group4_1.html')
+
+@app.route('/group4_2')
+def group4_2():
+    return render_template('group4_2.html')
+
 @app.route('/group5_1')
 def group5_1():
     return render_template('group5_1.html')
