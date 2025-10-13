@@ -116,32 +116,14 @@
     <!-- Hero: main + sidebar -->
     <div class="project-hero" role="region" aria-labelledby="project-title">
       <div class="main">
-        <!-- Gallery -->
-        <div class="gallery" id="gallery" aria-live="polite">
-            <div class="controls">
-                <button id="prevBtn" aria-label="上一張">◀</button>
-                <button id="nextBtn" aria-label="下一張">▶</button>
-            </div>
-            <img id="galleryImage" src="/static/test.png" alt="主圖 1">
-        </div>
+
 
 
         <div class="thumbs" id="thumbs">
           <!-- thumbnails will be injected by JS -->
         </div>
-
         <section>
           <h2 id="project-title">智慧路牌系統技術與應用探究</h2>
-          <div class="meta">
-            說明:主畫面、投資模擬畫面截圖(圖一/圖二/圖三)、實際到課堂給使用者體驗畫面(圖四/圖五)
-          </div>
-          <div class="meta">
-            相關連結:
-            <a href="https://github.com/ArthurArthurArthur0817/TradeNova-A-GenAI-Powered-Smart-Investment-Platform" target="_blank">
-            https://github.com/ArthurArthurArthur0817/TradeNova-A-GenAI-Powered-Smart-Investment-Platform
-            </a>
-          </div>
-
           <div >
           <h3>專題簡介</h3>
             <p> 找教室、問路線、看天氣，通通交給我！
@@ -219,13 +201,7 @@ Web遠端控制 + 物聯網整合
 </aside>
   <script>
     // ---- Simple gallery data (replace src with your real images) ----
-    const images = [
-        {src: "{{ url_for('static', filename='2-1.jpg') }}", alt:"主圖 1"},
-        {src: "{{ url_for('static', filename='2-2.jpg') }}", alt:"主圖 2"},
-        {src: "{{ url_for('static', filename='2-3.jpg') }}", alt:"主圖 3"},
-        {src: "{{ url_for('static', filename='2-4.jpg') }}", alt:"主圖 4"},
-        {src: "{{ url_for('static', filename='2-5.jpg') }}", alt:"主圖 5"}
-    ];
+
 
 
 
