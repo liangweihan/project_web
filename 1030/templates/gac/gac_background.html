@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景效果測試</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            
+            background-image: url("{{ url_for('static', filename='gac/背景.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .animated-object {
+            position: absolute;
+            height: auto;
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-16.png 的副本.png') }}" alt="視覺物件 1"
+         data-start-top="20" data-start-left="25" data-start-width="120"> <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-17.png 的副本.png') }}" alt="視覺物件 2"
+         data-start-top="75" data-start-left="15" data-start-width="80">  <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-18.png 的副本.png') }}" alt="視覺物件 3"
+         data-start-top="50" data-start-left="50" data-start-width="140"> <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-19.png 的副本.png') }}" alt="視覺物件 4"
+         data-start-top="25" data-start-left="80" data-start-width="112"> <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-20.png 的副本.png') }}" alt="視覺物件 5"
+         data-start-top="80" data-start-left="75" data-start-width="100"> <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-21.png 的副本.png') }}" alt="視覺物件 6"
+         data-start-top="15" data-start-left="55" data-start-width="88">  <img class="animated-object" 
+         src="{{ url_for('static', filename='gac/畢製視覺物件-22.png 的副本.png') }}" alt="視覺物件 7"
+         data-start-top="85" data-start-left="45" data-start-width="72">  <script>
+        const allObjects = document.querySelectorAll('.animated-object');
+
+        function runAnimationCycle(element, startTop, startLeft) {
+            
+            const randomDurationSeconds = Math.random() * 4 + 3;
+            const randomDurationMilliseconds = randomDurationSeconds * 1000;
+
+            element.style.transition = `transform ${randomDurationSeconds}s ease-in-out, top ${randomDurationSeconds}s ease-in-out, left ${randomDurationSeconds}s ease-in-out`;
+            
+            const movementRange = 10;
+            const randomTop = startTop + (Math.random() * movementRange - (movementRange / 2));
+            const randomLeft = startLeft + (Math.random() * movementRange - (movementRange / 2));
+            
+            const randomScale = Math.random() * 0.5 + 0.7; 
+            const randomRotation = Math.random() * 80 - 40; 
+
+            element.style.top = `${randomTop}%`;
+            element.style.left = `${randomLeft}%`;
+            element.style.transform = `translate(-50%, -50%) scale(${randomScale}) rotate(${randomRotation}deg)`;
+
+            setTimeout(() => runAnimationCycle(element, startTop, startLeft), randomDurationMilliseconds);
+        }
+
+        allObjects.forEach(obj => {
+            const startTop = parseFloat(obj.dataset.startTop) || 50;
+            const startLeft = parseFloat(obj.dataset.startLeft) || 50;
+            const startWidth = parseFloat(obj.dataset.startWidth) || 25;
+
+            obj.style.top = `${startTop}%`;
+            obj.style.left = `${startLeft}%`;
+            obj.style.width = `${startWidth}%`;
+            
+            setTimeout(() => {
+                runAnimationCycle(obj, startTop, startLeft);
+            }, Math.random() * 2000);
+        });
+
+    </script>
+</body>
+</html>

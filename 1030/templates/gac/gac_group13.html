@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訴誤三科 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第十三組_主視覺.png" alt="訴誤三科" class="project-hero-image">
+        <div class="project-content">
+            <h1>訴誤三科</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>本作品聚焦於職場中 X、Y、Z 世代之間的價值觀衝突，透過將觀念轉化為具象的文創設計，在差異中創造會心一笑的出口。我們希望以輕鬆詼諧的方式，減緩年輕世代面對職場的不安，同時促進不同世代間的理解與交流。
+
+觀眾將會看見職場中常見的日常用品，與 Z 世代的價值觀並置而產生新的對話；同時，也能沉浸式體驗我們蒐集並轉化的真實職場鬼故事。我們期待這些兼具幽默與紓壓功能的設計，能成為 Z 世代的情緒出口，更作為代際對話的媒介，在社群平台與辦公場域中建立具有共鳴的品牌形象。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>涂卉</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>謝侑臻、張禎晏、紀子萱</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

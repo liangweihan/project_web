@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘻食獨品 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第十二組_主視覺.png" alt="嘻食獨品" class="project-hero-image">
+        <div class="project-content">
+            <h1>嘻食獨品</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>《嘻食獨品》是一個結合美食與訪談的影音專題。我們邀請不同的饒舌歌手，在餐桌上邊吃邊聊，透過食物營造輕鬆氛圍，讓受訪者能卸下防備，談音樂創作、人生心境與幕後故事。節目沒有制式流程，強調自然對話與真實分享，讓觀眾不僅能認識歌手的作品，也能感受到他們最生活化的一面。我們希望藉由這樣的形式，呈現饒舌音樂背後的人味與故事，創造與觀眾之間更親近的連結。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>陳明秀</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>楊冠宏、葉青青</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

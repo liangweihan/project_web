@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* --- 外部容器 --- 
+ * 負責填滿螢幕並將內部容器置中
+*/
+.landing-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex; /* 使用 flex 來置中內部容器 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- 全螢幕背景圖層 --- */
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 填滿螢幕，多餘部分裁切 */
+    pointer-events: none;
+}
+
+/* --- 內部容器 (有最大寬度限制) --- */
+.content-wrapper {
+    position: relative;
+    width: 100%; /* 預設寬度100%，但在寬螢幕上會被max-width限制 */
+    max-width: 850px; /* 關鍵：設定內容的最大寬度，超過此寬度後內容不再放大 */
+    aspect-ratio: 2431 / 3382; /* 維持內容的原始比例 */
+}
+
+/* --- 內容圖層 (除背景外的所有視覺元素) --- */
+.content-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 使用 contain 確保內容完整顯示不裁切 */
+    pointer-events: none;
+}
+
+/* 針對有 hover 效果的視覺圖片，增加平滑過渡效果 */
+.clickable-target {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* --- 互動圖層：隱形按鈕 --- */
+.clickable-area {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* --- 懸浮效果 --- */
+#tech-button:hover + #tech-visual {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+
+#gac-button:hover + #gac-visual {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* --- 隱形按鈕的精準定位 (相對於內部容器) --- */
+#tech-button {
+    top: 60%;
+    left: 53%;
+    width: 35%;
+    height: 23%;
+}
+#gac-button {
+    top: 60%;
+    left: 13%;
+    width: 35%;
+    height: 23%;
+}

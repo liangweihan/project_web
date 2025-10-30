@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>賦格協奏 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第三組_主視覺.png" alt="賦格協奏" class="project-hero-image">
+        <div class="project-content">
+            <h1>賦格協奏</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>在AI科技迅速發展的現代社會中，人們常因擔憂被取代而感到焦慮，對未來充滿迷惘，進而對AI產生抗拒與排斥的情緒。透過這部音樂遊戲，我們希望角色之間的互動與音樂，能夠引導玩家們重新思考AI與人類之間的差異與連結，傳達一個訊息：AI是未來不可逆的發展趨勢，與其抗拒，不如學會理解與接納，嘗試與AI共存、協作，為創作增添更多不同的的可能性。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>張晏榕</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>許哲綸、莫懿、林語貞、黃世宇、宋品頤</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

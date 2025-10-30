@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>童年博物館 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第九組_主視覺.png" alt="童年博物館" class="project-hero-image">
+        <div class="project-content">
+            <h1>童年博物館</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>年初在家中整理出許多兒時的資料與物品，在好奇之下，我撥開灰塵開始慢慢翻看。隨著相關的人物、場景模糊地在腦中浮現，我好像也在那一刻找回了某些遺忘已久的自己。
+
+我們採訪了身邊的親朋好友，將他們的童年故事編輯成一本本獨一無二的小誌，並且將在展覽現場陳列他們童年珍藏的照片及物件，打造一個充滿溫度的童年博物館。希望能讓成年後正在忙於生活，甚至身處迷惘的人們，感受到純粹的快樂與真心的共鳴，一起找回被遺忘的美好。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>陳明秀</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>陳思妤、張家蓁</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>
