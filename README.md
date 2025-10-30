@@ -31,3 +31,8 @@
 3. 修改作品展示分類以及排版
 
 [0815新修正程式碼](https://github.com/liangweihan/project_web/tree/master/0815)  
+
+# 1030 新增
+1. 新增共同入口頁面 (landing.html)
+2. 新增圖傳系網站主頁 (gac/gac_index.html)
+3. 新增圖傳系各組作品介紹頁面 (gac/gac_groupxx.html)
