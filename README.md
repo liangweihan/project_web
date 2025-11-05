@@ -24,33 +24,4 @@
 - `.ebignore` - EB 部署忽略檔案
 
 ### 修正的檔案
-- `templates/group5_1.html` - group_9.PNG
-- `templates/group5_2.html` - group_10.PNG
-- `templates/group6_1.html` - group_11.PNG
-- `templates/group6_2.html` - group_12.PNG
-- `templates/group7_1.html` - group_13.PNG
-- `templates/group7_2.html` - logo_14.PNG, group_14.PNG
-- `templates/group8_1.html` - group_15.PNG
-- `templates/group8_2.html` - group_16.PNG
-- `templates/index.html` - logo_14.PNG
-
----
-
-## 專案結構
-```
-1030/
-├── application.py          # Flask 主程式
-├── templates/              # HTML 模板
-├── static/                 # 靜態資源（CSS、圖片）
-├── .elasticbeanstalk/      # AWS EB 配置
-└── requirements.txt        # Python 依賴
-```
-
-## 部署指令
-```bash
-# 進入虛擬環境
-source venv/bin/activate
-
-# 部署到 AWS
-eb deploy Graduate-env
-```
+- 例如 `templates/group5_1.html` - group_9.PNG
