@@ -1,0 +1,22 @@
+branch-defaults:
+  default:
+    environment: Graduate-env
+environment-defaults:
+  Graduate-env:
+    branch: null
+    repository: null
+deploy:
+  artifact: null
+  delete_application_versions: true
+global:
+  application_name: graduate
+  default_ec2_keyname: null
+  default_platform: Python 3.13 running on 64bit Amazon Linux 2023
+  default_region: ap-northeast-3
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  sc: null
+  workspace_type: Application
