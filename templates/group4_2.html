@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech Odyssey: 未來之旅 探索科技與人文的無限可能 | 師大科技系114成果展</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='groupstyle.css') }}">
+  <meta name="description" content="專案詳情頁範本：包含標題、圖片輪播、專案描述、團隊與相關連結。" />
+  <style>
+    /* ---- Reset & base ---- */
+    * { box-sizing: border-box; }
+    html,body {   background-image: 
+  linear-gradient(to bottom, rgba(13, 13, 43, 0.7), rgba(42, 10, 94, 0.7)),
+  url('galaxy.jpg');
+  background-size: cover;                     /* 填滿整個視窗 */
+  background-position: center;                /* 圖片置中 */
+  background-repeat: no-repeat;               /* 不重複圖片 */
+  background-attachment: fixed;               /* 背景固定不動 */
+  animation: galaxyScroll 60s linear infinite; /* 背景動畫 */
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.6;
+  overflow-x: hidden;}
+    a { color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* 小組照片相框 */
+.photo-frame {
+  background: #fff;
+  padding: 10px;
+  border: 3px solid #e5e7eb;  /* 淺灰相框 */
+  border-radius: 12px;         /* 圓角 */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* 陰影 */
+  margin-top: 8px;
+  text-align: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+    /* ---- Layout ---- */
+    .container { max-width:1100px; margin:28px auto; padding:0 20px; }
+    header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img{ width:44px; height:44px; object-fit:cover; border-radius:8px; }
+    .brand h1{ font-size:18px; margin:0; }
+    nav.top-nav { display:flex; gap:12px; align-items:center; }
+    nav.top-nav a { padding:8px 12px; border-radius:8px; background:transparent; transition:all .15s; }
+    nav.top-nav a:hover { background:#e6eef8; }
+
+    /* ---- Hero / title ---- */
+    .project-hero { background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%); border-radius:12px; padding:20px; box-shadow: 0 6px 18px rgba(9,30,66,0.04); display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+    @media (max-width:940px){ .project-hero { grid-template-columns: 1fr; } .sidebar { order:2; } .main { order:1; } }
+
+    .main h2 { margin:4px 0 8px; font-size:22px; word-wrap:break-word; }
+    .meta { color:#475569; font-size:14px; margin-bottom:12px; word-wrap:break-word; overflow-wrap:break-word; }
+    .meta a { word-break:break-all; }
+    .description { color:#334155; line-height:1.6; }
+
+    /* ---- Gallery ---- */
+    .gallery { border-radius:10px; overflow:hidden; position:relative; background:#000; min-height:260px; display:flex; align-items:center; justify-content:center; }
+    .gallery img { width:100%; height:auto; object-fit:cover; display:block; }
+    .thumbs { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    .thumbs button{ border:2px solid transparent; padding:0; border-radius:6px; overflow:hidden; width:72px; height:48px; cursor:pointer; background:#fff; }
+    .thumbs button img{ width:100%; height:100%; object-fit:cover; }
+    .thumbs button.active { border-color:#2563eb; box-shadow:0 4px 12px rgba(37,99,235,0.12); }
+
+    .gallery .controls { position:absolute; top:50%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; }
+    .gallery .controls button { pointer-events:auto; background:rgba(255,255,255,0.85); border:0; padding:10px; margin:0 6px; border-radius:8px; cursor:pointer; }
+
+    /* ---- Sidebar ---- */
+    .sidebar { background:#ffffff; border-radius:10px; padding:16px; box-shadow: 0 4px 10px rgba(2,6,23,0.04); height:fit-content; }
+    .info-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .tag { font-size:13px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; }
+
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; background:#2563eb; color:#fff; font-weight:600; border:0; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid #e6eef8; color:#0f172a; font-weight:600; }
+  
+    /* ---- Details / sections ---- */
+    section { margin-top:20px; }
+    h3 { margin:6px 0 12px; font-size:16px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width:640px){ .grid-2 { grid-template-columns:1fr; } }
+
+    footer { margin:34px 0; text-align:center; color:#64748b; font-size:13px; }
+
+    /* small helper */
+    .muted { color:#ffffff; font-size:13px; }
+    pre.code { background:#0f172a; color:#e6eef8; padding:12px; border-radius:8px; overflow:auto; font-size:13px; }
+    nav.muted a {
+  font-size: 20px; /* 你可以依需要調整 */
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='logo_8.png') }}" alt="logo">
+        <div class="muted">
+          <h1>Tech Odyssey: 未來之旅 探索科技與人文的無限可能</h1>
+          <div class="muted">作品展示平台</div>
+        </div>
+      </div>
+
+      <nav class="muted" >
+        <a href="/">首頁</a>
+      </nav>
+    </header>
+
+    <!-- Hero: main + sidebar -->
+    <div class="project-hero" role="region" aria-labelledby="project-title">
+      <div class="main">
+        <!-- Gallery -->
+        <div class="gallery" id="gallery" aria-live="polite">
+            <div class="controls">
+                <button id="prevBtn" aria-label="上一張">◀</button>
+                <button id="nextBtn" aria-label="下一張">▶</button>
+            </div>
+            <img id="galleryImage" src="/static/test.png" alt="主圖 1">
+        </div>
+
+
+        <div class="thumbs" id="thumbs">
+          <!-- thumbnails will be injected by JS -->
+        </div>
+
+        <section>
+          <h2 id="project-title">輔助中小學生學習運算思維之AI學習同伴的開發與評估</h2>
+          <div class="meta">
+            相關連結:
+            <a href="https://sites.google.com/view/aibuddy2025/%E9%A6%96%E9%A0%81" target="_blank">
+           https://sites.google.com/view/aibuddy2025/%E9%A6%96%E9%A0%81
+            </a>
+          </div>
+          <div >
+          <h3>專題簡介</h3>
+            <p>本專題打造一個能陪伴學生思考的AI學習夥伴，透過對話引導學習，不直接給答案，幫助學生培養思考力。結合網站與行動裝置，讓學習隨時隨地都能開始！</p>
+        </section>
+
+        <section>
+          <h3>專題動機</h3>
+            <p>隨著人工智慧技術迅速發展，如ChatGPT等等應用日益普及，使用者在依賴AI協助學習與解決問題的同時，忽略了自主思考、學習的過程，進而可能引發後設認知障礙的問題。為了有效地培養學生的運算思維與AI素養，本專題致力於開發一款基於引導式教學法的AIBuddy學習同伴為目標，透過互動式對話設計，激發學生的深度思考與提升問題解決能力。
+鎖定五大學習主題，分別是決策樹、線性迴歸、感知器、K-最近鄰、貝氏分類器等監督式機器學習之數位內容。
+</p>
+        </section>
+
+        <section>
+          <h3>專題介紹</h3>
+            <p>本專題以「引導式教學法」為核心理念，結合 GROW 模型（Goal、Reality、Options、Will）作為對話架構，設計出促進學生思辨與自主學習的AIBuddy學習同伴系統。透過反問、資訊提示與有邏輯性的對話引導，幫助學生思考而非直接給答案，進一步強化其問題解決與反思能力。
+ 
+為實現「走到哪、學到哪」的行動學習目標，專題以 Google Sites 建置教學網站，整合教學影片、互動教材與AIBuddy學習同伴專區，讓學生能隨時隨地透過行動裝置進行互動學習。
+ 
+技術應用與實作成果
+本專題已完成所有開發階段，包含：
+ 
+AIBuddy引導語設計：依據 GROW 模型設計 Prompt，確保 AI 回應具備啟發性與引導性。
+ 
+數位學習平台建構：以 Google Sites 為基礎整合影片、教材、互動區域。
+ 
+對話介面部署：使用 HTML、CSS 技術設計對話介面，並部署於雲端平台，嵌入網站中進行實際互動。
+ 
+實際應用與回饋
+專題成果已於暑假期間舉辦國中探索營隊中實際應用，邀請小六至國三學生體驗整套學習系統。活動中學生透過與AIBuddy學習同伴互動，展現高度參與度與學習動機，並在過程中表現出良好的思辨能力與主動學習態度。營隊回饋亦顯示，系統操作直覺、內容引人入勝，成功達成本專題設計初衷。
+ 
+未來將持續優化對話體驗與學習流程，提升 AI 在教育場域中的應用價值，擴展至更多學科與年齡層，推動智慧學習的實踐與落地。
+</p>
+        </section>
+
+      </div>
+
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <h3 id="sidebar-title">專題資訊</h3>
+        <div class="info-row">
+          <div >指導老師</div>
+        </div>
+        <div class="info-row">
+          <div>許庭嘉</div>
+        </div>
+
+        <div class="info-row">
+          <div >成員</div>
+        </div>
+        <div class="info-row">
+          <div> 詹喬崴、 林元方、黃品嘉、陳芊伃</div>
+        </div>
+
+        <div style="margin-top:8px">
+          <div >標籤</div>
+          <div class="tags" id="tagList">
+            <div class="tag">AI學習夥伴</div>
+            <div class="tag">引導式教學</div>
+            <div class="tag">自主思考力</div>
+            <div class="tag">智慧教育應用</div>
+            <div class="tag">行動學習隨時開始</div>
+          </div>
+        </div>
+  <!-- 新增小組照片 -->
+<div style="margin-top:16px">
+  <div>小組合照</div>
+  <div class="photo-frame">
+    <img src="{{ url_for('static', filename='group_8.png') }}" 
+         alt="小組合照">
+  </div>
+</div>
+
+</aside>
+  <script>
+    // ---- Simple gallery data (replace src with your real images) ----
+    const images = [
+        {src: "{{ url_for('static', filename='8-1.png') }}", alt:"主圖 1"},
+        {src: "{{ url_for('static', filename='8-2.png') }}", alt:"主圖 2"},
+        {src: "{{ url_for('static', filename='8-3.png') }}", alt:"主圖 3"},
+        {src: "{{ url_for('static', filename='8-4.png') }}", alt:"主圖 4"},
+        {src: "{{ url_for('static', filename='8-5.png') }}", alt:"主圖 5"}
+    ];
+
+
+
+    const galleryImage = document.getElementById('galleryImage');
+    const thumbs = document.getElementById('thumbs');
+    let idx = 0;
+
+    let currentIndex = 0;
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateImage() {
+    galleryImage.src = images[currentIndex].src;
+    galleryImage.alt = images[currentIndex].alt;
+    }
+
+    prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+    });
+
+
+
+    function renderThumbs(){
+      thumbs.innerHTML = "";
+      images.forEach((it,i) => {
+        const btn = document.createElement('button');
+        if(i===0) btn.classList.add('active');
+        const im = document.createElement('img');
+        im.src = it.src;
+        im.alt = it.alt;
+        btn.appendChild(im);
+        btn.addEventListener('click', () => { showAt(i); });
+        thumbs.appendChild(btn);
+      });
+    }
+
+    function showAt(i){
+      idx = i;
+      galleryImage.src = images[i].src;
+      galleryImage.alt = images[i].alt;
+      // update active thumb
+      Array.from(thumbs.children).forEach((b,bi)=> b.classList.toggle('active', bi===i));
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      idx = (idx - 1 + images.length) % images.length; showAt(idx);
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      idx = (idx + 1) % images.length; showAt(idx);
+    });
+
+    // auto-rotate
+    let auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500);
+    // pause on hover
+    const gallery = document.getElementById('gallery');
+    gallery.addEventListener('mouseenter', ()=> clearInterval(auto));
+    gallery.addEventListener('mouseleave', ()=> auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500));
+
+    // initial
+    renderThumbs();
+    showAt(0);
+
+    // Buttons (demo handlers)
+    document.getElementById('visit-btn').addEventListener('click', ()=> alert('這裡可連到實際預覽頁面或遠端連結。'));
+    document.getElementById('downloadBtn').addEventListener('click', ()=> alert('下載資料 (範例)。'));
+    document.getElementById('githubBtn').addEventListener('click', ()=> window.open('https://github.com/', '_blank'));
+  </script>
+</body>
+</html>

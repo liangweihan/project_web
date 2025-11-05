@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech Odyssey: 未來之旅 探索科技與人文的無限可能 | 師大科技系114成果展</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='groupstyle.css') }}">
+  <meta name="description" content="專案詳情頁範本：包含標題、圖片輪播、專案描述、團隊與相關連結。" />
+  <style>
+    /* ---- Reset & base ---- */
+    * { box-sizing: border-box; }
+    html,body {   background-image: 
+  linear-gradient(to bottom, rgba(13, 13, 43, 0.7), rgba(42, 10, 94, 0.7)),
+  url('galaxy.jpg');
+  background-size: cover;                     /* 填滿整個視窗 */
+  background-position: center;                /* 圖片置中 */
+  background-repeat: no-repeat;               /* 不重複圖片 */
+  background-attachment: fixed;               /* 背景固定不動 */
+  animation: galaxyScroll 60s linear infinite; /* 背景動畫 */
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.6;
+  overflow-x: hidden;}
+    a { color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* 小組照片相框 */
+.photo-frame {
+  background: #fff;
+  padding: 10px;
+  border: 3px solid #e5e7eb;  /* 淺灰相框 */
+  border-radius: 12px;         /* 圓角 */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* 陰影 */
+  margin-top: 8px;
+  text-align: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+    /* ---- Layout ---- */
+    .container { max-width:1100px; margin:28px auto; padding:0 20px; }
+    header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img{ width:44px; height:44px; object-fit:cover; border-radius:8px; }
+    .brand h1{ font-size:18px; margin:0; }
+    nav.top-nav { display:flex; gap:12px; align-items:center; }
+    nav.top-nav a { padding:8px 12px; border-radius:8px; background:transparent; transition:all .15s; }
+    nav.top-nav a:hover { background:#e6eef8; }
+
+    /* ---- Hero / title ---- */
+    .project-hero { background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%); border-radius:12px; padding:20px; box-shadow: 0 6px 18px rgba(9,30,66,0.04); display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+    @media (max-width:940px){ .project-hero { grid-template-columns: 1fr; } .sidebar { order:2; } .main { order:1; } }
+
+    .main h2 { margin:4px 0 8px; font-size:22px; }
+    .meta { color:#475569; font-size:14px; margin-bottom:12px; }
+    .description { color:#334155; line-height:1.6; }
+
+    /* ---- Gallery ---- */
+    .gallery { border-radius:10px; overflow:hidden; position:relative; background:#000; min-height:260px; display:flex; align-items:center; justify-content:center; }
+    .gallery img { width:100%; height:auto; object-fit:cover; display:block; }
+    .thumbs { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    .thumbs button{ border:2px solid transparent; padding:0; border-radius:6px; overflow:hidden; width:72px; height:48px; cursor:pointer; background:#fff; }
+    .thumbs button img{ width:100%; height:100%; object-fit:cover; }
+    .thumbs button.active { border-color:#2563eb; box-shadow:0 4px 12px rgba(37,99,235,0.12); }
+
+    .gallery .controls { position:absolute; top:50%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; }
+    .gallery .controls button { pointer-events:auto; background:rgba(255,255,255,0.85); border:0; padding:10px; margin:0 6px; border-radius:8px; cursor:pointer; }
+
+    /* ---- Sidebar ---- */
+    .sidebar { background:#ffffff; border-radius:10px; padding:16px; box-shadow: 0 4px 10px rgba(2,6,23,0.04); height:fit-content; }
+    .info-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .tag { font-size:13px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; }
+
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; background:#2563eb; color:#fff; font-weight:600; border:0; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid #e6eef8; color:#0f172a; font-weight:600; }
+  
+    /* ---- Details / sections ---- */
+    section { margin-top:20px; }
+    h3 { margin:6px 0 12px; font-size:16px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width:640px){ .grid-2 { grid-template-columns:1fr; } }
+
+    footer { margin:34px 0; text-align:center; color:#64748b; font-size:13px; }
+
+    /* small helper */
+    .muted { color:#ffffff; font-size:13px; }
+    pre.code { background:#0f172a; color:#e6eef8; padding:12px; border-radius:8px; overflow:auto; font-size:13px; }
+    nav.muted a {
+  font-size: 20px; /* 你可以依需要調整 */
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='logo_3.png') }}" alt="logo">
+        <div class="muted">
+          <h1>Tech Odyssey: 未來之旅 探索科技與人文的無限可能</h1>
+          <div class="muted">作品展示平台</div>
+        </div>
+      </div>
+
+      <nav class="muted" >
+        <a href="/">首頁</a>
+      </nav>
+    </header>
+
+    <!-- Hero: main + sidebar -->
+    <div class="project-hero" role="region" aria-labelledby="project-title">
+      <div class="main">
+        <!-- Gallery -->
+        <div class="gallery" id="gallery" aria-live="polite">
+            <div class="controls">
+                <button id="prevBtn" aria-label="上一張">◀</button>
+                <button id="nextBtn" aria-label="下一張">▶</button>
+            </div>
+            <img id="galleryImage" src="/static/test.png" alt="主圖 1">
+        </div>
+
+
+        <div class="thumbs" id="thumbs">
+          <!-- thumbnails will be injected by JS -->
+        </div>
+
+        <section>
+          <h2 id="project-title">遠端影像辨識串流與機械手臂物聯網結合快速AI輔助之系統與應用</h2>
+          <div >
+          <h3>專題簡介</h3>
+            <p> 本專題結合YOLO演算法與六軸機械手臂，打造具即時辨識與遠端操作能力的智慧平台，支援多任務物件組裝與教學應用，強化異地協作效率與工程實作臨場感，展現高度擴充與實用潛力</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>專題動機</h3>
+            <p>隨著人工智慧與物聯網（IoT）技術的快速發展，智慧操控與影像辨識系統在各領域中的應用日益廣泛，不僅改變了產業運作模式，也對教育與工程訓練帶來深遠影響。特別是在 COVID-19 疫情之後，遠距協作與線上教學的需求急劇上升，傳統以面對面為主的教學與實作課程受到極大挑戰，許多學生與教師反映在線上操作過程中缺乏「實體互動」與「臨場參與感」，導致學習效果不彰、技術掌握度下降。這些問題突顯了遠端實作系統在即時回饋、操作流暢性與視覺輔助等方面仍有明顯不足，亟需進一步突破。
+現今遠距教育大多以「單向視訊」、「影片教材」或「模擬軟體」為主，缺乏真實感與互動深度，難以滿足技職教育與工程設計等高度仰賴實作經驗的學習需求。以工科領域為例，機械手臂控制、物件辨識、精密裝配等技能訓練，必須經由實際操作才能建立學生的空間感與系統邏輯，若僅仰賴觀看影片或遠距指令輸入，學生難以真正理解實體裝置的運作與操作要領。此外，跨國技術交流、產學合作與遠距工程支援等場景日益常見，對於遠端操控設備的「即時性」、「準確性」與「可靠性」也提出更高標準。
+因此我們提出本專題計畫，結合當前最具潛力的深度學習物件辨識演算法 YOLO（You Only Look Once）與六軸機械手臂控制技術，設計一套具備「即時辨識能力」、「遠端操控功能」與「高互動性」的智慧作業平台。藉由整合網路串流、圖像處理與機械控制等多項技術，使使用者即使不在現場，也能像親自操作一般，完成物品辨識、搬運與組裝等任務，進一步提升遠端實作的真實感與效率。
+此外我們特別關注此系統在教育應用中的潛力。學生可以透過手機或電腦遠端操控機械手臂，觀察辨識系統即時標示物件，並在操作過程中理解 AI 模型與控制系統的實際應用。教師則能夠設計多樣化的任務情境，並即時觀察學生的操作成果，給予即時指導與回饋。此系統不僅提升教學互動性，更打破地域限制，讓偏鄉或海外學生也能參與高品質的實作訓練，實現教育公平與資源共享的理念。
+最後，本專題的發展動機來自對「教育與工程應用中遠端操作困境」的深刻觀察，並以實作性、互動性與擴展性為核心訴求，致力於打造一套具備高效能與高彈性的遠端作業系統。透過智慧影像辨識與機械手臂的融合控制，我們期望能為未來的智慧教學、異地協作與遠端實驗提供一個可靠且創新的解決方案，開創數位學習與遠距工程的新篇章。
+ Flask與Gemini AI的智慧投資學習平台，協助新手投資者在無基礎的情況下也能有效入門投資，讓投資變得更簡單且可學習</p>
+        </section>
+
+        <section>
+          <h3>專題介紹</h3>
+            <p>本專題致力於開發一套融合「YOLO 影像辨識演算法」與「六軸機械手臂控制」的遠端作業系統，提供具備即時辨識、操作指引與靈活控制能力的智慧平台。目的是讓使用者即便處於遠端環境，也能準確、流暢地執行複雜的物件操作與組裝任務，進一步強化遠距教學與異地工程協作的實用性與臨場感。
+本系統採用模組化設計理念，硬體架構方面以六自由度機械手臂為核心，透過六顆伺服馬達分別控制旋轉、肩部、肘部、腕部等部位，實現空間中高靈活度的移動與操作。手臂控制方面則由 Arduino Mega2560 負責處理伺服馬達驅動與指令解析，而 ESP8266 模組則負責接收來自遠端的控制指令與網路通訊任務。兩者透過資料線串接，達到系統穩定、模組分工、維修方便的設計目標。
+在影像辨識部分，我們採用 YOLOv8 演算法並進行客製化訓練，搭配標註工具與資料增強技術，例如影像翻轉、旋轉、亮度調整等，提升模型在各種環境下的辨識準確率與泛用性。此外，我們導入自動旋轉拍攝與即時框圖標示功能，讓使用者在遠端畫面上即可看到辨識結果與引導提示，提升操作效率與精準度。
+操作介面部分，我們開發了跨平台的控制 App，支援手機與電腦操作，使用者可即時切換視角（如俯視圖、第三人稱視角），並觀察系統回傳的影像與辨識結果，進行手臂動作控制。通訊協議方面，影像串流使用 WebRTC 技術達成低延遲、高畫質傳輸，控制指令則透過 MQTT 協定進行傳遞，具備良好的可擴充性與跨裝置相容性，同時亦支援 VPN 跨國連線與離線模式運作，使系統在不同場域與網路狀況下都能維持穩定運行。
+本系統目前已應用於「機械獸教材」的遠端教學示範，展現高度的辨識正確性與流暢的操作體驗。未來將進一步於國際場域進行驗證測試，規劃邀請印尼學生與台灣學生進行遠端協作實驗，共同操作機械手臂完成組裝任務，並透過焦點團體座談與系統效能分析回饋，驗證系統在跨國教育應用的實際可行性與發展潛力。
+最後本系統未來可廣泛應用於產品裝配、智慧製造、危險環境操作（如核能或高溫場所）、高精度醫療輔助設備控制等領域，甚至作為職訓單位與大學工科系所的遠距訓練平台，協助建立跨地區、跨學科的學習與合作環境。透過本專題，我們不僅希望解決既有遠端操控的技術問題，更希望能促進智慧教育、工程應用與人機互動的實質融合，開啟新世代數位操作與教學的創新局面。
+</p>
+
+      </div>
+
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <h3 id="sidebar-title">專題資訊</h3>
+        <div class="info-row">
+          <div >指導老師</div>
+        </div>
+        <div class="info-row">
+          <div>蔡芸琤、蔡其瑞</div>
+        </div>
+
+        <div class="info-row">
+          <div >成員</div>
+        </div>
+        <div class="info-row">
+          <div>孫士傑、廖誌晨、吳承翰、郭翰文</div>
+        </div>
+
+        <div style="margin-top:8px">
+          <div >標籤</div>
+          <div class="tags" id="tagList">
+            <div class="tag">智慧機械手臂</div>
+            <div class="tag">遠端影像辨識</div>
+            <div class="tag">AI教育應用</div>
+            <div class="tag">異地協作平台</div>
+            <div class="tag">智慧製造與教學</div>
+
+          </div>
+        </div>
+  <!-- 新增小組照片 -->
+<div style="margin-top:16px">
+  <div>小組合照</div>
+  <div class="photo-frame">
+    <img src="{{ url_for('static', filename='group_3.png') }}" 
+         alt="小組合照">
+  </div>
+</div>
+
+</aside>
+  <script>
+    // ---- Simple gallery data (replace src with your real images) ----
+    const images = [
+        {src: "{{ url_for('static', filename='3-1.png') }}", alt:"主圖 1"},
+        {src: "{{ url_for('static', filename='3-2.png') }}", alt:"主圖 2"},
+        {src: "{{ url_for('static', filename='3-3.png') }}", alt:"主圖 3"},
+        {src: "{{ url_for('static', filename='3-4.png') }}", alt:"主圖 4"}
+    ];
+
+
+
+    const galleryImage = document.getElementById('galleryImage');
+    const thumbs = document.getElementById('thumbs');
+    let idx = 0;
+
+    let currentIndex = 0;
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateImage() {
+    galleryImage.src = images[currentIndex].src;
+    galleryImage.alt = images[currentIndex].alt;
+    }
+
+    prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+    });
+
+
+
+    function renderThumbs(){
+      thumbs.innerHTML = "";
+      images.forEach((it,i) => {
+        const btn = document.createElement('button');
+        if(i===0) btn.classList.add('active');
+        const im = document.createElement('img');
+        im.src = it.src;
+        im.alt = it.alt;
+        btn.appendChild(im);
+        btn.addEventListener('click', () => { showAt(i); });
+        thumbs.appendChild(btn);
+      });
+    }
+
+    function showAt(i){
+      idx = i;
+      galleryImage.src = images[i].src;
+      galleryImage.alt = images[i].alt;
+      // update active thumb
+      Array.from(thumbs.children).forEach((b,bi)=> b.classList.toggle('active', bi===i));
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      idx = (idx - 1 + images.length) % images.length; showAt(idx);
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      idx = (idx + 1) % images.length; showAt(idx);
+    });
+
+    // auto-rotate
+    let auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500);
+    // pause on hover
+    const gallery = document.getElementById('gallery');
+    gallery.addEventListener('mouseenter', ()=> clearInterval(auto));
+    gallery.addEventListener('mouseleave', ()=> auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500));
+
+    // initial
+    renderThumbs();
+    showAt(0);
+
+    // Buttons (demo handlers)
+    document.getElementById('visit-btn').addEventListener('click', ()=> alert('這裡可連到實際預覽頁面或遠端連結。'));
+    document.getElementById('downloadBtn').addEventListener('click', ()=> alert('下載資料 (範例)。'));
+    document.getElementById('githubBtn').addEventListener('click', ()=> window.open('https://github.com/', '_blank'));
+  </script>
+</body>
+</html>
