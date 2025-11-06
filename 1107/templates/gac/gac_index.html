@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖 Be Continued | 師大圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="video-background-container">
+        <video autoplay loop muted playsinline id="home-background-video">
+            <source src="/static/gac/1920_1080p.mp4" type="video/mp4">
+            您的瀏覽器不支援影片播放。
+        </video>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/static/gac/logo.png" alt="GAC Logo">
+            </div>
+            <div class="logo-text">Department of<br>Graphic Arts<br>and<br>Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#intro">專展介紹</a></li>
+                <li><a href="#works">全部作品</a></li>
+                <li><a href="#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#intro">專展介紹</a></li>
+            <li><a href="#works">全部作品</a></li>
+            <li><a href="#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <section id="home" class="section">
+        <div class="home-content-wrapper">
+            <img id="main-title" src="/static/gac/標準字.png" alt="圖 Be Continued">
+            <!--img id="department-info" src="/static/gac/文字-01.png" alt="國立臺灣師範大學 圖文傳播學系 2025 畢業展">
+            <img id="deco-unfinished" src="/static/gac/裝飾物件-03.png" alt="Unfinished Decor"-->
+            <img id="deco-sparkle" src="/static/gac/裝飾物件-01.png" alt="Sparkle Decor">
+        </div>
+    </section>
+
+    <section id="intro" class="section">
+        <div class="intro-content-box">
+            <h2 class="section-title-box">專展介紹</h2>
+            <h3>關於專展</h3>
+            <p>「圖 be continued」為臺師大圖文傳播學系115級畢業專題展覽之主題，將展出49位同學在大學四年以來的學習成果。此次共有15件專題作品，創作形式包含：桌遊、漫畫、遊戲、影音、產品設計等，展現圖傳系學生的多元發展面貌。</p>
+            <h3>專展理念</h3>
+            <p>
+                <b>【 圖 be continued 】</b><br><br>
+                畢業，從來不是終點。<br>
+                「圖 be continued」取自最熟悉的 to be continued — 未完待續。<br>
+                「圖」不僅是「圖像」，更是映照設計思維與創作藍圖的無限延伸。<br>
+                在反覆推翻與重構之間，設計成為紀錄當下、勾勒未來想像的方法。<br>
+                此刻，蒐集結過往、回望軌跡、凝聚心血的時刻，也是編寫未完篇章的起點。<br>
+                故事尚未完結，圖 be continued ……
+            </p>
+            <div class="unfinished-stamp">
+                <img src="/static/gac/裝飾物件-03.png" alt="Unfinished">
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section">
+        <h2 class="section-title-box" style="margin-bottom:40px;font-weight:normal;">全部作品</h2>
+
+        <div class="works-carousel-container">
+            <div class="works-slider" id="works-slider">
+                <a href="{{ url_for('gac_group1') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第一組_主視覺.png" alt="青春軼逝">
+                    <div class="work-card-overlay">
+                        <h4>青春軼逝</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group2') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第二組_主視覺.png" alt="When You Are Around">
+                    <div class="work-card-overlay">
+                        <h4>When You Are Around</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group3') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第三組_主視覺.png" alt="賦格協奏">
+                    <div class="work-card-overlay">
+                        <h4>賦格協奏</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group4') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第四組_主視覺.png" alt="wifi找不到">
+                    <div class="work-card-overlay">
+                        <h4>wifi找不到</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group5') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第五組_主視覺.png" alt="心願收藏館">
+                    <div class="work-card-overlay">
+                        <h4>心願收藏館</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group6') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第六組_主視覺.png" alt="miù">
+                    <div class="work-card-overlay">
+                        <h4>miù</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group7') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第七組_主視覺.png" alt="耶比工作四">
+                    <div class="work-card-overlay">
+                        <h4>耶比工作四</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group8') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第八組_主視覺.png" alt="怪鳥校園季一番賞">
+                    <div class="work-card-overlay">
+                        <h4>怪鳥校園季一番賞</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group9') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第九組_主視覺.png" alt="童年博物館">
+                    <div class="work-card-overlay">
+                        <h4>童年博物館</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group10') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第十組_主視覺.png" alt="失落院區">
+                    <div class="work-card-overlay">
+                        <h4>失落院區</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group11') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第十一組_主視覺.jpg" alt="走跳永續村">
+                    <div class="work-card-overlay">
+                        <h4>走跳永續村</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group12') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第十二組_主視覺.png" alt="嘻食獨品">
+                    <div class="work-card-overlay">
+                        <h4>嘻食獨品</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group13') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第十三組_主視覺.png" alt="訴誤三科">
+                    <div class="work-card-overlay">
+                        <h4>訴誤三科</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group14') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第十四組_主視覺.png" alt="誤入夢境之境">
+                    <div class="work-card-overlay">
+                        <h4>誤入夢境之境</h4>
+                    </div>
+                </a>
+                <a href="{{ url_for('gac_group15') }}" class="work-card">
+                    <img src="/static/gac/圖傳系_第十五組_主視覺.png" alt="凌晨出走—迷你專輯製作">
+                    <div class="work-card-overlay">
+                        <h4>凌晨出走—迷你專輯製作</h4>
+                    </div>
+                </a>
+            </div>
+
+            <button class="carousel-btn prev" id="prev-btn">&lt;</button>
+            <button class="carousel-btn next" id="next-btn">&gt;</button>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="intro-content-box">
+            <h2 class="section-title-box">關於圖傳系</h2>
+            <p>國立臺灣師範大學圖文傳播學系成立於1996年，致力於圖文影音內容產製、印刷傳播科技與資訊技術、整合行銷企劃等領域專業人才培養，以及高職設計與藝術群師資培育。
+<br><br>
+本系強調跨領域整合內容產製與傳播科技，包含圖文設計、影音製作、資訊技術、印刷科技、行銷企劃等課程，結合理論知識與實務經驗。</p>
+        </div>
+    </section>
+
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+
+</html>

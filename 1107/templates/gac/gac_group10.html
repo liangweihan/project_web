@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>失落院區 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第十組_主視覺.png" alt="失落院區" class="project-hero-image">
+        <div class="project-content">
+            <h1>失落院區</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>這不是一場單純的惡作劇。
+搜救隊進入廢棄醫院，本該只是尋找失蹤者的行動，卻逐漸演變成一場無法醒來的噩夢。
+陰暗的走廊、封印破碎的太平間、嬰靈的哭聲、錯置的病歷與流動的陰影……
+這裡究竟是醫院，還是你心底最深處的囚牢？
+在黑暗吞噬之前，你們必須合作揭露真相，或選擇背叛彼此。
+遊戲特色：
+• 廢墟探索：數十種房間板塊（手術室、ICU、精神科、太平間……），拼湊出每次不同的醫院格局。
+• 沉浸式劇本：超過 40 個劇本，從「惡靈甦醒」到「錯名病歷」，每一局都是獨特的驚悚體驗。
+• 多線抉擇：玩家可能成為受困的搜救隊員，也可能在劇情反轉後暴露為「叛徒」。
+• 角色扮演：6 名角色各自擁有不同的知識、力量、理智與速度屬性，讓每場遊戲都有不同組合。
+• 隨機事件與詛咒：從「嬰兒頭顱」、「貼滿符咒的病歷表」到「哀嚎鬼魂」，事件與道具不僅能助你一臂之力，也可能將你推向毀滅
+核心體驗：
+• 緊張的探索與合作：在有限的回合內完成任務。
+• 不安的懷疑與背叛：叛徒的存在，讓每一步都充滿危機。
+• 恐怖的氛圍與沉浸感：劇情與道具設計將玩家帶入「醫院即陷阱」的詭譎氛圍。
+</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>陳明秀</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>蘇致穎、陳雲揚、王昱盛、陳睿璿、鄧謹祈</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miù | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第六組_主視覺.png" alt="miù" class="project-hero-image">
+        <div class="project-content">
+            <h1>miù</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>在社群媒體盛行的時代，人人皆可輕易針對社會事件或道德議題發表個人立場與看法。然而，現代許多民眾容易被言論風向所影響，使得個人原本看似堅定的道德觀與價值判斷受到動搖。
+
+《miù》源自「謬」與「繆」的同音概念，兩字在「謬誤」一詞中皆為合理寫法。我們以此為核心概念，發展一套互動型藝術裝置，探討意見與立場的分歧並非直接代表邏輯謬誤。我們試圖將人類的思考結構具象化，引導觀者逐步作出選擇，審視自身價值觀的形成脈絡與潛藏的矛盾之處，規劃屬於自己的思考路徑並進行思辯。
+
+此裝置結合邏輯思辨能力、探討道德價值觀與待人處事原則等核心概念，模擬人們的思考路徑。觀者將在選擇過程中檢視自我的價值觀是否前後一致，並思索其矛盾與合理性。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>張晏榕</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>呂卉然、王晴</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

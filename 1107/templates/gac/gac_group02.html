@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When You Are Around | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第二組_主視覺.png" alt="When You Are Around" class="project-hero-image">
+        <div class="project-content">
+            <h1>When You Are Around</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>以「延長悲傷障礙」與「快樂恐懼症」為出發點，建構出Eli、Lumi、Nell三位年幼兄妹的故事。故事從Eli的視角開始，帶領觀眾一同經歷他所面對的離別、情感與衝擊。
+2D動畫製作上分別使用Adobe Illustrator、Adobe After Effects兩種軟體為主，希望呈現簡潔明亮的視覺畫面，給予觀眾療癒與溫暖的同時，也期望藉由這段成長旅程，引導觀眾重新思考，我們該如何與悲傷共存，又該如何在愛與陪伴中找到再次微笑的勇氣。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>張晏榕</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>黃纓禎、李佳臻、戴美萍、劉珈恩、呂昀庭、蔡哲瑋</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>
