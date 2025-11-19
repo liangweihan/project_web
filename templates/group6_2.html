@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech Odyssey: 未來之旅 探索科技與人文的無限可能 | 師大科技系115成果展</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='groupstyle.css') }}">
+  <meta name="description" content="專案詳情頁範本：包含標題、圖片輪播、專案描述、團隊與相關連結。" />
+  <style>
+    /* ---- Reset & base ---- */
+    * { box-sizing: border-box; }
+    html,body {   background-image: 
+  linear-gradient(to bottom, rgba(13, 13, 43, 0.7), rgba(42, 10, 94, 0.7)),
+  url('galaxy.jpg');
+  background-size: cover;                     /* 填滿整個視窗 */
+  background-position: center;                /* 圖片置中 */
+  background-repeat: no-repeat;               /* 不重複圖片 */
+  background-attachment: fixed;               /* 背景固定不動 */
+  animation: galaxyScroll 60s linear infinite; /* 背景動畫 */
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.6;
+  overflow-x: hidden;}
+    a { color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* 小組照片相框 */
+.photo-frame {
+  background: #fff;
+  padding: 10px;
+  border: 3px solid #e5e7eb;  /* 淺灰相框 */
+  border-radius: 12px;         /* 圓角 */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* 陰影 */
+  margin-top: 8px;
+  text-align: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+    /* ---- Layout ---- */
+    .container { max-width:1100px; margin:28px auto; padding:0 20px; }
+    header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img{ width:44px; height:44px; object-fit:cover; border-radius:8px; }
+    .brand h1{ font-size:18px; margin:0; }
+    nav.top-nav { display:flex; gap:12px; align-items:center; }
+    nav.top-nav a { padding:8px 12px; border-radius:8px; background:transparent; transition:all .15s; }
+    nav.top-nav a:hover { background:#e6eef8; }
+
+    /* ---- Hero / title ---- */
+    .project-hero { background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%); border-radius:12px; padding:20px; box-shadow: 0 6px 18px rgba(9,30,66,0.04); display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+    @media (max-width:940px){ .project-hero { grid-template-columns: 1fr; } .sidebar { order:2; } .main { order:1; } }
+
+    .main h2 { margin:4px 0 8px; font-size:22px; }
+    .meta { color:#475569; font-size:14px; margin-bottom:12px; }
+    .description { color:#334155; line-height:1.6; }
+
+    /* ---- Gallery ---- */
+    .gallery { border-radius:10px; overflow:hidden; position:relative; background:#000; min-height:260px; display:flex; align-items:center; justify-content:center; }
+    .gallery img { width:100%; height:auto; object-fit:cover; display:block; }
+    .thumbs { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    .thumbs button{ border:2px solid transparent; padding:0; border-radius:6px; overflow:hidden; width:72px; height:48px; cursor:pointer; background:#fff; }
+    .thumbs button img{ width:100%; height:100%; object-fit:cover; }
+    .thumbs button.active { border-color:#2563eb; box-shadow:0 4px 12px rgba(37,99,235,0.12); }
+
+    .gallery .controls { position:absolute; top:50%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; }
+    .gallery .controls button { pointer-events:auto; background:rgba(255,255,255,0.85); border:0; padding:10px; margin:0 6px; border-radius:8px; cursor:pointer; }
+
+    /* ---- Sidebar ---- */
+    .sidebar { background:#ffffff; border-radius:10px; padding:16px; box-shadow: 0 4px 10px rgba(2,6,23,0.04); height:fit-content; }
+    .info-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .tag { font-size:13px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; }
+
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; background:#2563eb; color:#fff; font-weight:600; border:0; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid #e6eef8; color:#0f172a; font-weight:600; }
+  
+    /* ---- Details / sections ---- */
+    section { margin-top:20px; }
+    h3 { margin:6px 0 12px; font-size:16px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width:640px){ .grid-2 { grid-template-columns:1fr; } }
+
+    footer { margin:34px 0; text-align:center; color:#64748b; font-size:13px; }
+
+    /* small helper */
+    .muted { color:#ffffff; font-size:13px; }
+    pre.code { background:#0f172a; color:#e6eef8; padding:12px; border-radius:8px; overflow:auto; font-size:13px; }
+    nav.muted a {
+  font-size: 20px; /* 你可以依需要調整 */
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='logo_12.png') }}" alt="logo">
+        <div class="muted">
+          <h1>Tech Odyssey: 未來之旅 探索科技與人文的無限可能</h1>
+          <div class="muted">作品展示平台</div>
+        </div>
+      </div>
+
+      <nav class="muted" >
+        <a href="/">首頁</a>
+      </nav>
+    </header>
+
+    <!-- Hero: main + sidebar -->
+    <div class="project-hero" role="region" aria-labelledby="project-title">
+      <div class="main">
+        <div class="thumbs" id="thumbs">
+          <!-- thumbnails will be injected by JS -->
+        </div>
+        <section>
+          <h2 id="project-title">基於Ilm 聊天應用:幫助大學生解決社交困擾</h2>
+          <div >
+          <h3>專題簡介</h3>
+            <p>大家好！我們是 "Wingchat" ，我們的專題內容主要是幫助大學生透過遊戲互動來學習如何與人進行社交互動。藉由透過不斷的與遊戲中的角色溝通、互動，讓玩家在遊戲中有實體的社交感，在現實生活中與人社交不再「社恐」，成為一個人人熱愛的社交高手！</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>專題動機</h3>
+            <p>我們觀察到大學生在社交上常遇到困難，如無法融入新環境、社交冷感等。根據阿德勒心理學，社交需求是基本需求，缺乏社交技巧容易導致孤立與焦慮。因此，我們希望透過訓練 LLM 模型，協助大學生緩解社交焦慮，提升自信與心理健康。目標是開發一個基於 LLM 的聊天應用，提供模擬對話與即時回饋，強化用戶在現實社交場景中的應對能力。</p>
+        </section>
+
+        <section>
+          <h3>專題介紹</h3>
+            <p>在大學校園中，許多學生常因缺乏社交自信、技巧不足或面對新環境感到不安，導致人際互動受阻，甚至影響心理健康。我們團隊觀察到這個日益嚴重的現象，決定結合AI技術與人本關懷，打造一個創新平台——WingChat。</p>
+            <p>WingChat 是一款專為大學生設計的 AI 社交教練系統，運用經微調的本地化大型語言模型（Llama-3-Taiwan-8B-Instruct），提供擬真社交練習情境與即時、多維度的對話回饋。透過個性化AI角色互動、具體建議與成長追蹤，WingChat 成為學生低壓力、高成效的「社交健身房」。</p>
+      </div>
+
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <h3 id="sidebar-title">專題資訊</h3>
+        <div class="info-row">
+          <div >指導老師</div>
+        </div>
+        <div class="info-row">
+          <div>蔡芸琤、嚴萬軒</div>
+        </div>
+
+        <div class="info-row">
+          <div >成員</div>
+        </div>
+        <div class="info-row">
+          <div>陳廷安 呂沛修 劉禹岑 黃紫馨</div>
+        </div>
+
+        <div style="margin-top:8px">
+          <div >標籤</div>
+          <div class="tags" id="tagList">
+            <div class="tag">生成式AI應用</div>
+            <div class="tag">大學生心理健康</div>
+            <div class="tag">社交互動訓練</div>
+            <div class="tag">人際溝通練習</div>
+          </div>
+        </div>
+  <!-- 新增小組照片 -->
+<div style="margin-top:16px">
+  <div>小組合照</div>
+  <div class="photo-frame">
+    <img src="{{ url_for('static', filename='group_12.PNG') }}" 
+         alt="小組合照">
+  </div>
+</div>
+
+</aside>
+  <script>
+    // ---- Simple gallery data (replace src with your real images) ----
+    const galleryImage = document.getElementById('galleryImage');
+    const thumbs = document.getElementById('thumbs');
+    let idx = 0;
+
+    let currentIndex = 0;
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateImage() {
+    galleryImage.src = images[currentIndex].src;
+    galleryImage.alt = images[currentIndex].alt;
+    }
+
+    prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+    });
+
+
+
+    function renderThumbs(){
+      thumbs.innerHTML = "";
+      images.forEach((it,i) => {
+        const btn = document.createElement('button');
+        if(i===0) btn.classList.add('active');
+        const im = document.createElement('img');
+        im.src = it.src;
+        im.alt = it.alt;
+        btn.appendChild(im);
+        btn.addEventListener('click', () => { showAt(i); });
+        thumbs.appendChild(btn);
+      });
+    }
+
+    function showAt(i){
+      idx = i;
+      galleryImage.src = images[i].src;
+      galleryImage.alt = images[i].alt;
+      // update active thumb
+      Array.from(thumbs.children).forEach((b,bi)=> b.classList.toggle('active', bi===i));
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      idx = (idx - 1 + images.length) % images.length; showAt(idx);
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      idx = (idx + 1) % images.length; showAt(idx);
+    });
+
+    // auto-rotate
+    let auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500);
+    // pause on hover
+    const gallery = document.getElementById('gallery');
+    gallery.addEventListener('mouseenter', ()=> clearInterval(auto));
+    gallery.addEventListener('mouseleave', ()=> auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500));
+
+    // initial
+    renderThumbs();
+    showAt(0);
+
+    // Buttons (demo handlers)
+    document.getElementById('visit-btn').addEventListener('click', ()=> alert('這裡可連到實際預覽頁面或遠端連結。'));
+    document.getElementById('downloadBtn').addEventListener('click', ()=> alert('下載資料 (範例)。'));
+    document.getElementById('githubBtn').addEventListener('click', ()=> window.open('https://github.com/', '_blank'));
+  </script>
+</body>
+</html>

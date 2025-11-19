@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tech Odyssey: 未來之旅 探索科技與人文的無限可能 | 師大科技系114成果展</title>
+  <title>Tech Odyssey: 未來之旅 探索科技與人文的無限可能 | 師大科技系115成果展</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='groupstyle.css') }}">
   <meta name="description" content="專案詳情頁範本：包含標題、圖片輪播、專案描述、團隊與相關連結。" />
   <style>
@@ -123,7 +123,7 @@
                 <button id="prevBtn" aria-label="上一張">◀</button>
                 <button id="nextBtn" aria-label="下一張">▶</button>
             </div>
-            <img id="galleryImage" src="/static/test.png" alt="主圖 1">
+            <img id="galleryImage" src="/static/5_1.png" alt="主圖 1">
         </div>
 
 
@@ -195,9 +195,11 @@
 </aside>
   <script>
     // ---- Simple gallery data (replace src with your real images) ----
-
-
-
+    const images = [
+        {src: "{{ url_for('static', filename='5_1.png') }}", alt:"主圖 1"},
+        {src: "{{ url_for('static', filename='5_1_2.png') }}", alt:"主圖 2"},
+        {src: "{{ url_for('static', filename='5_1_3.png') }}", alt:"主圖 3"}
+    ];
 
     const galleryImage = document.getElementById('galleryImage');
     const thumbs = document.getElementById('thumbs');

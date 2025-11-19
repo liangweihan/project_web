@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech Odyssey: 未來之旅 探索科技與人文的無限可能 | 師大科技系115成果展</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='groupstyle.css') }}">
+  <meta name="description" content="專案詳情頁範本：包含標題、圖片輪播、專案描述、團隊與相關連結。" />
+  <style>
+    /* ---- Reset & base ---- */
+    * { box-sizing: border-box; }
+    html,body {   background-image: 
+  linear-gradient(to bottom, rgba(13, 13, 43, 0.7), rgba(42, 10, 94, 0.7)),
+  url('galaxy.jpg');
+  background-size: cover;                     /* 填滿整個視窗 */
+  background-position: center;                /* 圖片置中 */
+  background-repeat: no-repeat;               /* 不重複圖片 */
+  background-attachment: fixed;               /* 背景固定不動 */
+  animation: galaxyScroll 60s linear infinite; /* 背景動畫 */
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.6;
+  overflow-x: hidden;}
+    a { color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* 小組照片相框 */
+.photo-frame {
+  background: #fff;
+  padding: 10px;
+  border: 3px solid #e5e7eb;  /* 淺灰相框 */
+  border-radius: 12px;         /* 圓角 */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* 陰影 */
+  margin-top: 8px;
+  text-align: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+    /* ---- Layout ---- */
+    .container { max-width:1100px; margin:28px auto; padding:0 20px; }
+    header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img{ width:44px; height:44px; object-fit:cover; border-radius:8px; }
+    .brand h1{ font-size:18px; margin:0; }
+    nav.top-nav { display:flex; gap:12px; align-items:center; }
+    nav.top-nav a { padding:8px 12px; border-radius:8px; background:transparent; transition:all .15s; }
+    nav.top-nav a:hover { background:#e6eef8; }
+
+    /* ---- Hero / title ---- */
+    .project-hero { background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%); border-radius:12px; padding:20px; box-shadow: 0 6px 18px rgba(9,30,66,0.04); display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+    @media (max-width:940px){ .project-hero { grid-template-columns: 1fr; } .sidebar { order:2; } .main { order:1; } }
+
+    .main h2 { margin:4px 0 8px; font-size:22px; }
+    .meta { color:#475569; font-size:14px; margin-bottom:12px; }
+    .description { color:#334155; line-height:1.6; }
+
+    /* ---- Gallery ---- */
+    .gallery { border-radius:10px; overflow:hidden; position:relative; background:#000; min-height:260px; display:flex; align-items:center; justify-content:center; }
+    .gallery img { width:100%; height:auto; object-fit:cover; display:block; }
+    .thumbs { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    .thumbs button{ border:2px solid transparent; padding:0; border-radius:6px; overflow:hidden; width:72px; height:48px; cursor:pointer; background:#fff; }
+    .thumbs button img{ width:100%; height:100%; object-fit:cover; }
+    .thumbs button.active { border-color:#2563eb; box-shadow:0 4px 12px rgba(37,99,235,0.12); }
+
+    .gallery .controls { position:absolute; top:50%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; }
+    .gallery .controls button { pointer-events:auto; background:rgba(255,255,255,0.85); border:0; padding:10px; margin:0 6px; border-radius:8px; cursor:pointer; }
+
+    /* ---- Sidebar ---- */
+    .sidebar { background:#ffffff; border-radius:10px; padding:16px; box-shadow: 0 4px 10px rgba(2,6,23,0.04); height:fit-content; }
+    .info-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .tag { font-size:13px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; }
+
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; background:#2563eb; color:#fff; font-weight:600; border:0; cursor:pointer; }
+    .btn.ghost { background:transparent; border:1px solid #e6eef8; color:#0f172a; font-weight:600; }
+  
+    /* ---- Details / sections ---- */
+    section { margin-top:20px; }
+    h3 { margin:6px 0 12px; font-size:16px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width:640px){ .grid-2 { grid-template-columns:1fr; } }
+
+    footer { margin:34px 0; text-align:center; color:#64748b; font-size:13px; }
+
+    /* small helper */
+    .muted { color:#ffffff; font-size:13px; }
+    pre.code { background:#0f172a; color:#e6eef8; padding:12px; border-radius:8px; overflow:auto; font-size:13px; }
+    nav.muted a {
+  font-size: 20px; /* 你可以依需要調整 */
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='logo_16.png') }}" alt="logo">
+        <div class="muted">
+          <h1>Tech Odyssey: 未來之旅 探索科技與人文的無限可能</h1>
+          <div class="muted">作品展示平台</div>
+        </div>
+      </div>
+
+      <nav class="muted" >
+        <a href="/">首頁</a>
+      </nav>
+    </header>
+
+    <!-- Hero: main + sidebar -->
+    <div class="project-hero" role="region" aria-labelledby="project-title">
+      <div class="main">
+        <!-- Gallery -->
+        <div class="gallery" id="gallery" aria-live="polite">
+            <div class="controls">
+                <button id="prevBtn" aria-label="上一張">◀</button>
+                <button id="nextBtn" aria-label="下一張">▶</button>
+            </div>
+            <img id="galleryImage" src="/static/test.png" alt="主圖 1">
+        </div>
+
+
+        <div class="thumbs" id="thumbs">
+          <!-- thumbnails will be injected by JS -->
+        </div>
+
+        <section>
+          <h2 id="project-title">社交情緒學習之虛擬實境系統開發與評估</h2>
+          <div class="meta">
+          </div>
+          <div class="meta">
+            <a href="" target="_blank">
+            
+            </a>
+          </div>
+
+          <div >
+          <h3>專題簡介</h3>
+            <p> 我們運用虛擬實境 (VR) 打造超真實社交情境與AI影片，讓你能沉浸式地學習社交情緒，輕鬆提升情緒管理與人際互動能力，自信面對生活中的各種挑戰！</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>專題動機</h3>
+            <p>現今中學生在面對情緒管理與人際互動挑戰時，常缺乏有效策略與練習機會，尤其在升學壓力之下，常出現壓力過大、衝突應對失衡等問題。社交情緒學習（SEL）強調自我覺察、自我管理、社會覺察、人際技巧與負責任決策等五大核心能力，已被證實對學生的學業表現、心理健康與人際關係皆有正向影響。</p>
+            <p>然而，傳統教學手法（如簡報或影片）在培養情緒與社交技能時，較難激發學生的同理心與參與感。為提供更貼近生活且具備實作性的學習情境，我們希望導入更具沉浸感的科技工具，彌補傳統SEL教學的限制。</p>
+        </section>
+
+        <section>
+          <h3>專題介紹</h3>
+            <p>本專題運用虛擬實境（VR）技術與AI輔助影片兩種數位媒材，建構一套具備互動性與情境性的SEL教學系統。整體研究設計包含兩組：實驗組使用VR互動系統學習，對照組觀看AI圖像與語音合成製作的SEL教學影片，兩者皆涵蓋相同八大社交情境主題，如校園霸凌、人際衝突、作弊誘惑等。            </p>
+            <p>本計畫將透過SECQ、QACSE與沉浸感量表進行前後測，分析不同教學方式對學生社交情緒能力發展的影響。最終，我們希望驗證VR在SEL教學上的優勢與成效，並為未來教師提供具實證基礎的數位教材選擇，也為教育科技的應用開拓更多可能性。</p>
+      </div>
+
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <h3 id="sidebar-title">專題資訊</h3>
+        <div class="info-row">
+          <div >指導老師</div>
+        </div>
+        <div class="info-row">
+          <div>許庭嘉</div>
+        </div>
+
+        <div class="info-row">
+          <div >成員</div>
+        </div>
+        <div class="info-row">
+          <div>張慎修、林軒宇、潘穎翰、陳冠宇、翁睿承</div>
+        </div>
+
+        <div style="margin-top:8px">
+          <div >標籤</div>
+          <div class="tags" id="tagList">
+            <div class="tag">教育科技創新</div>
+            <div class="tag">虛擬實境教學</div>
+            <div class="tag">AI教育應用</div>
+            <div class="tag">社交情緒學習SEL</div>
+          </div>
+        </div>
+  <!-- 新增小組照片 -->
+<div style="margin-top:16px">
+  <div>小組合照</div>
+  <div class="photo-frame">
+    <img src="{{ url_for('static', filename='group_16.PNG') }}" 
+         alt="小組合照">
+  </div>
+</div>
+
+</aside>
+  <script>
+    // ---- Simple gallery data (replace src with your real images) ----
+    const images = [
+        {src: "{{ url_for('static', filename='16-1.png') }}", alt:"主圖 1"},
+        {src: "{{ url_for('static', filename='16-2.png') }}", alt:"主圖 2"}
+    ];
+
+
+
+    const galleryImage = document.getElementById('galleryImage');
+    const thumbs = document.getElementById('thumbs');
+    let idx = 0;
+
+    let currentIndex = 0;
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateImage() {
+    galleryImage.src = images[currentIndex].src;
+    galleryImage.alt = images[currentIndex].alt;
+    }
+
+    prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+    });
+
+
+
+    function renderThumbs(){
+      thumbs.innerHTML = "";
+      images.forEach((it,i) => {
+        const btn = document.createElement('button');
+        if(i===0) btn.classList.add('active');
+        const im = document.createElement('img');
+        im.src = it.src;
+        im.alt = it.alt;
+        btn.appendChild(im);
+        btn.addEventListener('click', () => { showAt(i); });
+        thumbs.appendChild(btn);
+      });
+    }
+
+    function showAt(i){
+      idx = i;
+      galleryImage.src = images[i].src;
+      galleryImage.alt = images[i].alt;
+      // update active thumb
+      Array.from(thumbs.children).forEach((b,bi)=> b.classList.toggle('active', bi===i));
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      idx = (idx - 1 + images.length) % images.length; showAt(idx);
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      idx = (idx + 1) % images.length; showAt(idx);
+    });
+
+    // auto-rotate
+    let auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500);
+    // pause on hover
+    const gallery = document.getElementById('gallery');
+    gallery.addEventListener('mouseenter', ()=> clearInterval(auto));
+    gallery.addEventListener('mouseleave', ()=> auto = setInterval(()=>{ idx = (idx+1)%images.length; showAt(idx); }, 4500));
+
+    // initial
+    renderThumbs();
+    showAt(0);
+
+    // Buttons (demo handlers)
+    document.getElementById('visit-btn').addEventListener('click', ()=> alert('這裡可連到實際預覽頁面或遠端連結。'));
+    document.getElementById('downloadBtn').addEventListener('click', ()=> alert('下載資料 (範例)。'));
+    document.getElementById('githubBtn').addEventListener('click', ()=> window.open('https://github.com/', '_blank'));
+  </script>
+</body>
+</html>

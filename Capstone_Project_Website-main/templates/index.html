@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Odyssey: 未來之旅</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-primary: #0a0e1a;
+      --bg-secondary: rgba(15, 25, 45, 0.85);
+      --bg-card: rgba(20, 35, 65, 0.92);
+      --text-primary: #ffffff;
+      --text-secondary: #b8d4ff;
+      --text-muted: #7a9bd9;
+      --accent-blue: #00d4ff;
+      --accent-cyan: #00ffff;
+      --accent-purple: #8a2be2;
+      --glow-blue: rgba(0, 212, 255, 0.3);
+      --glow-cyan: rgba(0, 255, 255, 0.4);
+      --border-glow: rgba(0, 212, 255, 0.5);
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    html, body { 
+      height: 100%; 
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    body {
+      background: url("/static/images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 深色遮罩層增強可讀性 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, 
+        rgba(10, 14, 26, 0.7) 0%, 
+        rgba(15, 25, 45, 0.8) 50%, 
+        rgba(20, 35, 65, 0.7) 100%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* 增強科技感的粒子效果 */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, var(--accent-cyan), transparent),
+        radial-gradient(1px 1px at 40px 70px, var(--accent-blue), transparent),
+        radial-gradient(2px 2px at 90px 40px, rgba(138, 43, 226, 0.6), transparent),
+        radial-gradient(1px 1px at 130px 80px, var(--accent-cyan), transparent),
+        radial-gradient(2px 2px at 160px 30px, rgba(0, 212, 255, 0.4), transparent);
+      background-repeat: repeat;
+      background-size: 200px 150px;
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    @keyframes float {
+      0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+      }
+      50% { 
+        transform: translateY(-10px) rotate(1deg);
+        opacity: 0.6;
+      }
+    }
+
+    /* 主容器 */
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* 卡片設計 */
+    .card {
+      width: min(900px, 95vw);
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(0, 212, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      padding: 3rem 2rem;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card.narrow {
+      width: min(750px, 95vw);
+    }
+
+    /* 卡片光暈效果 */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(0, 212, 255, 0.03),
+        transparent,
+        rgba(0, 255, 255, 0.03),
+        transparent
+      );
+      animation: rotate 8s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 標題樣式 */
+    .title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 20px var(--glow-cyan);
+      position: relative;
+      z-index: 1;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 問題區塊 */
+    .qblock {
+      background: rgba(30, 45, 80, 0.6);
+      border: 2px solid transparent;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      backdrop-filter: blur(10px);
+      background-image: linear-gradient(rgba(30, 45, 80, 0.6), rgba(30, 45, 80, 0.6)),
+                        linear-gradient(135deg, var(--border-glow), transparent, var(--border-glow));
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    /* 按鈕樣式 */
+    .btn {
+      display: block;
+      width: min(600px, 100%);
+      margin: 0.8rem auto;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, 
+        rgba(0, 212, 255, 0.1),
+        rgba(0, 255, 255, 0.05)
+      );
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 212, 255, 0.2), 
+        transparent
+      );
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-cyan);
+      box-shadow: 
+        0 10px 25px var(--glow-blue),
+        0 0 20px var(--glow-cyan);
+      background: linear-gradient(135deg, 
+        rgba(0, 212, 255, 0.2),
+        rgba(0, 255, 255, 0.15)
+      );
+    }
+
+    .btn.selected {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: var(--bg-primary);
+      border-color: var(--accent-cyan);
+      box-shadow: 
+        0 15px 30px var(--glow-cyan),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* 提交按鈕 */
+    #submitBtn {
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      border: 2px solid var(--accent-cyan);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #submitBtn:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        0 15px 35px rgba(138, 43, 226, 0.4),
+        0 0 30px var(--glow-cyan);
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    }
+
+    /* 結果頁面樣式 */
+    .result-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-sub {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* 標籤樣式 */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      color: var(--accent-cyan);
+      font-size: 0.9rem;
+      margin: 0.25rem;
+      font-weight: 500;
+    }
+
+    /* 專題連結按鈕 */
+    .link-btn {
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      background: linear-gradient(135deg, 
+        rgba(0, 212, 255, 0.05),
+        rgba(0, 255, 255, 0.02)
+      );
+      color: var(--text-primary);
+      padding: 1.2rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 0.8rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    .link-btn:hover {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: var(--bg-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px var(--glow-cyan);
+    }
+
+    /* 專題詳情頁 */
+    .pill {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 212, 255, 0.4);
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .proj-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .proj-meta {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .proj-sec {
+      margin: 1.5rem 0;
+    }
+
+    .proj-sec h4 {
+      color: var(--accent-cyan);
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .proj-sec p {
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* 分隔線 */
+    .hr {
+      height: 1px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        var(--border-glow), 
+        transparent
+      );
+      margin: 2rem 0;
+    }
+
+    /* 底部按鈕區 */
+    .backbar {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .home-btn {
+      width: auto;
+      min-width: 160px;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* 錯誤提示 */
+    .footer-note {
+      color: #ff6b6b;
+      text-align: center;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: 8px;
+    }
+
+    /* 響應式設計 */
+    @media (max-width: 768px) {
+      .card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .qblock {
+        padding: 1.5rem;
+      }
+      
+      .btn {
+        font-size: 0.95rem;
+        padding: 0.9rem 1.2rem;
+      }
+      
+      .backbar {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* 減少動畫偏好設定 */
+    @media (prefers-reduced-motion: reduce) {
+      .btn, #submitBtn, .link-btn {
+        transition: none;
+      }
+      
+      .btn:hover, #submitBtn:hover, .link-btn:hover {
+        transform: none;
+      }
+      
+      body::after, .card::before {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section id="view-home" class="card" aria-live="polite">
+      <h1 class="title">Tech Odyssey: 未來之旅</h1>
+      <p class="subtitle">探索科技與人文的無限可能</p>
+
+      <div class="qblock">
+        <div class="section-title">1. 在星際航行中，你更想升級哪種能力？</div>
+        <div class="btn-row">
+          <button class="btn" data-q="q1" data-v="導航系統">導航系統：策略思考與科技工具</button>
+          <button class="btn" data-q="q1" data-v="船員管理">船員管理：人際溝通與團隊發展</button>
+        </div>
+      </div>
+
+      <div class="qblock">
+        <div class="section-title">2. 你的探索方式像哪一種太空旅人？</div>
+        <div class="btn-row">
+          <button class="btn" data-q="q2" data-v="資料派">資料派：用數據與科技了解世界</button>
+          <button class="btn" data-q="q2" data-v="人本派">人本派：從人性與需求設計未來</button>
+        </div>
+      </div>
+
+      <div class="qblock">
+        <div class="section-title">3. 如果你正航行在未來宇宙中，你的首要任務是？</div>
+        <div class="btn-row">
+          <button class="btn" data-q="q3" data-v="打造工具">打造工具與系統來解決問題</button>
+          <button class="btn" data-q="q3" data-v="引導夥伴">引導夥伴發現自我與成長</button>
+        </div>
+      </div>
+
+      <p id="pending" class="footer-note" style="display:none">尚有題目未作答，請繼續你的選擇</p>
+      <div class="backbar">
+        <button id="submitBtn">提交問卷</button>
+      </div>
+    </section>
+
+    <section id="view-result" class="card narrow" style="display:none">
+      <h2 class="result-title">興趣取向分析</h2>
+      <p class="result-sub">推薦專題</p>
+      <div id="chips" class="chipbar" style="text-align:center; margin-bottom:10px"></div>
+      <div id="resultList" class="result-choice"></div>
+      <div class="backbar">
+        <button class="btn home-btn" onclick="resetAndGoHome()">返回首頁</button>
+      </div>
+    </section>
+
+    <section id="view-project" class="card narrow" style="display:none">
+      <div class="pill" id="projCat">分類</div>
+      <h3 class="proj-title" id="projTitle">專題標題</h3>
+      <p class="proj-meta" id="projTeam"></p>
+      <div id="projBody"></div>
+      <div class="hr"></div>
+      <div class="backbar">
+        <button class="btn" onclick="goto('result')">上一頁</button>
+        <button class="btn" onclick="resetAndGoHome()">返回首頁</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const $ = (sel)=>document.querySelector(sel);
+    const $$ = (sel)=>[...document.querySelectorAll(sel)];
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      let answers = { q1:null, q2:null, q3:null };
+
+      // 重置功能
+      window.resetAndGoHome = function(){
+        answers = { q1:null, q2:null, q3:null };
+        $$(".btn[data-q]").forEach(btn => btn.classList.remove('selected'));
+        const pend = $('#pending');
+        if(pend) pend.style.display='none';
+        goto('home');
+      }
+
+      $$(".btn[data-q]").forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const q = btn.dataset.q, v = btn.dataset.v;
+          answers[q] = v;
+          $$(`.btn[data-q="${q}"]`).forEach(b=>b.classList.remove('selected'));
+          btn.classList.add('selected');
+          const pend = $('#pending');
+          if(pend) pend.style.display='none';
+        });
+      });
+
+      const submit = $('#submitBtn');
+      if(submit){
+        submit.addEventListener('click',()=>{
+          if(!answers.q1 || !answers.q2 || !answers.q3){
+            const pend = $('#pending');
+            if(pend) pend.style.display='block';
+            return;
+          }
+          showResult(answers);
+        });
+      }
+
+      window.goto = function(view){
+        $('#view-home').style.display = (view==='home')? 'block':'none';
+        $('#view-result').style.display = (view==='result')? 'block':'none';
+        $('#view-project').style.display = (view==='project')? 'block':'none';
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+
+      const keyToLetter = {
+        '導航系統|資料派|打造工具':'A',
+        '導航系統|資料派|引導夥伴':'B',
+        '導航系統|人本派|打造工具':'C',
+        '導航系統|人本派|引導夥伴':'D',
+        '船員管理|資料派|打造工具':'E',
+        '船員管理|資料派|引導夥伴':'F',
+        '船員管理|人本派|打造工具':'G',
+        '船員管理|人本派|引導夥伴':'H'
+      };
+
+      const categories = {
+        'A': { name:'導航系統 → 資料派 → 打造工具' },
+        'B': { name:'導航系統 → 資料派 → 引導夥伴' },
+        'C': { name:'導航系統 → 人本派 → 打造工具' },
+        'D': { name:'導航系統 → 人本派 → 引導夥伴' },
+        'E': { name:'船員管理 → 資料派 → 打造工具' },
+        'F': { name:'船員管理 → 資料派 → 引導夥伴' },
+        'G': { name:'船員管理 → 人本派 → 打造工具' },
+        'H': { name:'船員管理 → 人本派 → 引導夥伴' }
+      };
+
+      const projects = {
+        '以物理知識輔助的深度學習方法預測分子束磊晶成長之GaAsBi中Bi成分': {
+          id: 'gaasbi',
+          cat: 'A',
+          team: '組員：倪咸安、鄭銘霆',
+          intro: '我們的專題用 AI 幫忙預測材料成分，讓研究不必一直靠試驗猜測，更快找到答案。透過智慧分析，我們希望讓半導體製程更省時、更有效率，也展現 AI 在科學研究中的新可能。',
+          motive: '隨著科技的快速發展，半導體材料在光電與資訊產業中扮演著越來越重要的角色。其中，GaAsBi（鎵砷鉍）材料因具備可調控的能隙特性，而在紅外線發光元件與太陽能電池等應用上具有極大的潛力。然而，GaAsBi 在實際製程上的一大挑戰是 鉍（Bi）含量非常難以精準控制。傳統方法往往需要依靠大量的反覆實驗，透過調整基板溫度、元素束流壓力等成長條件，一次次測試才能找出合適的組成比例。這樣的過程不僅耗費時間與人力，也會增加實驗成本，對研究效率造成限制。',
+          desc: '本專題的核心目標，是利用人工智慧（Artificial Intelligence, AI）來協助預測半導體材料 GaAsBi（鎵砷鉍） 中的 鉍（Bi）含量。在本研究中，我們採用了 Physics-Informed Neural Networks（PINNs），這是一種結合物理公式與神經網路的深度學習方法。與一般 AI 模型僅依靠數據不同，PINNs 能夠同時學習實驗數據與物理方程，讓模型在資料有限的情況下仍能保持準確，並具備物理上的可解釋性。'
+        },
+        'TradeNova-結合GenAI的新手智慧投資平台': {
+          id: 'tradenova',
+          cat: 'A',
+          team: '組員：許家寧、黃宇謙、王芳瑩、梁蘶瀚、吳宜庭',
+          intro: 'k線圖？MACD策略？我都看不懂......TradeNova解決股票小白對於投資市場的陌生與恐懼，讓你無縫銜接實戰股市！',
+          motive: '目前市面上缺乏針對零基礎使用者設計的模擬投資平台，導致許多初學者必須經歷多次嘗試與失敗，才能逐步累積投資經驗。因此本專題旨在打造一個結合Python Flask與Gemini AI的智慧投資學習平台，協助新手投資者在無基礎的情況下也能有效入門投資，讓投資變得更簡單且可學習。',
+          desc: '使用者只需根據自身需求，填寫設計好的表單，系統便可推薦合適股票，並提供報酬率模擬計算功能，接著可使用模擬交易系統進行股票的模擬買賣，搭配20種交易策略函數，輸入股票與選擇指定交易策略，即可獲得該股票套用指定策略的分析結果，若有任何不理解之處，可將分析結果提交給AI，即可得到策略的各項數值意義與股票分析結果，AI也會在分析後反問使用者相關問題，確認使用者的學習狀況，實現互動式學習。'
+        },
+        '遠端影像辨識串流與機械手臂物聯網結合快速AI輔助之系統與應用': {
+          id: 'remote-robot',
+          cat: 'B',
+          team: '組員：孫士傑、廖誌晨、吳承翰、郭翰文',
+          intro: '本專題結合YOLO演算法與六軸機械手臂，打造具即時辨識與遠端操作能力的智慧平台，支援多任務物件組裝與教學應用，強化異地協作效率與工程實作臨場感，展現高度擴充與實用潛力。',
+          motive: '隨著人工智慧與物聯網（IoT）技術的快速發展，智慧操控與影像辨識系統在各領域中的應用日益廣泛，不僅改變了產業運作模式，也對教育與工程訓練帶來深遠影響。特別是在COVID-19疫情之後，遠距協作與線上教學的需求急劇上升，傳統以面對面為主的教學與實作課程受到極大挑戰，許多學生與教師反映在線上操作過程中缺乏「實體互動」與「臨場參與感」，導致學習效果不彰、技術掌握度下降。',
+          desc: '本專題致力於開發一套融合「YOLO 影像辨識演算法」與「六軸機械手臂控制」的遠端作業系統，提供具備即時辨識、操作指引與靈活控制能力的智慧平台。本系統採用模組化設計理念，硬體架構方面以六自由度機械手臂為核心，透過六顆伺服馬達分別控制旋轉、肩部、肘部、腕部等部位，實現空間中高靈活度的移動與操作。'
+        },
+        'AI面試語言解碼-揭開受試者的真實面貌': {
+          id: 'lexia',
+          cat: 'B',
+          team: '組員：董承翰、周俊辰、石名軒、林易辰、陳俊翰',
+          intro: 'LexiAi 是一款 AI 面試系統，能快速、大量進行面試分析。我們只會透過文字進行分析，以避免外表、口音或語氣等因素影響判斷，使評估更客觀、更公平，讓分析迅速的同時不失精準度。',
+          motive: '根據104人力銀行調查，2025年初企業職缺達124萬，但僅有55萬求職者，缺口逼近69萬人。企業普遍採用快速面試、快速錄取策略，卻也因此提高了錯誤錄用的風險與後續的財務、法律代價。然而現有多數系統高度依賴表情與語調，難以跨文化、跨族群公平應用，且決策黑箱問題造成信任危機。',
+          desc: '本專題以語言內容為核心，打造一套兼具公平性、解釋性與實用性的 AI 面試系統，協助企業從「看人說話」轉向「看說話的內容」，建立具一致性與可追溯性的初階選才新模式。技術創新重點在於「語言邏輯 + 職能結構」的整合：結合心理學理論與 Chain-of-Thought 推理策略，使模型不僅能判斷說了什麼，更能判斷「說得怎麼樣」與「為何這樣說」，成為數據化人才決策的可信任助力。'
+        },
+        '健康生活的食譜圖像識別軟體「Snap Plate」': {
+          id: 'snap-plate',
+          cat: 'C',
+          team: '組員：鄭意平、余永興、黃新瑞、洪麗娜、黃順源',
+          intro: '我們的專題是一個智慧食譜推薦平台，只要用手機掃描冰箱裡的食材，就能立刻獲得適合的料理建議，還附上詳細的步驟說明，讓煮飯變得輕鬆又有趣。無論你是料理新手，還是每天煩惱晚餐吃什麼的人，都能在這裡找到靈感，讓每一餐都充滿驚喜與溫度！',
+          motive: '在現代生活步調快速的情況下，許多人常常面臨「不知道吃什麼」、「不會煮飯」或「冰箱有食材卻不知道怎麼搭配」的困擾。尤其是學生或上班族，時間有限，卻又希望能吃得健康又省錢。我們發現，雖然市面上有許多食譜網站或教學影片，但大多需要使用者自己先決定料理，再去準備食材，過程繁瑣也容易造成食材浪費。',
+          desc: '本專題旨在開發一款結合影像辨識與食譜推薦功能的智慧料理平台，讓使用者能夠依據手邊已有的食材快速獲得適合的料理建議。使用者只需透過手機或電腦上傳食材照片，系統將運用影像辨識技術辨別圖中的食材種類，並從資料庫中找出對應的食譜。食譜內容包含材料用量、步驟教學，部分也會搭配圖片或影片輔助，方便即使是新手也能輕鬆上手。'
+        },
+        '智慧路牌系統技術與應用探究': {
+          id: 'smart-sign',
+          cat: 'C',
+          team: '組員：莊孟喬、張哲睿、盧昱廷、徐鉉秝、陳芃屹',
+          intro: '找教室、問路線、看天氣，通通交給我！我們用互動面板、會轉向的路牌和溫暖的路線指引，陪你一起在師大安心走對每一步。',
+          motive: '結合區域網路連線、資料庫應用與穩定機構設計，搭配互動面板、可轉向路牌與路線圖指引，溫暖陪你在師大走對每一步。',
+          desc: '本專題打造一套結合實體路牌與數位科技的「智慧路牌系統」，專為臺師大校園導覽與服務需求而設計！系統結合即時天氣資訊、校園活動訊息與緊急公告，讓大家掌握最新動態。針對校慶、開放日、展演活動等大型活動，自動更新指標方向與活動資訊，提升來訪體驗。透過網頁平台即時更新路牌內容，並與ESP32連線控制硬體裝置，打造低成本、高效率的校園智慧設施。'
+        },
+        'PiCare': {
+          id: 'picare',
+          cat: 'D',
+          team: '組員：劉彥谷、李勻歆、林冠秀、楊芸蓁、李騰騏',
+          intro: 'PiCare 是一款全方位的健康管理平台，結合 AI 技術，讓使用者能以最簡單的方式，拍照即可完整記錄血壓、用藥資訊與回診提醒等重要健康資料。',
+          motive: '因應全球個人照護及慢性病追蹤需求日依增長，PiCare 團隊欲提出一個結合智慧科技與人本關懷的健康管理解決方案，期望透過創新設計，讓日常的健康照護變得更簡單、直覺且充滿溫度。',
+          desc: 'PiCare 是一款全方位醫療追蹤及管理的平台，提供照護者與被照護者集中、簡易、精準的使用流程。透過安心拍 AI 使生命徵象、用藥資訊、回診提醒，得以透過拍照即完成紀錄；並基於 PiAI 精準檢索、寫入個案資訊，以及自然語言互動，達到即時監管與資訊確認，此外，亦可基於紀錄資訊生成回診報告。'
+        },
+        '輔助中小學生學習運算思維之AI學習同伴的開發與評估': {
+          id: 'aibuddy',
+          cat: 'D',
+          team: '組員：詹喬崴、林元方、黃品嘉、陳芊伃',
+          intro: '本專題打造一個能陪伴學生思考的AI學習夥伴，透過對話引導學習，不直接給答案，幫助學生培養思考力。結合網站與行動裝置，讓學習隨時隨地都能開始！',
+          motive: '隨著人工智慧技術迅速發展，如ChatGPT等等應用日益普及，使用者在依賴AI協助學習與解決問題的同時，忽略了自主思考、學習的過程，進而可能引發後設認知障礙的問題。為了有效地培養學生的運算思維與AI素養，本專題致力於開發一款基於引導式教學法的AIBuddy學習同伴為目標，透過互動式對話設計，激發學生的深度思考與提升問題解決能力。',
+          desc: '本專題以「引導式教學法」為核心理念，結合 GROW 模型（Goal、Reality、Options、Will）作為對話架構，設計出促進學生思辨與自主學習的AIBuddy學習同伴系統。透過反問、資訊提示與有邏輯性的對話引導，幫助學生思考而非直接給答案，進一步強化其問題解決與反思能力。'
+        },
+        '未來造物島': {
+          id: 'maker-island',
+          cat: 'E',
+          team: '組員：林庭妤、安珮均、吳易軒',
+          intro: '我們提出一種新方法，透過語音轉文字與 AI 協助老師記錄學生討論，還能自動留下學習紀錄，快速掌握每位學生的參與與想法，評量更輕鬆！',
+          motive: '在現今教育現場中，生活科技課程強調學生合作與問題解決的歷程，但教師在評量學生討論過程時，往往面臨諸多困難。目前多數教師的評分方式仍以考試成績與最後成品為主，著重整體成果而忽略了個別學生的參與與貢獻。此外，在評量過程中，教師難以掌握每位學生在小組討論中的實際表現，導致評分缺乏一致性與公平性，加上需耗費大量時間與精力進行紀錄與統整，使得評量工作負擔沉重。',
+          desc: '在生活科技課程中，小組合作與問題解決是核心能力，但教師往往難以掌握每位學生在討論中的參與與貢獻，評量也多聚焦於最終成品，忽略了過程與個別表現。本專題提出一種結合語音轉文字與生成式 AI 的方法，協助教師紀錄並分析學生在對話任務中的思考歷程。學生只需口語表達觀點，AI 便可協助整理內容，最終產出個人化的學習歷程紀錄，幫助教師快速掌握學生的理解狀況，提升教學與評量的效率與公平性。'
+        },
+        '紙尖上的藝數': {
+          id: 'origami-math',
+          cat: 'E',
+          team: '組員：丁祺、吳孟涵、黎嘉華、李怡安、莊博宇',
+          intro: '自己動手做有趣又好玩的數學摺紙小夜燈！你知道摺紙的發展與數學息息相關嗎?甚至只需要一張紙就可以摺出一隻超複雜的中國龍！摺紙藝術遠超你的想像，快來一起認識摺紙吧！',
+          motive: '在求學階段數學往往是學生較為抗拒的科目，許多學生因其需要思考、推導的特性，對數學常常避之唯恐不及。因此，我們希望藉由摺紙這項藝術題材，讓學生可以認識藏於其中的數學知識，推廣數學的同時也推廣摺紙這項世界聞名的技藝，提升學生跨領域之綜合素養。',
+          desc: '我們的專題包含兩大部分：1.摺紙小夜燈的實作 2.紙本教材與線上摺紙介紹網站，介紹摺紙與數學之間的關聯，近代的摺紙發展與知名摺紙藝術家等資訊，並放上摺紙小夜燈的教學影片。'
+        },
+        '員工協助方案之遊戲化平台-EAPic': {
+          id: 'eapic',
+          cat: 'F',
+          team: '組員：溫苡含、李心于、何舒葦、楊思瑜、潘柔玉',
+          intro: '歡迎來到EAPic海底世界！成為我們的主角——「飯龜」，潛入海洋探索並收集神祕寶藏，最後完成關卡並修復遺跡！無論是壓力管理、家庭照顧，還是新人協助，你都能在這趟旅程中發現各種貼心的員工協助方案！',
+          motive: '本專題旨在推廣員工協助方案（EAP），提升在職者對EAP的認知與使用率。研究指出，心理狀態良好的員工在專業表現與合作方面皆較優異。然而，EAP常因參與度低與工具互動性不足而成效不彰。有鑑於此，本研究結合EAP與遊戲化設計，運用Unity開發一款沉浸式互動遊戲，主題涵蓋新進人員協助、壓力管理及家庭照顧三大核心需求，提升學習興趣與投入度。',
+          desc: '近年來，職場對員工身心健康的重視日益提升。本專題運用Unity打造一款2D第一人稱視角的沉浸式遊戲——EAPic，以「遊戲化學習」推廣員工協助方案（EAP），提升其在職場的實際應用與參與意願。玩家將扮演可愛主角「飯龜」，潛入海底冒險，探索與收集象徵EAP功能的寶藏，並完成最終任務修復遺跡。'
+        },
+        '基於LLM 聊天應用:幫助大學生解決社交困擾': {
+          id: 'wingchat',
+          cat: 'F',
+          team: '組員：陳廷安、呂沛修、劉禹岑、黃紫馨',
+          intro: '大家好！我們是 "Wingchat"，我們的專題內容主要是幫助大學生透過遊戲互動來學習如何與人進行社交互動。藉由透過不斷的與遊戲中的角色溝通、互動，讓玩家在遊戲中有實體的社交感，在現實生活中與人社交不再「社恐」，成為一個人人熱愛的社交高手！',
+          motive: '我們觀察到大學生在社交上常遇到困難，如無法融入新環境、社交冷感等。根據阿德勒心理學，社交需求是基本需求，缺乏社交技巧容易導致孤立與焦慮。因此，我們希望透過訓練 LLM 模型，協助大學生緩解社交焦慮，提升自信與心理健康。目標是開發一個基於 LLM 的聊天應用，提供模擬對話與即時回饋，強化用戶在現實社交場景中的應對能力。',
+          desc: '在大學校園中，許多學生常因缺乏社交自信、技巧不足或面對新環境感到不安，導致人際互動受阻，甚至影響心理健康。我們團隊觀察到這個日益嚴重的現象，決定結合AI技術與人本關懷，打造一個創新平台——WingChat。WingChat 是一款專為大學生設計的 AI 社交教練系統，運用經微調的本地化大型語言模型（Llama-3-Taiwan-8B-Instruct），提供擬真社交練習情境與即時、多維度的對話回饋。'
+        },
+        '樂活無齡---互動教學設計': {
+          id: 'senior-health',
+          cat: 'G',
+          team: '組員：陳柔伊、許菡容、顏志凌',
+          intro: '臺灣預估於 2025 邁入超高齡社會，因此長者的健康力是個重要的議題，我們希望能做一個互動教具，以趣味的遊戲形式搭配課程，提供給第一線人員做健康力的推廣。',
+          motive: '在挑選方向時，看到了董氏基金會食品營養中心的「無齡世代－教案及文宣徵選」，恰好組內三人對於這個議題都很有想法，因此就決定以這個競賽為基礎，設計一份能夠提升長者關於健康力（食力為主）的教案，以及一套能提升長者食力知識、肌力及腦力的互動教具。',
+          desc: '健康力包含食力、肌力、腦力，我們希望能做一個涵蓋三個健康力的互動教具，以趣味的遊戲形式搭配課程，提供給第一線人員做健康力的推廣。教具的部分外觀是一個餐盒的造型，盒中有食材感應區、LCD螢幕及六大類食物放置區，食材模型是以 3D 列印來製作，而遊戲用 Arduino RFID 模組為主，用來感應與辨識。'
+        },
+        '結合實體和數位的防災桌遊---勇者別慌！魔王的防災大考驗': {
+          id: 'disaster-game',
+          cat: 'G',
+          team: '組員：李珮宸、吳昀晏、蔡宜柔、許瑋庭',
+          intro: '你有想過防災也能邊玩邊學嗎？我們設計了一款結合感應科技與桌遊的冒險遊戲，讓孩子在歡笑中學會災害應變，輕鬆又有趣！',
+          motive: '近年全球災害頻傳，台灣亦呈上升趨勢，尤其以颱風與水災為主。然而現行小學防災教育多以靜態教材為主，缺乏互動與實作，導致學童學習興趣與實際應變能力不足。因此本研究希望透過更具互動性的教具提升防災教育成效。',
+          desc: '《勇者別慌！魔王的防災大考驗》是一款融合實體桌遊與數位互動系統的創新防災教育產品，專為9至12歲的國小學童設計。考量到台灣多災的地理環境與學童對防災演練的陌生感，我們以「勇者冒險故事」為主軸，搭配擬人化的狗狗角色與寶石收集挑戰，讓學童在遊戲中進行知識判斷與避難行動模擬，提升防災應變能力。'
+        },
+        '《內語》 Inner Speech：一場從焦慮出發，學習共處的冒險': {
+          id: 'inner-speech',
+          cat: 'H',
+          team: '組員：洪芷葳、游建佑',
+          intro: '你是否也曾在人群中感到緊張？這款遊戲帶你走進社交焦慮者的內心世界，隨角色一起成長，學習理解自己，與焦慮共處。',
+          motive: '「社恐」這個詞在台灣逐漸被認識，但對許多人來說，它仍然是一個模糊、難以具體理解的心理狀態。因此我們希望透過遊戲這樣的沉浸式媒介，讓玩家從主角的角度體驗這份情緒，藉由互動與情節推進，感受進入新環境的不安與自我掙扎。透過這款遊戲，我們希望引發玩家對焦慮情緒的理解與同理心，不論玩家本身是否具有類似經驗，都能在遊戲中找到情感的共鳴與反思的空間。',
+          desc: '本專題為一款2D橫向卷軸的動作解謎遊戲，主軸圍繞一位剛進入大學、極度社恐的新生展開。玩家將操控主角，在真實世界中面對各種社交場景（如新生訓練、社團活動），並在主角因過度緊張時，進入內心的「裡世界」。裡世界中的場景、怪物與機關皆象徵主角內在的壓力與情緒，玩家需要透過戰鬥與解謎，一步步幫助主角克服焦慮、收集「對話碎片」，最終逐漸改善其對外界的反應與心態，完成從排斥社交到逐步接受的轉變。'
+        },
+        '社交情緒學習之虛擬實境系統開發與評估': {
+          id: 'vr-sel',
+          cat: 'H',
+          team: '組員：張慎修、林軒宇、潘穎翰、陳冠宇、翁睿承',
+          intro: '我們運用虛擬實境 (VR) 打造超真實社交情境與AI影片，讓你能沉浸式地學習社交情緒，輕鬆提升情緒管理與人際互動能力，自信面對生活中的各種挑戰！',
+          motive: '現今中學生在面對情緒管理與人際互動挑戰時，常缺乏有效策略與練習機會，尤其在升學壓力之下，常出現壓力過大、衝突應對失衡等問題。社交情緒學習（SEL）強調自我覺察、自我管理、社會覺察、人際技巧與負責任決策等五大核心能力，已被證實對學生的學業表現、心理健康與人際關係皆有正向影響。然而，傳統教學手法（如簡報或影片）在培養情緒與社交技能時，較難激發學生的同理心與參與感。',
+          desc: '本專題運用虛擬實境（VR）技術與AI輔助影片兩種數位媒材，建構一套具備互動性與情境性的SEL教學系統。整體研究設計包含兩組：實驗組使用VR互動系統學習，對照組觀看AI圖像與語音合成製作的SEL教學影片，兩者皆涵蓋相同八大社交情境主題，如校園霸凌、人際衝突、作弊誘惑等。本計畫將透過SECQ、QACSE與沉浸感量表進行前後測，分析不同教學方式對學生社交情緒能力發展的影響。'
+        }
+      };
+
+      function computeLetter(a){
+        const key = `${a.q1}|${a.q2}|${a.q3}`;
+        return keyToLetter[key];
+      }
+
+      window.showResult = function(a){
+        const letter = computeLetter(a);
+        const chips = [a.q1, a.q2, a.q3].map(t=>`<span class="chip">${t}</span>`).join(' ');
+        $('#chips').innerHTML = chips;
+
+        const list = Object.entries(projects).filter(([,p])=>p.cat===letter);
+        $('#resultList').innerHTML = list.map(([name, p])=>{
+          const shortName = name.replace(/（.+?）/, '').replace(/「.+?」/, '').replace(/《.+?》/, '').replace(/---.*/, '').replace(/-.*/, '');
+          return `<button class="link-btn" onclick="openProject('${p.id}')">${shortName}</button>`
+        }).join('');
+
+        goto('result');
+      }
+
+      window.openProject = function(pid){
+        const entry = Object.values(projects).find(p=>p.id===pid);
+        if(!entry) return;
+        const projectName = Object.keys(projects).find(k=>projects[k]===entry);
+        
+        $('#projCat').textContent = (categories[entry.cat]?.name)||'';
+        $('#projTitle').textContent = projectName;
+        $('#projTeam').textContent = entry.team || '';
+        
+        const html = `
+          <div class="proj-sec"><h4>專題簡介</h4><p>${entry.intro}</p></div>
+          ${entry.motive ? `<div class="proj-sec"><h4>專題動機</h4><p>${entry.motive}</p></div>` : ''}
+          ${entry.desc ? `<div class="proj-sec"><h4>專題介紹</h4><p>${entry.desc}</p></div>` : ''}
+        `;
+        $('#projBody').innerHTML = html;
+        goto('project');
+      }
+
+      goto('home');
+    });
+  </script>
+
+</body>
+</html>

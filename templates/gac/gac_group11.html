@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>走跳永續村 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第十一組_主視覺.jpg" alt="走跳永續村" class="project-hero-image">
+        <div class="project-content">
+            <h1>走跳永續村</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>這是一款專為小學高年級生設計的桌遊，希望用遊戲把「永續發展」變得簡單又有趣。玩家在遊戲中扮演不同的產業角色，透過一、二、三級產業的合作，交換資源、運用「碳金」，一步步推動減碳行動。
+
+遊戲不只是比拼勝負，更強調 合作共好：只有彼此攜手，才能完成任務，才能一起建構出永續的未來村落。在過程中，孩子們會發現，日常生活的選擇也能影響地球的未來。
+我們希望讓環境議題不再只是課本上的名詞，而是能在歡笑與挑戰中理解與實踐「減碳」與「淨零」的重要性。走跳永續村，從遊戲開始，為 2050 淨零目標踏出第一步！🌱</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>陳明秀</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>孫郁淇、劉睿欣</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

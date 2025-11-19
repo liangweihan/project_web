@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>115級畢業聯展｜To Be Continued × Tech Odyssey</title>
+  <meta name="description" content="國立臺灣師範大學 國文傳播學系 × 科技應用與人力資源發展學系 115級畢業聯展" />
+
+  <!-- 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/landing_style.css">
+</head>
+<body>
+
+  <!-- 固定背景層：整頁鋪滿，永不移動 -->
+  <div class="bg-fixed" aria-hidden="true"></div>
+
+  <!-- 導覽列 -->
+  <div class="topbar" id="top">
+    <div class="navwrap">
+      <div class="brand">
+        <b>115級畢業聯展｜To Be Continued × Tech Odyssey</b>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#about">聯展介紹</a>
+        <a href="#faq">常見問題FAQ</a>
+        <a href="#traffic">交通資訊</a>
+        <a href="#floor">展場地圖</a>
+        <a href="#sponsor">贊助廠商</a>
+        <a href="#ig">聯展IG</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="topbar-banner">
+    <img src="/static/landing/上方工作欄_文字.png" alt="聯展導覽文字裝飾" loading="lazy" />
+  </div>
+
+  <!-- 主視覺 -->
+  <header class="hero" id="home">
+    <img class="title-mark" src="/static/landing/中間主題.png" alt="聯展標題覆蓋圖" />
+
+    <!-- 展開探索按鈕 -->
+    <a href="#dept" class="scroll-btn" onclick="scrollToDept(event)">▼ 展開探索 ▼</a>
+
+    <div class="hero-inner">
+      <div class="dept-grid" id="dept">
+        <a class="dept-link" href="{{ url_for('gac_home') }}" target="_blank" rel="noopener">
+          <img class="dept-img" src="/static/landing/圖傳按鈕.png" alt="國文傳播學系 To Be Continued" />
+        </a>
+        <a class="dept-link" href="{{ url_for('tech_home') }}" target="_blank" rel="noopener">
+          <img class="dept-img" src="/static/landing/科技按鈕.png" alt="科技應用與人資發展學系 Tech Odyssey" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 聯展介紹 -->
+  <section id="about" class="section">
+    <!-- ✅ 黏住頂端的淡出漸層（承接 hero 的灰黑遮罩） -->
+    <div class="section-fade" aria-hidden="true"></div>
+
+    
+
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="glass">
+      <h2>常見問題 FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>需要購票或預約入場嗎？</summary>
+          <div class="a">免費入場，無需預約。人潮尖峰時段會實施流量管控。</div>
+        </details>
+        <details>
+          <summary>可以中途離場、再入場嗎？</summary>
+          <div class="a">可以，出入自由，但請遵守場內秩序與動線指示。</div>
+        </details>
+        <details>
+          <summary>展覽可以拍照或錄影嗎？</summary>
+          <div class="a">可自由拍攝，但請勿使用閃光燈或腳架，以免影響作品與他人觀賞。</div>
+        </details>
+        <details>
+          <summary>是否可攜帶飲食、是否有無障礙動線？</summary>
+          <div class="a">展場內請勿飲食；提供電梯與無障礙坡道。</div>
+        </details>
+        
+        <details>
+          <summary>展覽適合兒童或長者參觀嗎？</summary>
+          <div class="a">歡迎各年齡層觀展，並設有電梯與無障礙坡道。</div>
+        </details>
+        <details>
+          <summary>有提供停車位嗎？</summary>
+          <div class="a">校區內車位有限，建議搭乘大眾運輸；可利用附近公有停車場（師大路停車場、龍泉停車場）。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 交通資訊 -->
+  <section id="traffic" class="section">
+    <div class="glass">
+      <h2>交通資訊</h2>
+      <div class="info-grid">
+        <div>
+          <iframe class="map" loading="lazy" allowfullscreen
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.1855270096257!2d121.52752387515784!3d25.027777177820443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9843e366efb%3A0x4c1a63efd9765eaf!2z5ZyL56uL6Ie654Gj5bir56-E5aSn5a24LeW4q-Wkp-e-juihk-mkqA!5e0!3m2!1szh-TW!2stw!4v1762157734775!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="kv">
+          <div><b>時間</b><br>11/28(五) 11/29(六) : 10:00 ~ 17:00
+            <br>11/30(日) : 10:00 ~ 12:00</div>
+          <div><b>地址</b><br>台北市大安區和平東路一段129號 美術館3F</div>
+          <div><b>交通方式</b><br>搭乘捷運 : <br>1.由捷運古亭站出發： 中和新蘆線(橘線)、松山新店線(綠線)<br>
+          出站 : 5號出口<br>
+          步行：直行約十分鐘可抵達圖書館校區綜合大樓，入口位於師大路與和平東路交叉口附近，依照指示地版貼紙進入大樓後，前往美術館3F。<br><br>
+          2.由捷運台電大樓站出發： 松山新店線(綠線)<br>出站 : 3號出口<br>步行：從師大路直行約十分鐘，可抵達圖書館校區綜合大樓，入口位於師大路與和平東路交叉口附近，依照指示地貼進入大樓後，前往美術館3F。
+          <br><br>搭乘公車 : <br>18、235、237、278、295、672、907、和平幹線至「師大站」。
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 展場地圖 -->
+  <section id="floor" class="section">
+  <div class="glass">
+    <h2>展場地圖</h2>
+    <img src="/static/map new.jpg" alt="展場地圖" class="floor-img" loading="lazy">
+  </div>
+</section>
+
+
+  </section>
+
+  <!-- 贊助廠商 -->
+<section id="sponsor" class="section">
+  <div class="glass">
+    <h2>贊助廠商</h2>
+
+    <div class="sponsor-grid">
+      <!-- ✅ 依序放入你的 logo 檔案 -->
+      <div class="sponsor">
+        <img src="/static/landing/89.png" alt="贊助廠商1" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/ele.png" alt="贊助廠商2" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/game.png" alt="贊助廠商3" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/gillo.png" alt="贊助廠商4" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/swan.png" alt="贊助廠商5" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/original.webp" alt="贊助廠商6" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/printer.png" alt="贊助廠商7" loading="lazy">
+      </div>
+      <div class="sponsor">
+        <img src="/static/landing/com.png" alt="贊助廠商8" loading="lazy">
+      </div>
+    </div>
+
+    
+  </div>
+</section>
+
+
+  <!-- IG -->
+<section id="ig" class="section">
+  <div class="glass">
+    <h2>聯展 Instagram</h2>
+    <p style="text-align:center; margin-bottom:1rem;">
+      <a href="https://www.instagram.com/ntnutahrd115_tech_odyssey?igsh=MXA4azk1aXZoYjB2dw=="
+        target="_blank" rel="noopener"
+        class="ig-btn">
+        前往官方 Instagram
+      </a>
+
+    </p>
+
+    <div class="ig-grid">
+      <!-- 第一張貼文 -->
+      <iframe src="https://www.instagram.com/p/DOVL-Rgj8Og/embed"
+              allowtransparency="true" frameborder="0" scrolling="no"
+              width="100%" height="420"
+              style="border-radius:14px; background:rgba(255,255,255,0.06);"></iframe>
+
+      <!-- 第二張貼文 -->
+      <iframe src="https://www.instagram.com/p/DOVL8mXD7Hn/embed"
+              allowtransparency="true" frameborder="0" scrolling="no"
+              width="100%" height="420"
+              style="border-radius:14px; background:rgba(255,255,255,0.06);"></iframe>
+
+      <!-- 第三張貼文 -->
+      <iframe src="https://www.instagram.com/p/DOVL4Wlj9cg/embed"
+              allowtransparency="true" frameborder="0" scrolling="no"
+              width="100%" height="420"
+              style="border-radius:14px; background:rgba(255,255,255,0.06);"></iframe>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    © 2025 師大 115級 畢業聯展 — To Be Continued × Tech Odyssey
+  </footer>
+
+  <!-- JS -->
+  <script src="/static/landing_script.js"></script>
+</body>
+</html>

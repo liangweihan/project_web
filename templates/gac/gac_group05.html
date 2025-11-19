@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心願收藏館 | 圖傳系115級畢業展</title>
+    <link rel="stylesheet" href="/static/gac/gac_group_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('gac_home') }}"><img src="/static/gac/logo.png" alt="GAC Logo" class="logo"></a>
+            <div class="logo-text">Department of <br> Graphic Arts <br> and <br> Communication</div>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+                <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+                <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+                <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="{{ url_for('gac_home') }}#home">首頁</a></li>
+            <li><a href="{{ url_for('gac_home') }}#intro">專展介紹</a></li>
+            <li><a href="{{ url_for('gac_home') }}#works">全部作品</a></li>
+            <li><a href="{{ url_for('gac_home') }}#about">關於圖傳系</a></li>
+        </ul>
+    </div>
+
+    <div class="project-detail-container">
+        <img src="/static/gac/圖傳系_第五組_主視覺.png" alt="心願收藏館" class="project-hero-image">
+        <div class="project-content">
+            <h1>心願收藏館</h1>
+            <hr>
+            <div class="project-section">
+                <h3>作品介紹</h3>
+                <p>願望，是我們對未來的小小想像，是那些藏在心裡、說不出口或者還在醞釀的幻想。
+它可以很簡單，也可以很複雜，有時甚至只是希望今天能過得稍微順利一點。
+
+我們很好奇，如果把願望「具象化」，它會是什麼樣子？
+會是一個可愛的生物？實用的小道具？還是帶點奇想的幻想物件呢？
+又或者，願望真的有辦法被實現，它會變成什麼模樣？
+
+因此，我們創作了 「心願收藏館」——一個可以自由走動的虛擬展覽空間，展示我們設計的各種願望道具 3D 模型。
+每個道具都源自我們的想像，對應一個小小的願望，呈現我們心裡對願望的理解和幻想。</p>
+            </div>
+            <div class="project-section">
+                <h3>指導教授</h3>
+                <div>張晏榕</div>
+            </div>
+            <div class="project-section">
+                <h3>小組成員</h3>
+                <div>黃皙、柯潔蓉、劉丞庭</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/gac/gac_main.js"></script>
+</body>
+</html>

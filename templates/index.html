@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Odyssey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/three-dots@0.2.0/dist/three-dots.min.css">
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-bg"></div>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='galaxy.jpg') }}" alt="TAHRD Logo" class="logo" style="height: 60px; width: auto;">
+            <div class="logo-text">
+                <div style="font-family:'Times New Roman', Times, serif ;">115 TAHRD</div>
+                <div>畢業專展</div>
+            </div>
+        </div>
+        <div class="nav-links"></div>
+        <ul>
+            <li><a href="#home" class="nav-link" title="首頁">首頁</a></li>
+            <li><a href="#intro" class="nav-link" title="專展介紹">專展介紹</a></li>
+            <li><a href="#works" class="nav-link" title="作品集">作品集</a></li>
+            <li><a href="#about" class="nav-link" title="關於科技系">關於科技系</a></li>
+            <li><a href="#games" class="nav-link" title="互動遊戲">互動遊戲</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#home" class="mobile-nav-link" title="首頁">首頁</a></li>
+            <li><a href="#intro" class="mobile-nav-link" title="專展介紹">專展介紹</a></li>
+            <li><a href="#works" class="mobile-nav-link" title="作品集">作品集</a></li>
+            <li><a href="#about" class="mobile-nav-link" title="關於科技系">關於科技系</a></li>
+            <li><a href="#games" class="mobile-nav-link" title="互動遊戲">互動遊戲</a></li>
+        </ul>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="home-content">
+            <div class="home-title-container">
+                <span class="home-title " data-text="Tech Odyssey:" style="font-family:'Times New Roman', Times, serif ;">Tech Odyssey:</span>
+                <span class="home-title " data-text="未來之旅">未來之旅</span>
+                <div class="home-subtitle">探索科技與人文的無限可能</div>
+                <div class="tech-line"></div>
+            </div>
+            
+            <div class="home-cta">
+                <a href="#intro" class="cta-button" title="點擊此處探索更多專題展覽內容">
+                    <span>探索專展</span>
+                    <svg class="cta-arrow" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="footer-text">
+            <p>2025 國立臺灣師範大學<br>科技應用與人力資源發展學系</p>
+        </div>
+        
+        <div class="scroll-indicator" title="向下滾動以查看更多我們的專展內容">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Intro Section -->
+    <div id="intro" class="section-title" data-aos="fade-right" data-aos-delay="0" data-aos-once="false">專展介紹</div>
+    <section id="intro" class="section intro-section">
+        <div class="intro-container">
+            <div class="intro-card rounded-box" data-aos="fade-up" data-aos-delay="0" data-aos-once="false" title="關於專展">
+                <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="card-glow"></div>
+                <h3>專展介紹</h3>
+                <p>
+                    本次專題展旨在呈現本系學生四年學習歷程的成果與結晶，作品內容涵蓋專業知識、創新思維及團隊協作，展現學生將理論落實於實務的能力。透過此次展覽，不僅可窺見學生於探索與實踐過程中的努力與成長，更能彰顯本系教學特色與發展方向。期盼參展學生能夠藉由這次專題深化社會各界對本系的認識與理解，並促進師生與社會各界的交流與合作，共同追求專業進步與自我突破。...
+                </p>
+                <div class="card-decoration"></div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </div>
+            <div class="intro-card rounded-box" data-aos="fade-up" data-aos-delay="0" data-aos-once="false" title="專展理念">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <div class="card-glow"></div>
+                <h3>專展理念</h3>
+                <p>
+ 「Tech Odyssey」是我們這次畢業專題展覽的主題，象徵一場探索科技無限可能的旅程。展覽融合了當代科技與人文思維，展現創新實踐所勾勒出的未來藍圖。參觀者將猶如置身於科技航行之中，隨著展品的引導，穿梭於智慧應用、互動體驗與數位藝術的空間，親身感受科技如何突破疆界，並為人類生活開創嶄新的想像與可能性。                </p>
+                <div class="card-decoration"></div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Works Section -->
+    <div id="works" class="section-title" data-aos="fade-right" data-aos-delay="0" data-aos-once="false">作品集</div>
+    <section id="works" class="section works-section">
+        <div class="works-filter" data-aos="fade-up" data-aos-delay="0" data-aos-once="false">
+            <button class="filter-btn active" data-filter="category1" title="分類一">分類一</button>
+            <button class="filter-btn" data-filter="category2" title="分類二">分類二</button>
+            <button class="filter-btn" data-filter="category3" title="分類三">分類三</button>
+            <button class="filter-btn" data-filter="category4" title="分類四">分類四</button>
+            <button class="filter-btn" data-filter="category5" title="分類五">分類五</button>
+            <button class="filter-btn" data-filter="category6" title="分類六">分類六</button>
+            <button class="filter-btn" data-filter="category7" title="分類七">分類七</button>
+            <button class="filter-btn" data-filter="category8" title="分類八">分類八</button>
+        </div>
+        <div class="works-grid" data-aos="fade-up" data-aos-delay="0" data-aos-once="false">
+            <a href="{{ url_for('group1_1') }}" class="work-card" data-category="category1" title="點擊查看更多作品1-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_1.png') }}" alt="作品1-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>以物理知識輔助的深度學習方法預測分子束磊晶成長之GaAsBi中Bi成分</h4>
+                    <p>我們的專題用 AI 幫忙預測材料成分，讓研究不必一直靠試驗猜測，更快找到答案。透過智慧分析，我們希望讓半導體製程更省時、更有效率，也展現 AI 在科學研究中的新可能。</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group1_2') }}" class="work-card" data-category="category1" title="點擊查看更多作品1-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_2.png') }}" alt="作品1-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>TradeNova 智慧投資平台</h4>
+                    <p>TradeNova解決股票小白對於投資市場的陌生與恐懼，讓你無縫銜接實戰股市！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group2_1') }}" class="work-card" data-category="category2" title="點擊查看更多作品2-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_3.png') }}" alt="作品2-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>遠端影像辨識串流與機械手臂物聯網結合快速AI輔助之系統與應用</h4>
+                    <p>本專題結合YOLO演算法與六軸機械手臂，打造具即時辨識與遠端操作能力的智慧平台，支援多任務物件組裝與教學應用，強化異地協作效率與工程實作臨場感，展現高度擴充與實用潛力</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group2_2') }}" class="work-card" data-category="category2" title="點擊查看更多作品2-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_4.png') }}" alt="作品2-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>AI面試語言解碼-揭開受試者的真實面貌</h4>
+                    <p>LexiAi 是一款 AI 面試系統，能快速、大量進行面試分析。我們只會透過文字進行分析，以避免外表、口音或語氣等因素影響判斷，使評估更客觀、更公平，讓分析迅速的同時不失精準度。</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group3_1') }}" class="work-card" data-category="category3" title="點擊查看更多作品3-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_5.png') }}" alt="作品3-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>健康生活的食譜圖像識別軟體「Snap  Plate」</h4>
+                    <p>我們的專題是一個智慧食譜推薦平台，只要用手機掃描冰箱裡的食材，就能立刻獲得適合的料理建議，還附上詳細的步驟說明，讓煮飯變得輕鬆又有趣。無論你是料理新手，還是每天煩惱晚餐吃什麼的人，都能在這裡找到靈感，讓每一餐都充滿驚喜與溫度！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group3_2') }}" class="work-card" data-category="category3" title="點擊查看更多作品3-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_6.png') }}" alt="作品3-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>智慧路牌系統技術與應用探究</h4>
+                    <p>找教室、問路線、看天氣，通通交給我！</p>
+                    <p>我們用互動面板、會轉向的路牌和溫暖的路線指引，陪你一起在師大安心走對每一步。</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group4_1') }}" class="work-card" data-category="category4" title="點擊查看更多作品4-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_7.png') }}" alt="作品4-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>PiCare</h4>
+                    <p>PiCare 是一款全方位的健康管理平台，結合 AI 技術，讓使用者能以最簡單的方式，拍照即可完整記錄血壓、用藥資訊與回診提醒等重要健康資料。</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group4_2') }}" class="work-card" data-category="category4" title="點擊查看更多作品4-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='4_2.jpeg') }}" alt="作品4-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>輔助中小學生學習運算思維之AI學習同伴的開發與評估</h4>
+                    <p>本專題打造一個能陪伴學生思考的AI學習夥伴，透過對話引導學習，不直接給答案，幫助學生培養思考力。結合網站與行動裝置，讓學習隨時隨地都能開始！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group5_1') }}" class="work-card" data-category="category5" title="點擊查看更多作品5-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_9.png') }}" alt="作品5-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>未來造物島</h4>
+                    <p>我們提出一種新方法，透過語音轉文字與 AI 協助老師記錄學生討論，還能自動留下學習紀錄，快速掌握每位學生的參與與想法，評量更輕鬆！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group5_2') }}" class="work-card" data-category="category5" title="點擊查看更多作品5-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_10.png') }}" alt="作品5-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>紙尖上的藝數</h4>
+                    <p>自己動手做有趣又好玩的數學摺紙小夜燈！你知道摺紙的發展與數學息息相關嗎?甚至只需要一張紙就可以摺出一隻超複雜的中國龍！摺紙藝術遠超你的想像，快來一起認識摺紙吧！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group6_1') }}" class="work-card" data-category="category6" title="點擊查看更多作品6-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_11.png') }}" alt="作品6-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>員工協助方案之遊戲化平台-EAPic</h4>
+                    <p>歡迎來到EAPic海底世界！</p>
+                    <p>成為我們的主角——「飯龜」，潛入海洋探索並收集神祕寶藏，最後完成關卡並修復遺跡！</p>
+                    <p>無論是壓力管理、家庭照顧，還是新人協助，你都能在這趟旅程中發現各種貼心的員工協助方案！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group6_2') }}" class="work-card" data-category="category6" title="點擊查看更多作品6-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_12.png') }}" alt="作品6-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>基於Ilm 聊天應用:幫助大學生解決社交困擾</h4>
+                    <p>大家好！我們是 "Wingchat" ，我們的專題內容主要是幫助大學生透過遊戲互動來學習如何與人進行社交互動。藉由透過不斷的與遊戲中的角色溝通、互動，讓玩家在遊戲中有實體的社交感，在現實生活中與人社交不再「社恐」，成為一個人人熱愛的社交高手！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group7_1') }}" class="work-card" data-category="category7" title="點擊查看更多作品7-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_13.png') }}" alt="作品7-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>樂活無齡—互動教學設計</h4>
+                    <p>臺灣預估於 2025 邁入超高齡社會，因此長者的健康力是個重要的議題，我們希望能做一個互動教具，以趣味的遊戲形式搭配課程，提供給第一線人員做健康力的推廣</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group7_2') }}" class="work-card" data-category="category7" title="點擊查看更多作品7-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_14.PNG') }}" alt="作品7-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>結合實體和數位的防災桌遊—勇者別慌！魔王的防災大考驗</h4>
+                    <p>你有想過防災也能邊玩邊學嗎？我們設計了一款結合感應科技與桌遊的冒險遊戲，讓孩子在歡笑中學會災害應變，輕鬆又有趣！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group8_1') }}" class="work-card" data-category="category8" title="點擊查看更多作品8-1的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_15.jpg') }}" alt="作品8-1">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>《內語》 Inner Speech：一場從焦慮出發，學習共處的冒險</h4>
+                    <p>你是否也曾在人群中感到緊張？這款遊戲帶你走進社交焦慮者的內心世界，隨角色一起成長，學習理解自己，與焦慮共處。</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+            <a href="{{ url_for('group8_2') }}" class="work-card" data-category="category8" title="點擊查看更多作品8-2的內容">
+                <div class="work-image">
+                    <img src="{{ url_for('static', filename='logo_16.png') }}" alt="作品8-2">
+                    <div class="work-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-eye"></i>
+                            <span>查看詳情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-description">
+                    <h4>社交情緒學習之虛擬實境系統開發與評估</h4>
+                    <p>我們運用虛擬實境 (VR) 打造超真實社交情境與AI影片，讓你能沉浸式地學習社交情緒，輕鬆提升情緒管理與人際互動能力，自信面對生活中的各種挑戰！</p>
+                </div>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div id="about" class="section-title" data-aos="fade-right" style="color: aliceblue;">關於科技系</div>
+    <section id="about" class="section about-section">
+        <div class="about-container">
+            <div class="about-text rounded-box" data-aos="fade-up" data-aos-delay="0" data-aos-once="false" title="關於科技系">
+                <p>
+                    本系源自民國42年設立之工業教育系「工藝教育組」，專責培育中學工藝課師資。隨課程調整，於61年改名為「工業技術教育組」，71年獨立為「工藝教育學系」，隸屬藝術學院。<br><br>
+                    80年設碩士班、87年設博士班。因應社會變遷與師資多元化，83年更名為「工業科技教育學系」，培育中學生活科技課師資，87年改隸科技學院。為配合科技產業教育訓練需求，98學年度再更名為「科技應用與人力資源發展學系」，簡稱科技系。<br><br>
+                    為拓展就業出路，自83年起以師資培育為基礎推行課程分組。現行大學部分為「學習與科技組」及「設計與科技組」，培育科技產業所需人才。碩士班設有「科技與工程教育」、「人力資源」、「網路學習」等課程，博士班則分「科技與工程教育」與「人力資源」兩組，培育教學與研究專才。
+                </p>
+                <div class="tech-corner top-left"></div>
+                <div class="tech-corner top-right"></div>
+                <div class="tech-corner bottom-left"></div>
+                <div class="tech-corner bottom-right"></div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Games Section -->
+     <div id="games" class="section-title" data-aos="fade-right">互動遊戲</div>
+     <section id="games" class="section games-section">
+         <div class="games-container" data-aos="fade-up" data-aos-delay="0" data-aos-once="false">
+             <a href="https://seanshih8787.github.io/bridge_game/" 
+                class="game-button btn" 
+                title="遊戲一" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                 <div class="game-icon"><i class="fas fa-gamepad"></i></div>
+                 <span>專展小遊戲</span>
+                 <div class="btn-bg"></div>
+                 <div class="btn-glitch"></div>
+                 <div class="tech-corner top-left"></div>
+                 <div class="tech-corner top-right"></div>
+                 <div class="tech-corner bottom-left"></div>
+                 <div class="tech-corner bottom-right"></div>
+             </a>
+         </div>
+     </section>
+
+    <div class="TAHRD">
+        <p>2025 國立臺灣師範大學 科技應用與人力資源發展學系<br>115級畢業專題成果網站</p>
+    </div>
+
+    <div class="final-container">
+        <p class="manufacturer-footer-text">© Copyright 2025 臺師大科技系畢業專題成果展</p>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
